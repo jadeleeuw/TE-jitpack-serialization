@@ -121,7 +121,7 @@ Name | Type | Description  | Notes
 
 <a name="verifyA3"></a>
 # **verifyA3**
-> SubmissionResult verifyA3(requestBody)
+> SubmissionResult verifyA3(pcPart)
 
 verify assignment A3
 
@@ -145,9 +145,9 @@ idKey.setApiKey("YOUR API KEY");
 //idKey.setApiKeyPrefix("Token");
 
 AssignmentAApi apiInstance = new AssignmentAApi();
-List<Object> requestBody = Arrays.asList(null); // List<Object> | The array of PC parts.
+List<PCPart> pcPart = Arrays.asList(null); // List<PCPart> | The array of PC parts.
 try {
-    SubmissionResult result = apiInstance.verifyA3(requestBody);
+    SubmissionResult result = apiInstance.verifyA3(pcPart);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling AssignmentAApi#verifyA3");
@@ -159,7 +159,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **requestBody** | [**List&lt;Object&gt;**](List.md)| The array of PC parts. |
+ **pcPart** | [**List&lt;PCPart&gt;**](List.md)| The array of PC parts. |
 
 ### Return type
 

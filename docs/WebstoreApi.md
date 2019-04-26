@@ -65,7 +65,7 @@ Name | Type | Description  | Notes
 
 <a name="getProduct"></a>
 # **getProduct**
-> Object getProduct(productId)
+> PCPart getProduct(productId)
 
 Get product/part by ID
 
@@ -91,7 +91,7 @@ idKey.setApiKey("YOUR API KEY");
 WebstoreApi apiInstance = new WebstoreApi();
 String productId = "productId_example"; // String | The id of the product.
 try {
-    Object result = apiInstance.getProduct(productId);
+    PCPart result = apiInstance.getProduct(productId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling WebstoreApi#getProduct");
@@ -107,7 +107,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+[**PCPart**](PCPart.md)
 
 ### Authorization
 

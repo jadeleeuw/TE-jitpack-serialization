@@ -3,6 +3,7 @@ package sdk.serialization.api;
 import sdk.serialization.ApiClient;
 
 import sdk.serialization.model.Customer;
+import sdk.serialization.model.PCPart;
 
 import java.util.HashMap;
 import java.util.List;
@@ -24,7 +25,7 @@ import org.springframework.http.MediaType;
 import reactor.core.publisher.Mono;
 import reactor.core.publisher.Flux;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-04-26T13:55:14.146935+02:00[Europe/Amsterdam]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-04-26T15:17:24.338706+02:00[Europe/Amsterdam]")
 public class WebstoreApi {
     private ApiClient apiClient;
 
@@ -89,10 +90,10 @@ public class WebstoreApi {
      * <p><b>200</b> - All information about the product
      * <p><b>400</b> - The product with the specified ID could not be found.
      * @param productId The id of the product.
-     * @return Object
+     * @return PCPart
      * @throws RestClientException if an error occurs while attempting to invoke the API
      */
-    public Mono<Object> getProduct(String productId) throws HttpClientErrorException {
+    public Mono<PCPart> getProduct(String productId) throws HttpClientErrorException {
         Object postBody = null;
         
         // verify the required parameter 'productId' is set
@@ -118,7 +119,7 @@ public class WebstoreApi {
 
         String[] authNames = new String[] { "idKey" };
 
-        ParameterizedTypeReference<Object> returnType = new ParameterizedTypeReference<Object>() {};
+        ParameterizedTypeReference<PCPart> returnType = new ParameterizedTypeReference<PCPart>() {};
         return apiClient.invokeAPI(path, HttpMethod.GET, queryParams, postBody, headerParams, formParams, accept, contentType, authNames, returnType);
     }
 }

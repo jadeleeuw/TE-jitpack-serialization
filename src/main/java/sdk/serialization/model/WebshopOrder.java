@@ -23,17 +23,18 @@ import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
 import java.util.List;
 import sdk.serialization.model.Customer;
+import sdk.serialization.model.PCPart;
 
 /**
  * WebshopOrder
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-04-26T13:55:14.146935+02:00[Europe/Amsterdam]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-04-26T15:17:24.338706+02:00[Europe/Amsterdam]")
 public class WebshopOrder {
   @JsonProperty("customer")
   private Customer customer = null;
 
   @JsonProperty("pcParts")
-  private List<Object> pcParts = null;
+  private List<PCPart> pcParts = null;
 
   public WebshopOrder customer(Customer customer) {
     this.customer = customer;
@@ -53,12 +54,12 @@ public class WebshopOrder {
     this.customer = customer;
   }
 
-  public WebshopOrder pcParts(List<Object> pcParts) {
+  public WebshopOrder pcParts(List<PCPart> pcParts) {
     this.pcParts = pcParts;
     return this;
   }
 
-  public WebshopOrder addPcPartsItem(Object pcPartsItem) {
+  public WebshopOrder addPcPartsItem(PCPart pcPartsItem) {
     if (this.pcParts == null) {
       this.pcParts = new ArrayList<>();
     }
@@ -71,11 +72,11 @@ public class WebshopOrder {
    * @return pcParts
   **/
   @ApiModelProperty(value = "")
-  public List<Object> getPcParts() {
+  public List<PCPart> getPcParts() {
     return pcParts;
   }
 
-  public void setPcParts(List<Object> pcParts) {
+  public void setPcParts(List<PCPart> pcParts) {
     this.pcParts = pcParts;
   }
 

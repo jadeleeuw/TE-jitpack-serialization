@@ -22,10 +22,10 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
 /**
- * CPU
+ * PCPart
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-04-26T15:17:24.338706+02:00[Europe/Amsterdam]")
-public class CPU {
+public class PCPart {
   @JsonProperty("price")
   private Double price;
 
@@ -38,13 +38,7 @@ public class CPU {
   @JsonProperty("category")
   private String category;
 
-  @JsonProperty("brand")
-  private String brand;
-
-  @JsonProperty("performance")
-  private Integer performance;
-
-  public CPU price(Double price) {
+  public PCPart price(Double price) {
     this.price = price;
     return this;
   }
@@ -62,7 +56,7 @@ public class CPU {
     this.price = price;
   }
 
-  public CPU name(String name) {
+  public PCPart name(String name) {
     this.name = name;
     return this;
   }
@@ -80,7 +74,7 @@ public class CPU {
     this.name = name;
   }
 
-  public CPU productId(String productId) {
+  public PCPart productId(String productId) {
     this.productId = productId;
     return this;
   }
@@ -98,7 +92,7 @@ public class CPU {
     this.productId = productId;
   }
 
-  public CPU category(String category) {
+  public PCPart category(String category) {
     this.category = category;
     return this;
   }
@@ -116,42 +110,6 @@ public class CPU {
     this.category = category;
   }
 
-  public CPU brand(String brand) {
-    this.brand = brand;
-    return this;
-  }
-
-   /**
-   * Get brand
-   * @return brand
-  **/
-  @ApiModelProperty(required = true, value = "")
-  public String getBrand() {
-    return brand;
-  }
-
-  public void setBrand(String brand) {
-    this.brand = brand;
-  }
-
-  public CPU performance(Integer performance) {
-    this.performance = performance;
-    return this;
-  }
-
-   /**
-   * Get performance
-   * @return performance
-  **/
-  @ApiModelProperty(required = true, value = "")
-  public Integer getPerformance() {
-    return performance;
-  }
-
-  public void setPerformance(Integer performance) {
-    this.performance = performance;
-  }
-
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -161,32 +119,28 @@ public class CPU {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    CPU CPU = (CPU) o;
-    return Objects.equals(this.price, CPU.price) &&
-        Objects.equals(this.name, CPU.name) &&
-        Objects.equals(this.productId, CPU.productId) &&
-        Objects.equals(this.category, CPU.category) &&
-        Objects.equals(this.brand, CPU.brand) &&
-        Objects.equals(this.performance, CPU.performance);
+    PCPart pcPart = (PCPart) o;
+    return Objects.equals(this.price, pcPart.price) &&
+        Objects.equals(this.name, pcPart.name) &&
+        Objects.equals(this.productId, pcPart.productId) &&
+        Objects.equals(this.category, pcPart.category);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(price, name, productId, category, brand, performance);
+    return Objects.hash(price, name, productId, category);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class CPU {\n");
+    sb.append("class PCPart {\n");
     
     sb.append("    price: ").append(toIndentedString(price)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    productId: ").append(toIndentedString(productId)).append("\n");
     sb.append("    category: ").append(toIndentedString(category)).append("\n");
-    sb.append("    brand: ").append(toIndentedString(brand)).append("\n");
-    sb.append("    performance: ").append(toIndentedString(performance)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -322,7 +322,7 @@ This endpoint does not need any parameter.
 
 <a name="getPartslist"></a>
 # **getPartslist**
-> List&lt;Object&gt; getPartslist()
+> List&lt;PCPart&gt; getPartslist()
 
 Returns all parts in the warehouse in one list
 
@@ -347,7 +347,7 @@ idKey.setApiKey("YOUR API KEY");
 
 WarehouseApi apiInstance = new WarehouseApi();
 try {
-    List<Object> result = apiInstance.getPartslist();
+    List<PCPart> result = apiInstance.getPartslist();
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling WarehouseApi#getPartslist");
@@ -360,7 +360,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-**List&lt;Object&gt;**
+[**List&lt;PCPart&gt;**](PCPart.md)
 
 ### Authorization
 

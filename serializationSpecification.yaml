@@ -75,13 +75,7 @@ paths:
             schema:
               type: array
               items:
-                anyOf:
-                  - $ref: '#/components/schemas/Case'
-                  - $ref: '#/components/schemas/Cooling'
-                  - $ref: '#/components/schemas/CPU'
-                  - $ref: '#/components/schemas/GPU'
-                  - $ref: '#/components/schemas/PSU'
-                  - $ref: '#/components/schemas/Storage'
+                $ref: '#/components/schemas/PCPart'
       tags:
       - ASSIGNMENT_A
       responses:
@@ -305,13 +299,7 @@ paths:
               schema:
                 type: array
                 items:
-                  anyOf:
-                  - $ref: '#/components/schemas/Case'
-                  - $ref: '#/components/schemas/Cooling'
-                  - $ref: '#/components/schemas/CPU'
-                  - $ref: '#/components/schemas/GPU'
-                  - $ref: '#/components/schemas/PSU'
-                  - $ref: '#/components/schemas/Storage'
+                  $ref: '#/components/schemas/PCPart'
 
   /warehouse/{productId}:
     get: 
@@ -333,13 +321,7 @@ paths:
           content:
             application/json:
               schema:
-                anyOf:
-                  - $ref: '#/components/schemas/Case'
-                  - $ref: '#/components/schemas/Cooling'
-                  - $ref: '#/components/schemas/CPU'
-                  - $ref: '#/components/schemas/GPU'
-                  - $ref: '#/components/schemas/PSU'
-                  - $ref: '#/components/schemas/Storage'
+                $ref: '#/components/schemas/PCPart'
         '400':
           description: The product with the specified ID could not be found.
 
@@ -565,6 +547,24 @@ components:
         capacity: 1000
         speed: 95
     
+    PCPart:
+      type: object
+      properties:
+        price:
+          type: number
+          format: double
+        name:
+          type: string
+        productId:
+          type: string
+        category:
+          type: string
+      required:
+        - price
+        - name
+        - productId
+        - category
+
     PC:
       type: object
       properties:
@@ -699,14 +699,7 @@ components:
         pcParts:
           type: array
           items:
-            anyOf:
-                  - $ref: '#/components/schemas/Case'
-                  - $ref: '#/components/schemas/Cooling'
-                  - $ref: '#/components/schemas/CPU'
-                  - $ref: '#/components/schemas/GPU'
-                  - $ref: '#/components/schemas/PSU'
-                  - $ref: '#/components/schemas/Storage'
-
+            $ref: '#/components/schemas/PCPart'
     Catalog:
       type: object
       properties:
