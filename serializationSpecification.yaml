@@ -6,13 +6,13 @@ info:
   version: 1.0
 
 servers:
-- url: http://localhost:8080/serialization
+- url: http://localhost:8080
   description: Main server
 
 paths:
 
   ##### ASSIGNMENT A #####
-  /a/1:
+  /serialization/a/1:
     post:
       summary: verify assignment A1
       description: Verifies assignment A1.
@@ -38,7 +38,7 @@ paths:
                 $ref: '#/components/schemas/SubmissionResult'
         '400':
           description: The submitted JSON could not be parsed correctly.
-  /a/2:
+  /serialization/a/2:
     post:
       summary: verify assignment A2
       description: Verifies assignment A2.
@@ -62,7 +62,7 @@ paths:
         '400':
           description: The submitted JSON could not be parsed correctly.
 
-  /a/3:
+  /serialization/a/3:
     post:
       summary: verify assignment A3
       description: Verifies assignment A3.
@@ -95,7 +95,7 @@ paths:
           description: The submitted JSON could not be parsed correctly.
 
   ##### ASSIGNMENT B #####
-  /b:
+  /serialization/b:
     post:
       summary: verify assignment B
       description: Verifies the shipment based on the shipment request for assignment B.
@@ -133,32 +133,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/ShipmentRequest'
 
-  /customer/{customerId}:
-    get: 
-      summary: Get customer
-      description: Gets all the information about the customer with the specified ID.
-      operationId: getCustomer
-      parameters:
-      - in: path
-        name: customerId
-        description: The id of the customer.
-        required: true
-        schema:
-          type: string
-      tags:
-      - ASSIGNMENT_B
-      responses:
-        '200':
-          description: All information about the customer.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Customer'
-        '400':
-          description: The customer with the specified ID could not be found.
-
   ##### ASSIGNMENT C #####
-  /c:
+  /serialization/c:
     post:
       summary: verify assignment C
       description: Verifies the administration order based on the webshop order for assignment C.
@@ -195,6 +171,202 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/WebshopOrder'
+
+  ##### WAREHOUSE #####
+  /warehouse/catalog:
+    get:
+      summary: Returns a catalog containing all parts divided in categories
+      description: Returns a catalog containing all parts divided in their respective categories.
+      operationId: getCatalog
+      tags:
+      - WAREHOUSE
+      responses:
+        '200':
+          description: The catalog containing all parts divided in catagories
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Catalog'
+
+  /warehouse/cases:
+    get:
+      summary: Returns all cases
+      description: Returns an array of all case objects in the warehouse
+      operationId: getCases
+      tags:
+      - WAREHOUSE
+      responses:
+        '200':
+          description: An array of all case objects
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Case'
+
+  /warehouse/cooling:
+    get:
+      summary: Returns all cooling possibilities
+      description: Returns an array of all cooling objects in the warehouse
+      operationId: getCooling
+      tags:
+      - WAREHOUSE
+      responses:
+        '200':
+          description: An array of all cooling objects
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Cooling'
+
+  /warehouse/cpus:
+    get:
+      summary: Returns all CPUs
+      description: Returns an array of all CPU objects in the warehouse
+      operationId: getCPUs
+      tags:
+      - WAREHOUSE
+      responses:
+        '200':
+          description: An array of all CPU objects
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/CPU'
+
+  /warehouse/gpus:
+    get:
+      summary: Returns all GPUs
+      description: Returns an array of all GPU objects in the warehouse
+      operationId: getGPUs
+      tags:
+      - WAREHOUSE
+      responses:
+        '200':
+          description: An array of all GPU objects
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GPU'
+
+  /warehouse/psus:
+    get:
+      summary: Returns all PSUs
+      description: Returns an array of all PSU objects in the warehouse
+      operationId: getPSUs
+      tags:
+      - WAREHOUSE
+      responses:
+        '200':
+          description: An array of all PSU objects
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/PSU'
+
+  /warehouse/storage:
+    get:
+      summary: Returns all storage possibilities
+      description: Returns an array of all storage objects in the warehouse
+      operationId: getStorage
+      tags:
+      - WAREHOUSE
+      responses:
+        '200':
+          description: An array of all storage objects
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Storage'
+
+  /warehouse/partslist:
+    get:
+      summary: Returns all parts in the warehouse in one list
+      description: Returns all parts in the warehouse as a single list, without division in categories
+      operationId: getPartslist
+      tags:
+      - WAREHOUSE
+      responses:
+        '200':
+          description: An array containing all parts in the warehouse
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  anyOf:
+                  - $ref: '#/components/schemas/Case'
+                  - $ref: '#/components/schemas/Cooling'
+                  - $ref: '#/components/schemas/CPU'
+                  - $ref: '#/components/schemas/GPU'
+                  - $ref: '#/components/schemas/PSU'
+                  - $ref: '#/components/schemas/Storage'
+
+  /warehouse/{productId}:
+    get: 
+      summary: Get product/part by ID
+      description: Gets all the information about the product with the specified ID.
+      operationId: getProduct
+      parameters:
+      - in: path
+        name: productId
+        description: The id of the product.
+        required: true
+        schema:
+          type: string
+      tags:
+      - WEBSTORE
+      responses:
+        '200':
+          description: All information about the product
+          content:
+            application/json:
+              schema:
+                anyOf:
+                  - $ref: '#/components/schemas/Case'
+                  - $ref: '#/components/schemas/Cooling'
+                  - $ref: '#/components/schemas/CPU'
+                  - $ref: '#/components/schemas/GPU'
+                  - $ref: '#/components/schemas/PSU'
+                  - $ref: '#/components/schemas/Storage'
+        '400':
+          description: The product with the specified ID could not be found.
+
+  ##### WEBSTORE #####
+  /webstore/customer/{customerId}:
+    get: 
+      summary: Get customer by ID
+      description: Gets all the information about the customer with the specified ID.
+      operationId: getCustomer
+      parameters:
+      - in: path
+        name: customerId
+        description: The id of the customer.
+        required: true
+        schema:
+          type: string
+      tags:
+      - WEBSTORE
+      responses:
+        '200':
+          description: All information about the customer.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Customer'
+        '400':
+          description: The customer with the specified ID could not be found.
 
 components:
   securitySchemes:
@@ -535,6 +707,41 @@ components:
                   - $ref: '#/components/schemas/PSU'
                   - $ref: '#/components/schemas/Storage'
 
+    Catalog:
+      type: object
+      properties:
+        cases:
+          type: array
+          items:
+            $ref: '#/components/schemas/Case'
+        cooling:
+          type: array
+          items:
+            $ref: '#/components/schemas/Cooling'
+        cpus:
+          type: array
+          items:
+            $ref: '#/components/schemas/CPU'
+        gpus:
+          type: array
+          items:
+            $ref: '#/components/schemas/GPU'
+        psus:
+          type: array
+          items:
+            $ref: '#/components/schemas/PSU'
+        storage:
+          type: array
+          items:
+            $ref: '#/components/schemas/Storage'
+      required:
+        - cases
+        - cooling
+        - cpus
+        - gpus
+        - psus
+        - storage
+
 security:
 - idKey: []
 
@@ -542,3 +749,5 @@ tags:
 - name: ASSIGNMENT_A
 - name: ASSIGNMENT_B
 - name: ASSIGNMENT_C
+- name: WAREHOUSE
+- name: WEBSTORE

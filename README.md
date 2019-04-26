@@ -2,7 +2,7 @@
 
 Serialization API
 - API version: 1.0
-  - Build date: 2019-04-25T16:28:59.613360+02:00[Europe/Amsterdam]
+  - Build date: 2019-04-26T10:40:13.153265+02:00[Europe/Amsterdam]
 
 All endpoints related to the serialization assignment.
 
@@ -107,24 +107,34 @@ public class AssignmentAApiExample {
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *http://localhost:8080/serialization*
+All URIs are relative to *http://localhost:8080*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*AssignmentAApi* | [**verifyA1**](docs/AssignmentAApi.md#verifyA1) | **POST** /a/1 | verify assignment A1
-*AssignmentAApi* | [**verifyA2**](docs/AssignmentAApi.md#verifyA2) | **POST** /a/2 | verify assignment A2
-*AssignmentAApi* | [**verifyA3**](docs/AssignmentAApi.md#verifyA3) | **POST** /a/3 | verify assignment A3
-*AssignmentBApi* | [**getCustomer**](docs/AssignmentBApi.md#getCustomer) | **GET** /customer/{customerId} | Get customer
-*AssignmentBApi* | [**getShipmentRequest**](docs/AssignmentBApi.md#getShipmentRequest) | **GET** /b | Get shipment request
-*AssignmentBApi* | [**verifyB**](docs/AssignmentBApi.md#verifyB) | **POST** /b | verify assignment B
-*AssignmentCApi* | [**getWebshopOrder**](docs/AssignmentCApi.md#getWebshopOrder) | **GET** /c | Get webshop order
-*AssignmentCApi* | [**verifyC**](docs/AssignmentCApi.md#verifyC) | **POST** /c | verify assignment C
+*AssignmentAApi* | [**verifyA1**](docs/AssignmentAApi.md#verifyA1) | **POST** /serialization/a/1 | verify assignment A1
+*AssignmentAApi* | [**verifyA2**](docs/AssignmentAApi.md#verifyA2) | **POST** /serialization/a/2 | verify assignment A2
+*AssignmentAApi* | [**verifyA3**](docs/AssignmentAApi.md#verifyA3) | **POST** /serialization/a/3 | verify assignment A3
+*AssignmentBApi* | [**getShipmentRequest**](docs/AssignmentBApi.md#getShipmentRequest) | **GET** /serialization/b | Get shipment request
+*AssignmentBApi* | [**verifyB**](docs/AssignmentBApi.md#verifyB) | **POST** /serialization/b | verify assignment B
+*AssignmentCApi* | [**getWebshopOrder**](docs/AssignmentCApi.md#getWebshopOrder) | **GET** /serialization/c | Get webshop order
+*AssignmentCApi* | [**verifyC**](docs/AssignmentCApi.md#verifyC) | **POST** /serialization/c | verify assignment C
+*WarehouseApi* | [**getCPUs**](docs/WarehouseApi.md#getCPUs) | **GET** /warehouse/cpus | Returns all CPUs
+*WarehouseApi* | [**getCases**](docs/WarehouseApi.md#getCases) | **GET** /warehouse/cases | Returns all cases
+*WarehouseApi* | [**getCatalog**](docs/WarehouseApi.md#getCatalog) | **GET** /warehouse/catalog | Returns a catalog containing all parts divided in categories
+*WarehouseApi* | [**getCooling**](docs/WarehouseApi.md#getCooling) | **GET** /warehouse/cooling | Returns all cooling possibilities
+*WarehouseApi* | [**getGPUs**](docs/WarehouseApi.md#getGPUs) | **GET** /warehouse/gpus | Returns all GPUs
+*WarehouseApi* | [**getPSUs**](docs/WarehouseApi.md#getPSUs) | **GET** /warehouse/psus | Returns all PSUs
+*WarehouseApi* | [**getPartslist**](docs/WarehouseApi.md#getPartslist) | **GET** /warehouse/partslist | Returns all parts in the warehouse in one list
+*WarehouseApi* | [**getStorage**](docs/WarehouseApi.md#getStorage) | **GET** /warehouse/storage | Returns all storage possibilities
+*WebstoreApi* | [**getCustomer**](docs/WebstoreApi.md#getCustomer) | **GET** /webstore/customer/{customerId} | Get customer by ID
+*WebstoreApi* | [**getProduct**](docs/WebstoreApi.md#getProduct) | **GET** /warehouse/{productId} | Get product/part by ID
 
 
 ## Documentation for Models
 
  - [AdministrationOrder](docs/AdministrationOrder.md)
  - [CPU](docs/CPU.md)
+ - [Catalog](docs/Catalog.md)
  - [Cooling](docs/Cooling.md)
  - [Customer](docs/Customer.md)
  - [CustomerOrder](docs/CustomerOrder.md)

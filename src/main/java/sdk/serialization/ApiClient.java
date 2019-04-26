@@ -62,7 +62,7 @@ import sdk.serialization.auth.HttpBasicAuth;
 import sdk.serialization.auth.ApiKeyAuth;
 import sdk.serialization.auth.OAuth;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-04-25T16:28:59.613360+02:00[Europe/Amsterdam]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-04-26T10:40:13.153265+02:00[Europe/Amsterdam]")
 public class ApiClient {
     public enum CollectionFormat {
         CSV(","), TSV("\t"), SSV(" "), PIPES("|"), MULTI(null);
@@ -79,7 +79,7 @@ public class ApiClient {
 
     private HttpHeaders defaultHeaders = new HttpHeaders();
 
-    private String basePath = "http://localhost:8080/serialization";
+    private String basePath = "http://localhost:8080";
 
     private final WebClient webClient;
     private final DateFormat dateFormat;

@@ -1,20 +1,20 @@
-# AssignmentBApi
+# WebstoreApi
 
 All URIs are relative to *http://localhost:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getShipmentRequest**](AssignmentBApi.md#getShipmentRequest) | **GET** /serialization/b | Get shipment request
-[**verifyB**](AssignmentBApi.md#verifyB) | **POST** /serialization/b | verify assignment B
+[**getCustomer**](WebstoreApi.md#getCustomer) | **GET** /webstore/customer/{customerId} | Get customer by ID
+[**getProduct**](WebstoreApi.md#getProduct) | **GET** /warehouse/{productId} | Get product/part by ID
 
 
-<a name="getShipmentRequest"></a>
-# **getShipmentRequest**
-> ShipmentRequest getShipmentRequest()
+<a name="getCustomer"></a>
+# **getCustomer**
+> Customer getCustomer(customerId)
 
-Get shipment request
+Get customer by ID
 
-Gets the shipment request that needs to be handled for assignment B.
+Gets all the information about the customer with the specified ID.
 
 ### Example
 ```java
@@ -23,7 +23,7 @@ Gets the shipment request that needs to be handled for assignment B.
 //import sdk.serialization.ApiException;
 //import sdk.serialization.Configuration;
 //import sdk.serialization.auth.*;
-//import sdk.serialization.api.AssignmentBApi;
+//import sdk.serialization.api.WebstoreApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
@@ -33,22 +33,26 @@ idKey.setApiKey("YOUR API KEY");
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //idKey.setApiKeyPrefix("Token");
 
-AssignmentBApi apiInstance = new AssignmentBApi();
+WebstoreApi apiInstance = new WebstoreApi();
+String customerId = "customerId_example"; // String | The id of the customer.
 try {
-    ShipmentRequest result = apiInstance.getShipmentRequest();
+    Customer result = apiInstance.getCustomer(customerId);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling AssignmentBApi#getShipmentRequest");
+    System.err.println("Exception when calling WebstoreApi#getCustomer");
     e.printStackTrace();
 }
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **customerId** | **String**| The id of the customer. |
 
 ### Return type
 
-[**ShipmentRequest**](ShipmentRequest.md)
+[**Customer**](Customer.md)
 
 ### Authorization
 
@@ -59,13 +63,13 @@ This endpoint does not need any parameter.
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a name="verifyB"></a>
-# **verifyB**
-> SubmissionResult verifyB(shipment)
+<a name="getProduct"></a>
+# **getProduct**
+> Object getProduct(productId)
 
-verify assignment B
+Get product/part by ID
 
-Verifies the shipment based on the shipment request for assignment B.
+Gets all the information about the product with the specified ID.
 
 ### Example
 ```java
@@ -74,7 +78,7 @@ Verifies the shipment based on the shipment request for assignment B.
 //import sdk.serialization.ApiException;
 //import sdk.serialization.Configuration;
 //import sdk.serialization.auth.*;
-//import sdk.serialization.api.AssignmentBApi;
+//import sdk.serialization.api.WebstoreApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
@@ -84,13 +88,13 @@ idKey.setApiKey("YOUR API KEY");
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //idKey.setApiKeyPrefix("Token");
 
-AssignmentBApi apiInstance = new AssignmentBApi();
-Shipment shipment = new Shipment(); // Shipment | The shipment based on the given shipment request.
+WebstoreApi apiInstance = new WebstoreApi();
+String productId = "productId_example"; // String | The id of the product.
 try {
-    SubmissionResult result = apiInstance.verifyB(shipment);
+    Object result = apiInstance.getProduct(productId);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling AssignmentBApi#verifyB");
+    System.err.println("Exception when calling WebstoreApi#getProduct");
     e.printStackTrace();
 }
 ```
@@ -99,11 +103,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **shipment** | [**Shipment**](Shipment.md)| The shipment based on the given shipment request. |
+ **productId** | **String**| The id of the product. |
 
 ### Return type
 
-[**SubmissionResult**](SubmissionResult.md)
+**Object**
 
 ### Authorization
 
@@ -111,6 +115,6 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 

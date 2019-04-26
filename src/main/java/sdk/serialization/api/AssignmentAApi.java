@@ -25,7 +25,7 @@ import org.springframework.http.MediaType;
 import reactor.core.publisher.Mono;
 import reactor.core.publisher.Flux;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-04-25T16:28:59.613360+02:00[Europe/Amsterdam]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-04-26T10:40:13.153265+02:00[Europe/Amsterdam]")
 public class AssignmentAApi {
     private ApiClient apiClient;
 
@@ -63,7 +63,7 @@ public class AssignmentAApi {
             throw new HttpClientErrorException(HttpStatus.BAD_REQUEST, "Missing the required parameter 'requestBody' when calling verifyA1");
         }
         
-        String path = UriComponentsBuilder.fromPath("/a/1").build().toUriString();
+        String path = UriComponentsBuilder.fromPath("/serialization/a/1").build().toUriString();
         
         final MultiValueMap<String, String> queryParams = new LinkedMultiValueMap<String, String>();
         final HttpHeaders headerParams = new HttpHeaders();
@@ -100,7 +100,7 @@ public class AssignmentAApi {
             throw new HttpClientErrorException(HttpStatus.BAD_REQUEST, "Missing the required parameter 'GPU' when calling verifyA2");
         }
         
-        String path = UriComponentsBuilder.fromPath("/a/2").build().toUriString();
+        String path = UriComponentsBuilder.fromPath("/serialization/a/2").build().toUriString();
         
         final MultiValueMap<String, String> queryParams = new LinkedMultiValueMap<String, String>();
         final HttpHeaders headerParams = new HttpHeaders();
@@ -137,7 +137,7 @@ public class AssignmentAApi {
             throw new HttpClientErrorException(HttpStatus.BAD_REQUEST, "Missing the required parameter 'requestBody' when calling verifyA3");
         }
         
-        String path = UriComponentsBuilder.fromPath("/a/3").build().toUriString();
+        String path = UriComponentsBuilder.fromPath("/serialization/a/3").build().toUriString();
         
         final MultiValueMap<String, String> queryParams = new LinkedMultiValueMap<String, String>();
         final HttpHeaders headerParams = new HttpHeaders();

@@ -1,12 +1,12 @@
 # AssignmentAApi
 
-All URIs are relative to *http://localhost:8080/serialization*
+All URIs are relative to *http://localhost:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**verifyA1**](AssignmentAApi.md#verifyA1) | **POST** /a/1 | verify assignment A1
-[**verifyA2**](AssignmentAApi.md#verifyA2) | **POST** /a/2 | verify assignment A2
-[**verifyA3**](AssignmentAApi.md#verifyA3) | **POST** /a/3 | verify assignment A3
+[**verifyA1**](AssignmentAApi.md#verifyA1) | **POST** /serialization/a/1 | verify assignment A1
+[**verifyA2**](AssignmentAApi.md#verifyA2) | **POST** /serialization/a/2 | verify assignment A2
+[**verifyA3**](AssignmentAApi.md#verifyA3) | **POST** /serialization/a/3 | verify assignment A3
 
 
 <a name="verifyA1"></a>

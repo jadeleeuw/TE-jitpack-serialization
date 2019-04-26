@@ -30,48 +30,58 @@ import sdk.serialization.model.PSU;
 import sdk.serialization.model.Storage;
 
 /**
- * PC
+ * Catalog
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-04-26T10:40:13.153265+02:00[Europe/Amsterdam]")
-public class PC {
-  @JsonProperty("caze")
-  private ModelCase caze = null;
+public class Catalog {
+  @JsonProperty("cases")
+  private List<ModelCase> cases = new ArrayList<>();
 
   @JsonProperty("cooling")
-  private Cooling cooling = null;
+  private List<Cooling> cooling = new ArrayList<>();
 
-  @JsonProperty("cpu")
-  private CPU cpu = null;
+  @JsonProperty("cpus")
+  private List<CPU> cpus = new ArrayList<>();
 
-  @JsonProperty("gpu")
-  private GPU gpu = null;
+  @JsonProperty("gpus")
+  private List<GPU> gpus = new ArrayList<>();
 
-  @JsonProperty("psu")
-  private PSU psu = null;
+  @JsonProperty("psus")
+  private List<PSU> psus = new ArrayList<>();
 
   @JsonProperty("storage")
   private List<Storage> storage = new ArrayList<>();
 
-  public PC caze(ModelCase caze) {
-    this.caze = caze;
+  public Catalog cases(List<ModelCase> cases) {
+    this.cases = cases;
+    return this;
+  }
+
+  public Catalog addCasesItem(ModelCase casesItem) {
+    this.cases.add(casesItem);
     return this;
   }
 
    /**
-   * Get caze
-   * @return caze
+   * Get cases
+   * @return cases
   **/
   @ApiModelProperty(required = true, value = "")
-  public ModelCase getCaze() {
-    return caze;
+  public List<ModelCase> getCases() {
+    return cases;
   }
 
-  public void setCaze(ModelCase caze) {
-    this.caze = caze;
+  public void setCases(List<ModelCase> cases) {
+    this.cases = cases;
   }
 
-  public PC cooling(Cooling cooling) {
+  public Catalog cooling(List<Cooling> cooling) {
     this.cooling = cooling;
+    return this;
+  }
+
+  public Catalog addCoolingItem(Cooling coolingItem) {
+    this.cooling.add(coolingItem);
     return this;
   }
 
@@ -80,74 +90,89 @@ public class PC {
    * @return cooling
   **/
   @ApiModelProperty(required = true, value = "")
-  public Cooling getCooling() {
+  public List<Cooling> getCooling() {
     return cooling;
   }
 
-  public void setCooling(Cooling cooling) {
+  public void setCooling(List<Cooling> cooling) {
     this.cooling = cooling;
   }
 
-  public PC cpu(CPU cpu) {
-    this.cpu = cpu;
+  public Catalog cpus(List<CPU> cpus) {
+    this.cpus = cpus;
+    return this;
+  }
+
+  public Catalog addCpusItem(CPU cpusItem) {
+    this.cpus.add(cpusItem);
     return this;
   }
 
    /**
-   * Get cpu
-   * @return cpu
+   * Get cpus
+   * @return cpus
   **/
   @ApiModelProperty(required = true, value = "")
-  public CPU getCpu() {
-    return cpu;
+  public List<CPU> getCpus() {
+    return cpus;
   }
 
-  public void setCpu(CPU cpu) {
-    this.cpu = cpu;
+  public void setCpus(List<CPU> cpus) {
+    this.cpus = cpus;
   }
 
-  public PC gpu(GPU gpu) {
-    this.gpu = gpu;
+  public Catalog gpus(List<GPU> gpus) {
+    this.gpus = gpus;
+    return this;
+  }
+
+  public Catalog addGpusItem(GPU gpusItem) {
+    this.gpus.add(gpusItem);
     return this;
   }
 
    /**
-   * Get gpu
-   * @return gpu
+   * Get gpus
+   * @return gpus
   **/
   @ApiModelProperty(required = true, value = "")
-  public GPU getGpu() {
-    return gpu;
+  public List<GPU> getGpus() {
+    return gpus;
   }
 
-  public void setGpu(GPU gpu) {
-    this.gpu = gpu;
+  public void setGpus(List<GPU> gpus) {
+    this.gpus = gpus;
   }
 
-  public PC psu(PSU psu) {
-    this.psu = psu;
+  public Catalog psus(List<PSU> psus) {
+    this.psus = psus;
+    return this;
+  }
+
+  public Catalog addPsusItem(PSU psusItem) {
+    this.psus.add(psusItem);
     return this;
   }
 
    /**
-   * Get psu
-   * @return psu
+   * Get psus
+   * @return psus
   **/
   @ApiModelProperty(required = true, value = "")
-  public PSU getPsu() {
-    return psu;
+  public List<PSU> getPsus() {
+    return psus;
   }
 
-  public void setPsu(PSU psu) {
-    this.psu = psu;
+  public void setPsus(List<PSU> psus) {
+    this.psus = psus;
   }
 
-  public PC storage(List<Storage> storage) {
+  public Catalog storage(List<Storage> storage) {
     this.storage = storage;
     return this;
   }
 
-  public PC addStorageItem(Storage storageItem) {
+  public Catalog addStorageItem(Storage storageItem) {
     this.storage.add(storageItem);
     return this;
   }
@@ -174,31 +199,31 @@ public class PC {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    PC PC = (PC) o;
-    return Objects.equals(this.caze, PC.caze) &&
-        Objects.equals(this.cooling, PC.cooling) &&
-        Objects.equals(this.cpu, PC.cpu) &&
-        Objects.equals(this.gpu, PC.gpu) &&
-        Objects.equals(this.psu, PC.psu) &&
-        Objects.equals(this.storage, PC.storage);
+    Catalog catalog = (Catalog) o;
+    return Objects.equals(this.cases, catalog.cases) &&
+        Objects.equals(this.cooling, catalog.cooling) &&
+        Objects.equals(this.cpus, catalog.cpus) &&
+        Objects.equals(this.gpus, catalog.gpus) &&
+        Objects.equals(this.psus, catalog.psus) &&
+        Objects.equals(this.storage, catalog.storage);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(caze, cooling, cpu, gpu, psu, storage);
+    return Objects.hash(cases, cooling, cpus, gpus, psus, storage);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class PC {\n");
+    sb.append("class Catalog {\n");
     
-    sb.append("    caze: ").append(toIndentedString(caze)).append("\n");
+    sb.append("    cases: ").append(toIndentedString(cases)).append("\n");
     sb.append("    cooling: ").append(toIndentedString(cooling)).append("\n");
-    sb.append("    cpu: ").append(toIndentedString(cpu)).append("\n");
-    sb.append("    gpu: ").append(toIndentedString(gpu)).append("\n");
-    sb.append("    psu: ").append(toIndentedString(psu)).append("\n");
+    sb.append("    cpus: ").append(toIndentedString(cpus)).append("\n");
+    sb.append("    gpus: ").append(toIndentedString(gpus)).append("\n");
+    sb.append("    psus: ").append(toIndentedString(psus)).append("\n");
     sb.append("    storage: ").append(toIndentedString(storage)).append("\n");
     sb.append("}");
     return sb.toString();

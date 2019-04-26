@@ -2,9 +2,7 @@ package sdk.serialization.api;
 
 import sdk.serialization.ApiClient;
 
-import sdk.serialization.model.AdministrationOrder;
-import sdk.serialization.model.SubmissionResult;
-import sdk.serialization.model.WebshopOrder;
+import sdk.serialization.model.Customer;
 
 import java.util.HashMap;
 import java.util.List;
@@ -27,15 +25,15 @@ import reactor.core.publisher.Mono;
 import reactor.core.publisher.Flux;
 
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-04-26T10:40:13.153265+02:00[Europe/Amsterdam]")
-public class AssignmentCApi {
+public class WebstoreApi {
     private ApiClient apiClient;
 
-    public AssignmentCApi() {
+    public WebstoreApi() {
         this(new ApiClient());
     }
 
     @Autowired
-    public AssignmentCApi(ApiClient apiClient) {
+    public WebstoreApi(ApiClient apiClient) {
         this.apiClient = apiClient;
     }
 
@@ -48,16 +46,26 @@ public class AssignmentCApi {
     }
 
     /**
-     * Get webshop order
-     * Gets the webshop order that needs to be processed for assignment C.
-     * <p><b>200</b> - The webshop order that needs to be processed for assignment C.
-     * @return WebshopOrder
+     * Get customer by ID
+     * Gets all the information about the customer with the specified ID.
+     * <p><b>200</b> - All information about the customer.
+     * <p><b>400</b> - The customer with the specified ID could not be found.
+     * @param customerId The id of the customer.
+     * @return Customer
      * @throws RestClientException if an error occurs while attempting to invoke the API
      */
-    public Mono<WebshopOrder> getWebshopOrder() throws HttpClientErrorException {
+    public Mono<Customer> getCustomer(String customerId) throws HttpClientErrorException {
         Object postBody = null;
         
-        String path = UriComponentsBuilder.fromPath("/serialization/c").build().toUriString();
+        // verify the required parameter 'customerId' is set
+        if (customerId == null) {
+            throw new HttpClientErrorException(HttpStatus.BAD_REQUEST, "Missing the required parameter 'customerId' when calling getCustomer");
+        }
+        
+        // create path and map variables
+        final Map<String, Object> uriVariables = new HashMap<String, Object>();
+        uriVariables.put("customerId", customerId);
+        String path = UriComponentsBuilder.fromPath("/webstore/customer/{customerId}").buildAndExpand(uriVariables).toUriString();
         
         final MultiValueMap<String, String> queryParams = new LinkedMultiValueMap<String, String>();
         final HttpHeaders headerParams = new HttpHeaders();
@@ -72,27 +80,30 @@ public class AssignmentCApi {
 
         String[] authNames = new String[] { "idKey" };
 
-        ParameterizedTypeReference<WebshopOrder> returnType = new ParameterizedTypeReference<WebshopOrder>() {};
+        ParameterizedTypeReference<Customer> returnType = new ParameterizedTypeReference<Customer>() {};
         return apiClient.invokeAPI(path, HttpMethod.GET, queryParams, postBody, headerParams, formParams, accept, contentType, authNames, returnType);
     }
     /**
-     * verify assignment C
-     * Verifies the administration order based on the webshop order for assignment C.
-     * <p><b>200</b> - The correctness of the submitted solution.
-     * <p><b>400</b> - The submitted JSON could not be parsed correctly.
-     * @param administrationOrder The administration order based on the given webshop order.
-     * @return SubmissionResult
+     * Get product/part by ID
+     * Gets all the information about the product with the specified ID.
+     * <p><b>200</b> - All information about the product
+     * <p><b>400</b> - The product with the specified ID could not be found.
+     * @param productId The id of the product.
+     * @return Object
      * @throws RestClientException if an error occurs while attempting to invoke the API
      */
-    public Mono<SubmissionResult> verifyC(AdministrationOrder administrationOrder) throws HttpClientErrorException {
-        Object postBody = administrationOrder;
+    public Mono<Object> getProduct(String productId) throws HttpClientErrorException {
+        Object postBody = null;
         
-        // verify the required parameter 'administrationOrder' is set
-        if (administrationOrder == null) {
-            throw new HttpClientErrorException(HttpStatus.BAD_REQUEST, "Missing the required parameter 'administrationOrder' when calling verifyC");
+        // verify the required parameter 'productId' is set
+        if (productId == null) {
+            throw new HttpClientErrorException(HttpStatus.BAD_REQUEST, "Missing the required parameter 'productId' when calling getProduct");
         }
         
-        String path = UriComponentsBuilder.fromPath("/serialization/c").build().toUriString();
+        // create path and map variables
+        final Map<String, Object> uriVariables = new HashMap<String, Object>();
+        uriVariables.put("productId", productId);
+        String path = UriComponentsBuilder.fromPath("/warehouse/{productId}").buildAndExpand(uriVariables).toUriString();
         
         final MultiValueMap<String, String> queryParams = new LinkedMultiValueMap<String, String>();
         final HttpHeaders headerParams = new HttpHeaders();
@@ -102,14 +113,12 @@ public class AssignmentCApi {
             "application/json"
         };
         final List<MediaType> accept = apiClient.selectHeaderAccept(accepts);
-        final String[] contentTypes = { 
-            "application/json"
-        };
+        final String[] contentTypes = { };
         final MediaType contentType = apiClient.selectHeaderContentType(contentTypes);
 
         String[] authNames = new String[] { "idKey" };
 
-        ParameterizedTypeReference<SubmissionResult> returnType = new ParameterizedTypeReference<SubmissionResult>() {};
-        return apiClient.invokeAPI(path, HttpMethod.POST, queryParams, postBody, headerParams, formParams, accept, contentType, authNames, returnType);
+        ParameterizedTypeReference<Object> returnType = new ParameterizedTypeReference<Object>() {};
+        return apiClient.invokeAPI(path, HttpMethod.GET, queryParams, postBody, headerParams, formParams, accept, contentType, authNames, returnType);
     }
 }

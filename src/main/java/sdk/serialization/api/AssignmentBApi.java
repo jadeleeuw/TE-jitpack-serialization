@@ -2,7 +2,6 @@ package sdk.serialization.api;
 
 import sdk.serialization.ApiClient;
 
-import sdk.serialization.model.Customer;
 import sdk.serialization.model.Shipment;
 import sdk.serialization.model.ShipmentRequest;
 import sdk.serialization.model.SubmissionResult;
@@ -27,7 +26,7 @@ import org.springframework.http.MediaType;
 import reactor.core.publisher.Mono;
 import reactor.core.publisher.Flux;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-04-25T16:28:59.613360+02:00[Europe/Amsterdam]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-04-26T10:40:13.153265+02:00[Europe/Amsterdam]")
 public class AssignmentBApi {
     private ApiClient apiClient;
 
@@ -49,44 +48,6 @@ public class AssignmentBApi {
     }
 
     /**
-     * Get customer
-     * Gets all the information about the customer with the specified ID.
-     * <p><b>200</b> - All information about the customer.
-     * <p><b>400</b> - The customer with the specified ID could not be found.
-     * @param customerId The id of the customer.
-     * @return Customer
-     * @throws RestClientException if an error occurs while attempting to invoke the API
-     */
-    public Mono<Customer> getCustomer(String customerId) throws HttpClientErrorException {
-        Object postBody = null;
-        
-        // verify the required parameter 'customerId' is set
-        if (customerId == null) {
-            throw new HttpClientErrorException(HttpStatus.BAD_REQUEST, "Missing the required parameter 'customerId' when calling getCustomer");
-        }
-        
-        // create path and map variables
-        final Map<String, Object> uriVariables = new HashMap<String, Object>();
-        uriVariables.put("customerId", customerId);
-        String path = UriComponentsBuilder.fromPath("/customer/{customerId}").buildAndExpand(uriVariables).toUriString();
-        
-        final MultiValueMap<String, String> queryParams = new LinkedMultiValueMap<String, String>();
-        final HttpHeaders headerParams = new HttpHeaders();
-        final MultiValueMap<String, Object> formParams = new LinkedMultiValueMap<String, Object>();
-
-        final String[] accepts = { 
-            "application/json"
-        };
-        final List<MediaType> accept = apiClient.selectHeaderAccept(accepts);
-        final String[] contentTypes = { };
-        final MediaType contentType = apiClient.selectHeaderContentType(contentTypes);
-
-        String[] authNames = new String[] { "idKey" };
-
-        ParameterizedTypeReference<Customer> returnType = new ParameterizedTypeReference<Customer>() {};
-        return apiClient.invokeAPI(path, HttpMethod.GET, queryParams, postBody, headerParams, formParams, accept, contentType, authNames, returnType);
-    }
-    /**
      * Get shipment request
      * Gets the shipment request that needs to be handled for assignment B.
      * <p><b>200</b> - The shipment request that needs to be handled for assignment B.
@@ -96,7 +57,7 @@ public class AssignmentBApi {
     public Mono<ShipmentRequest> getShipmentRequest() throws HttpClientErrorException {
         Object postBody = null;
         
-        String path = UriComponentsBuilder.fromPath("/b").build().toUriString();
+        String path = UriComponentsBuilder.fromPath("/serialization/b").build().toUriString();
         
         final MultiValueMap<String, String> queryParams = new LinkedMultiValueMap<String, String>();
         final HttpHeaders headerParams = new HttpHeaders();
@@ -131,7 +92,7 @@ public class AssignmentBApi {
             throw new HttpClientErrorException(HttpStatus.BAD_REQUEST, "Missing the required parameter 'shipment' when calling verifyB");
         }
         
-        String path = UriComponentsBuilder.fromPath("/b").build().toUriString();
+        String path = UriComponentsBuilder.fromPath("/serialization/b").build().toUriString();
         
         final MultiValueMap<String, String> queryParams = new LinkedMultiValueMap<String, String>();
         final HttpHeaders headerParams = new HttpHeaders();

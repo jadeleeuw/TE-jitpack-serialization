@@ -1,11 +1,11 @@
 # AssignmentCApi
 
-All URIs are relative to *http://localhost:8080/serialization*
+All URIs are relative to *http://localhost:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getWebshopOrder**](AssignmentCApi.md#getWebshopOrder) | **GET** /c | Get webshop order
-[**verifyC**](AssignmentCApi.md#verifyC) | **POST** /c | verify assignment C
+[**getWebshopOrder**](AssignmentCApi.md#getWebshopOrder) | **GET** /serialization/c | Get webshop order
+[**verifyC**](AssignmentCApi.md#verifyC) | **POST** /serialization/c | verify assignment C
 
 
 <a name="getWebshopOrder"></a>
