@@ -24,7 +24,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * PCPart
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-04-26T15:17:24.338706+02:00[Europe/Amsterdam]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-04-26T15:59:01.100196+02:00[Europe/Amsterdam]")
 public class PCPart {
   @JsonProperty("price")
   private Double price;
@@ -37,6 +37,24 @@ public class PCPart {
 
   @JsonProperty("category")
   private String category;
+
+  @JsonProperty("volume")
+  private Double volume;
+
+  @JsonProperty("performance")
+  private Integer performance;
+
+  @JsonProperty("brand")
+  private String brand;
+
+  @JsonProperty("wattage")
+  private Integer wattage;
+
+  @JsonProperty("capacity")
+  private Integer capacity;
+
+  @JsonProperty("speed")
+  private Integer speed;
 
   public PCPart price(Double price) {
     this.price = price;
@@ -110,6 +128,114 @@ public class PCPart {
     this.category = category;
   }
 
+  public PCPart volume(Double volume) {
+    this.volume = volume;
+    return this;
+  }
+
+   /**
+   * Get volume
+   * @return volume
+  **/
+  @ApiModelProperty(value = "")
+  public Double getVolume() {
+    return volume;
+  }
+
+  public void setVolume(Double volume) {
+    this.volume = volume;
+  }
+
+  public PCPart performance(Integer performance) {
+    this.performance = performance;
+    return this;
+  }
+
+   /**
+   * Get performance
+   * @return performance
+  **/
+  @ApiModelProperty(value = "")
+  public Integer getPerformance() {
+    return performance;
+  }
+
+  public void setPerformance(Integer performance) {
+    this.performance = performance;
+  }
+
+  public PCPart brand(String brand) {
+    this.brand = brand;
+    return this;
+  }
+
+   /**
+   * Get brand
+   * @return brand
+  **/
+  @ApiModelProperty(value = "")
+  public String getBrand() {
+    return brand;
+  }
+
+  public void setBrand(String brand) {
+    this.brand = brand;
+  }
+
+  public PCPart wattage(Integer wattage) {
+    this.wattage = wattage;
+    return this;
+  }
+
+   /**
+   * Get wattage
+   * @return wattage
+  **/
+  @ApiModelProperty(value = "")
+  public Integer getWattage() {
+    return wattage;
+  }
+
+  public void setWattage(Integer wattage) {
+    this.wattage = wattage;
+  }
+
+  public PCPart capacity(Integer capacity) {
+    this.capacity = capacity;
+    return this;
+  }
+
+   /**
+   * Get capacity
+   * @return capacity
+  **/
+  @ApiModelProperty(value = "")
+  public Integer getCapacity() {
+    return capacity;
+  }
+
+  public void setCapacity(Integer capacity) {
+    this.capacity = capacity;
+  }
+
+  public PCPart speed(Integer speed) {
+    this.speed = speed;
+    return this;
+  }
+
+   /**
+   * Get speed
+   * @return speed
+  **/
+  @ApiModelProperty(value = "")
+  public Integer getSpeed() {
+    return speed;
+  }
+
+  public void setSpeed(Integer speed) {
+    this.speed = speed;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -123,12 +249,18 @@ public class PCPart {
     return Objects.equals(this.price, pcPart.price) &&
         Objects.equals(this.name, pcPart.name) &&
         Objects.equals(this.productId, pcPart.productId) &&
-        Objects.equals(this.category, pcPart.category);
+        Objects.equals(this.category, pcPart.category) &&
+        Objects.equals(this.volume, pcPart.volume) &&
+        Objects.equals(this.performance, pcPart.performance) &&
+        Objects.equals(this.brand, pcPart.brand) &&
+        Objects.equals(this.wattage, pcPart.wattage) &&
+        Objects.equals(this.capacity, pcPart.capacity) &&
+        Objects.equals(this.speed, pcPart.speed);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(price, name, productId, category);
+    return Objects.hash(price, name, productId, category, volume, performance, brand, wattage, capacity, speed);
   }
 
 
@@ -141,6 +273,12 @@ public class PCPart {
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    productId: ").append(toIndentedString(productId)).append("\n");
     sb.append("    category: ").append(toIndentedString(category)).append("\n");
+    sb.append("    volume: ").append(toIndentedString(volume)).append("\n");
+    sb.append("    performance: ").append(toIndentedString(performance)).append("\n");
+    sb.append("    brand: ").append(toIndentedString(brand)).append("\n");
+    sb.append("    wattage: ").append(toIndentedString(wattage)).append("\n");
+    sb.append("    capacity: ").append(toIndentedString(capacity)).append("\n");
+    sb.append("    speed: ").append(toIndentedString(speed)).append("\n");
     sb.append("}");
     return sb.toString();
   }

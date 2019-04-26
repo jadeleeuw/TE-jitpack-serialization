@@ -2,7 +2,7 @@
 
 Serialization API
 - API version: 1.0
-  - Build date: 2019-04-26T15:17:24.338706+02:00[Europe/Amsterdam]
+  - Build date: 2019-04-26T15:59:01.100196+02:00[Europe/Amsterdam]
 
 All endpoints related to the serialization assignment.
 
