@@ -2,7 +2,7 @@
 
 Serialization API
 - API version: 1.0
-  - Build date: 2019-04-26T10:40:13.153265+02:00[Europe/Amsterdam]
+  - Build date: 2019-04-26T13:55:14.146935+02:00[Europe/Amsterdam]
 
 All endpoints related to the serialization assignment.
 
@@ -158,7 +158,7 @@ Authentication schemes defined for the API:
 ### idKey
 
 - **Type**: API key
-- **API key parameter name**: x-id-key
+- **API key parameter name**: x-idkey
 - **Location**: HTTP header
 
 

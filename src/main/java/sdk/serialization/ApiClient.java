@@ -62,7 +62,7 @@ import sdk.serialization.auth.HttpBasicAuth;
 import sdk.serialization.auth.ApiKeyAuth;
 import sdk.serialization.auth.OAuth;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-04-26T10:40:13.153265+02:00[Europe/Amsterdam]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-04-26T13:55:14.146935+02:00[Europe/Amsterdam]")
 public class ApiClient {
     public enum CollectionFormat {
         CSV(","), TSV("\t"), SSV(" "), PIPES("|"), MULTI(null);
@@ -116,7 +116,7 @@ public class ApiClient {
     protected void init() {
         // Setup authentications (key: authentication name, value: authentication).
         authentications = new HashMap<String, Authentication>();
-        authentications.put("idKey", new ApiKeyAuth("header", "x-id-key"));
+        authentications.put("idKey", new ApiKeyAuth("header", "x-idkey"));
         // Prevent the authentications from being modified.
         authentications = Collections.unmodifiableMap(authentications);
     }

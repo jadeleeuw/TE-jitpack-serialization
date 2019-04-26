@@ -373,7 +373,7 @@ components:
     idKey:
       type: apiKey
       in: header
-      name: x-id-key
+      name: x-idkey
 
   responses:
     UnauthorizedError:

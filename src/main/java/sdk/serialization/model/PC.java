@@ -32,7 +32,7 @@ import sdk.serialization.model.Storage;
 /**
  * PC
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-04-26T10:40:13.153265+02:00[Europe/Amsterdam]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-04-26T13:55:14.146935+02:00[Europe/Amsterdam]")
 public class PC {
   @JsonProperty("caze")
   private ModelCase caze = null;
