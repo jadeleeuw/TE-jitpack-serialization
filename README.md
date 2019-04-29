@@ -2,7 +2,7 @@
 
 Serialization API
 - API version: 1.0
-  - Build date: 2019-04-26T15:59:01.100196+02:00[Europe/Amsterdam]
+  - Build date: 2019-04-29T13:12:28.277491+02:00[Europe/Amsterdam]
 
 All endpoints related to the serialization assignment.
 
@@ -118,6 +118,7 @@ Class | Method | HTTP request | Description
 *AssignmentBApi* | [**verifyB**](docs/AssignmentBApi.md#verifyB) | **POST** /serialization/b | verify assignment B
 *AssignmentCApi* | [**getWebshopOrder**](docs/AssignmentCApi.md#getWebshopOrder) | **GET** /serialization/c | Get webshop order
 *AssignmentCApi* | [**verifyC**](docs/AssignmentCApi.md#verifyC) | **POST** /serialization/c | verify assignment C
+*WarehouseApi* | [**assemblePC**](docs/WarehouseApi.md#assemblePC) | **POST** /warehouse/assemble | Assemble PC parts into a PC.
 *WarehouseApi* | [**getCPUs**](docs/WarehouseApi.md#getCPUs) | **GET** /warehouse/cpus | Returns all CPUs
 *WarehouseApi* | [**getCases**](docs/WarehouseApi.md#getCases) | **GET** /warehouse/cases | Returns all cases
 *WarehouseApi* | [**getCatalog**](docs/WarehouseApi.md#getCatalog) | **GET** /warehouse/catalog | Returns a catalog containing all parts divided in categories
@@ -125,9 +126,9 @@ Class | Method | HTTP request | Description
 *WarehouseApi* | [**getGPUs**](docs/WarehouseApi.md#getGPUs) | **GET** /warehouse/gpus | Returns all GPUs
 *WarehouseApi* | [**getPSUs**](docs/WarehouseApi.md#getPSUs) | **GET** /warehouse/psus | Returns all PSUs
 *WarehouseApi* | [**getPartslist**](docs/WarehouseApi.md#getPartslist) | **GET** /warehouse/partslist | Returns all parts in the warehouse in one list
+*WarehouseApi* | [**getProduct**](docs/WarehouseApi.md#getProduct) | **GET** /warehouse/{productId} | Get product/part by ID
 *WarehouseApi* | [**getStorage**](docs/WarehouseApi.md#getStorage) | **GET** /warehouse/storage | Returns all storage possibilities
 *WebstoreApi* | [**getCustomer**](docs/WebstoreApi.md#getCustomer) | **GET** /webstore/customer/{customerId} | Get customer by ID
-*WebstoreApi* | [**getProduct**](docs/WebstoreApi.md#getProduct) | **GET** /warehouse/{productId} | Get product/part by ID
 
 
 ## Documentation for Models

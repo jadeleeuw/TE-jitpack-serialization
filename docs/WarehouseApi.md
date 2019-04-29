@@ -4,6 +4,7 @@ All URIs are relative to *http://localhost:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**assemblePC**](WarehouseApi.md#assemblePC) | **POST** /warehouse/assemble | Assemble PC parts into a PC.
 [**getCPUs**](WarehouseApi.md#getCPUs) | **GET** /warehouse/cpus | Returns all CPUs
 [**getCases**](WarehouseApi.md#getCases) | **GET** /warehouse/cases | Returns all cases
 [**getCatalog**](WarehouseApi.md#getCatalog) | **GET** /warehouse/catalog | Returns a catalog containing all parts divided in categories
@@ -11,8 +12,64 @@ Method | HTTP request | Description
 [**getGPUs**](WarehouseApi.md#getGPUs) | **GET** /warehouse/gpus | Returns all GPUs
 [**getPSUs**](WarehouseApi.md#getPSUs) | **GET** /warehouse/psus | Returns all PSUs
 [**getPartslist**](WarehouseApi.md#getPartslist) | **GET** /warehouse/partslist | Returns all parts in the warehouse in one list
+[**getProduct**](WarehouseApi.md#getProduct) | **GET** /warehouse/{productId} | Get product/part by ID
 [**getStorage**](WarehouseApi.md#getStorage) | **GET** /warehouse/storage | Returns all storage possibilities
 
+
+<a name="assemblePC"></a>
+# **assemblePC**
+> PC assemblePC(pcPart)
+
+Assemble PC parts into a PC.
+
+Assembles the given PC parts into a PC and returns the constructed PC.
+
+### Example
+```java
+// Import classes:
+//import sdk.serialization.ApiClient;
+//import sdk.serialization.ApiException;
+//import sdk.serialization.Configuration;
+//import sdk.serialization.auth.*;
+//import sdk.serialization.api.WarehouseApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure API key authorization: idKey
+ApiKeyAuth idKey = (ApiKeyAuth) defaultClient.getAuthentication("idKey");
+idKey.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//idKey.setApiKeyPrefix("Token");
+
+WarehouseApi apiInstance = new WarehouseApi();
+List<PCPart> pcPart = Arrays.asList(null); // List<PCPart> | The parts that should be used in the PC.
+try {
+    PC result = apiInstance.assemblePC(pcPart);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WarehouseApi#assemblePC");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **pcPart** | [**List&lt;PCPart&gt;**](List.md)| The parts that should be used in the PC. |
+
+### Return type
+
+[**PC**](PC.md)
+
+### Authorization
+
+[idKey](../README.md#idKey)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 <a name="getCPUs"></a>
 # **getCPUs**
@@ -361,6 +418,61 @@ This endpoint does not need any parameter.
 ### Return type
 
 [**List&lt;PCPart&gt;**](PCPart.md)
+
+### Authorization
+
+[idKey](../README.md#idKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="getProduct"></a>
+# **getProduct**
+> PCPart getProduct(productId)
+
+Get product/part by ID
+
+Gets all the information about the product with the specified ID.
+
+### Example
+```java
+// Import classes:
+//import sdk.serialization.ApiClient;
+//import sdk.serialization.ApiException;
+//import sdk.serialization.Configuration;
+//import sdk.serialization.auth.*;
+//import sdk.serialization.api.WarehouseApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure API key authorization: idKey
+ApiKeyAuth idKey = (ApiKeyAuth) defaultClient.getAuthentication("idKey");
+idKey.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//idKey.setApiKeyPrefix("Token");
+
+WarehouseApi apiInstance = new WarehouseApi();
+String productId = "productId_example"; // String | The id of the product.
+try {
+    PCPart result = apiInstance.getProduct(productId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WarehouseApi#getProduct");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **productId** | **String**| The id of the product. |
+
+### Return type
+
+[**PCPart**](PCPart.md)
 
 ### Authorization
 

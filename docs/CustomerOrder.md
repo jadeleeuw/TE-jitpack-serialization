@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **customer** | [**Customer**](Customer.md) |  | 
-**pcs** | [**List&lt;PC&gt;**](PC.md) |  | 
+**pcOrders** | [**List&lt;PC&gt;**](PC.md) |  | 
 
 
 

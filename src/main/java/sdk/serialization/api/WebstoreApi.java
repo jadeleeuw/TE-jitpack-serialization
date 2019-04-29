@@ -3,7 +3,6 @@ package sdk.serialization.api;
 import sdk.serialization.ApiClient;
 
 import sdk.serialization.model.Customer;
-import sdk.serialization.model.PCPart;
 
 import java.util.HashMap;
 import java.util.List;
@@ -25,7 +24,7 @@ import org.springframework.http.MediaType;
 import reactor.core.publisher.Mono;
 import reactor.core.publisher.Flux;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-04-26T15:59:01.100196+02:00[Europe/Amsterdam]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-04-29T13:12:28.277491+02:00[Europe/Amsterdam]")
 public class WebstoreApi {
     private ApiClient apiClient;
 
@@ -82,44 +81,6 @@ public class WebstoreApi {
         String[] authNames = new String[] { "idKey" };
 
         ParameterizedTypeReference<Customer> returnType = new ParameterizedTypeReference<Customer>() {};
-        return apiClient.invokeAPI(path, HttpMethod.GET, queryParams, postBody, headerParams, formParams, accept, contentType, authNames, returnType);
-    }
-    /**
-     * Get product/part by ID
-     * Gets all the information about the product with the specified ID.
-     * <p><b>200</b> - All information about the product
-     * <p><b>400</b> - The product with the specified ID could not be found.
-     * @param productId The id of the product.
-     * @return PCPart
-     * @throws RestClientException if an error occurs while attempting to invoke the API
-     */
-    public Mono<PCPart> getProduct(String productId) throws HttpClientErrorException {
-        Object postBody = null;
-        
-        // verify the required parameter 'productId' is set
-        if (productId == null) {
-            throw new HttpClientErrorException(HttpStatus.BAD_REQUEST, "Missing the required parameter 'productId' when calling getProduct");
-        }
-        
-        // create path and map variables
-        final Map<String, Object> uriVariables = new HashMap<String, Object>();
-        uriVariables.put("productId", productId);
-        String path = UriComponentsBuilder.fromPath("/warehouse/{productId}").buildAndExpand(uriVariables).toUriString();
-        
-        final MultiValueMap<String, String> queryParams = new LinkedMultiValueMap<String, String>();
-        final HttpHeaders headerParams = new HttpHeaders();
-        final MultiValueMap<String, Object> formParams = new LinkedMultiValueMap<String, Object>();
-
-        final String[] accepts = { 
-            "application/json"
-        };
-        final List<MediaType> accept = apiClient.selectHeaderAccept(accepts);
-        final String[] contentTypes = { };
-        final MediaType contentType = apiClient.selectHeaderContentType(contentTypes);
-
-        String[] authNames = new String[] { "idKey" };
-
-        ParameterizedTypeReference<PCPart> returnType = new ParameterizedTypeReference<PCPart>() {};
         return apiClient.invokeAPI(path, HttpMethod.GET, queryParams, postBody, headerParams, formParams, accept, contentType, authNames, returnType);
     }
 }

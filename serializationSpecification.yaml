@@ -314,7 +314,7 @@ paths:
         schema:
           type: string
       tags:
-      - WEBSTORE
+      - WAREHOUSE
       responses:
         '200':
           description: All information about the product
@@ -612,13 +612,13 @@ components:
       properties:
         customer:
           $ref: '#/components/schemas/Customer'
-        pcs:
+        pcOrders:
           type: array
           items:
             $ref: '#/components/schemas/PC'
       required:
         - customer
-        - pcs
+        - pcOrders
 
     Shipment:
       type: object

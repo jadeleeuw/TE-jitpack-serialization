@@ -28,13 +28,13 @@ import sdk.serialization.model.PC;
 /**
  * CustomerOrder
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-04-26T15:59:01.100196+02:00[Europe/Amsterdam]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-04-29T13:12:28.277491+02:00[Europe/Amsterdam]")
 public class CustomerOrder {
   @JsonProperty("customer")
   private Customer customer = null;
 
-  @JsonProperty("pcs")
-  private List<PC> pcs = new ArrayList<>();
+  @JsonProperty("pcOrders")
+  private List<PC> pcOrders = new ArrayList<>();
 
   public CustomerOrder customer(Customer customer) {
     this.customer = customer;
@@ -54,27 +54,27 @@ public class CustomerOrder {
     this.customer = customer;
   }
 
-  public CustomerOrder pcs(List<PC> pcs) {
-    this.pcs = pcs;
+  public CustomerOrder pcOrders(List<PC> pcOrders) {
+    this.pcOrders = pcOrders;
     return this;
   }
 
-  public CustomerOrder addPcsItem(PC pcsItem) {
-    this.pcs.add(pcsItem);
+  public CustomerOrder addPcOrdersItem(PC pcOrdersItem) {
+    this.pcOrders.add(pcOrdersItem);
     return this;
   }
 
    /**
-   * Get pcs
-   * @return pcs
+   * Get pcOrders
+   * @return pcOrders
   **/
   @ApiModelProperty(required = true, value = "")
-  public List<PC> getPcs() {
-    return pcs;
+  public List<PC> getPcOrders() {
+    return pcOrders;
   }
 
-  public void setPcs(List<PC> pcs) {
-    this.pcs = pcs;
+  public void setPcOrders(List<PC> pcOrders) {
+    this.pcOrders = pcOrders;
   }
 
 
@@ -88,12 +88,12 @@ public class CustomerOrder {
     }
     CustomerOrder customerOrder = (CustomerOrder) o;
     return Objects.equals(this.customer, customerOrder.customer) &&
-        Objects.equals(this.pcs, customerOrder.pcs);
+        Objects.equals(this.pcOrders, customerOrder.pcOrders);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(customer, pcs);
+    return Objects.hash(customer, pcOrders);
   }
 
 
@@ -103,7 +103,7 @@ public class CustomerOrder {
     sb.append("class CustomerOrder {\n");
     
     sb.append("    customer: ").append(toIndentedString(customer)).append("\n");
-    sb.append("    pcs: ").append(toIndentedString(pcs)).append("\n");
+    sb.append("    pcOrders: ").append(toIndentedString(pcOrders)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -20,101 +20,18 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import sdk.serialization.model.PCPart;
 
 /**
  * Storage
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-04-26T15:59:01.100196+02:00[Europe/Amsterdam]")
-public class Storage {
-  @JsonProperty("price")
-  private Double price;
-
-  @JsonProperty("name")
-  private String name;
-
-  @JsonProperty("productId")
-  private String productId;
-
-  @JsonProperty("category")
-  private String category;
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-04-29T13:12:28.277491+02:00[Europe/Amsterdam]")
+public class Storage extends PCPart {
   @JsonProperty("capacity")
   private Integer capacity;
 
   @JsonProperty("speed")
   private Integer speed;
-
-  public Storage price(Double price) {
-    this.price = price;
-    return this;
-  }
-
-   /**
-   * Get price
-   * @return price
-  **/
-  @ApiModelProperty(required = true, value = "")
-  public Double getPrice() {
-    return price;
-  }
-
-  public void setPrice(Double price) {
-    this.price = price;
-  }
-
-  public Storage name(String name) {
-    this.name = name;
-    return this;
-  }
-
-   /**
-   * Get name
-   * @return name
-  **/
-  @ApiModelProperty(required = true, value = "")
-  public String getName() {
-    return name;
-  }
-
-  public void setName(String name) {
-    this.name = name;
-  }
-
-  public Storage productId(String productId) {
-    this.productId = productId;
-    return this;
-  }
-
-   /**
-   * Get productId
-   * @return productId
-  **/
-  @ApiModelProperty(required = true, value = "")
-  public String getProductId() {
-    return productId;
-  }
-
-  public void setProductId(String productId) {
-    this.productId = productId;
-  }
-
-  public Storage category(String category) {
-    this.category = category;
-    return this;
-  }
-
-   /**
-   * Get category
-   * @return category
-  **/
-  @ApiModelProperty(required = true, value = "")
-  public String getCategory() {
-    return category;
-  }
-
-  public void setCategory(String category) {
-    this.category = category;
-  }
 
   public Storage capacity(Integer capacity) {
     this.capacity = capacity;
@@ -162,17 +79,14 @@ public class Storage {
       return false;
     }
     Storage storage = (Storage) o;
-    return Objects.equals(this.price, storage.price) &&
-        Objects.equals(this.name, storage.name) &&
-        Objects.equals(this.productId, storage.productId) &&
-        Objects.equals(this.category, storage.category) &&
-        Objects.equals(this.capacity, storage.capacity) &&
-        Objects.equals(this.speed, storage.speed);
+    return Objects.equals(this.capacity, storage.capacity) &&
+        Objects.equals(this.speed, storage.speed) &&
+        super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(price, name, productId, category, capacity, speed);
+    return Objects.hash(capacity, speed, super.hashCode());
   }
 
 
@@ -180,11 +94,7 @@ public class Storage {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class Storage {\n");
-    
-    sb.append("    price: ").append(toIndentedString(price)).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    productId: ").append(toIndentedString(productId)).append("\n");
-    sb.append("    category: ").append(toIndentedString(category)).append("\n");
+    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("    capacity: ").append(toIndentedString(capacity)).append("\n");
     sb.append("    speed: ").append(toIndentedString(speed)).append("\n");
     sb.append("}");

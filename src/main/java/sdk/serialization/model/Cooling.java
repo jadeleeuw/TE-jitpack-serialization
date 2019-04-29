@@ -20,98 +20,15 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import sdk.serialization.model.PCPart;
 
 /**
  * Cooling
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-04-26T15:59:01.100196+02:00[Europe/Amsterdam]")
-public class Cooling {
-  @JsonProperty("price")
-  private Double price;
-
-  @JsonProperty("name")
-  private String name;
-
-  @JsonProperty("productId")
-  private String productId;
-
-  @JsonProperty("category")
-  private String category;
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-04-29T13:12:28.277491+02:00[Europe/Amsterdam]")
+public class Cooling extends PCPart {
   @JsonProperty("performance")
   private Integer performance;
-
-  public Cooling price(Double price) {
-    this.price = price;
-    return this;
-  }
-
-   /**
-   * Get price
-   * @return price
-  **/
-  @ApiModelProperty(required = true, value = "")
-  public Double getPrice() {
-    return price;
-  }
-
-  public void setPrice(Double price) {
-    this.price = price;
-  }
-
-  public Cooling name(String name) {
-    this.name = name;
-    return this;
-  }
-
-   /**
-   * Get name
-   * @return name
-  **/
-  @ApiModelProperty(required = true, value = "")
-  public String getName() {
-    return name;
-  }
-
-  public void setName(String name) {
-    this.name = name;
-  }
-
-  public Cooling productId(String productId) {
-    this.productId = productId;
-    return this;
-  }
-
-   /**
-   * Get productId
-   * @return productId
-  **/
-  @ApiModelProperty(required = true, value = "")
-  public String getProductId() {
-    return productId;
-  }
-
-  public void setProductId(String productId) {
-    this.productId = productId;
-  }
-
-  public Cooling category(String category) {
-    this.category = category;
-    return this;
-  }
-
-   /**
-   * Get category
-   * @return category
-  **/
-  @ApiModelProperty(required = true, value = "")
-  public String getCategory() {
-    return category;
-  }
-
-  public void setCategory(String category) {
-    this.category = category;
-  }
 
   public Cooling performance(Integer performance) {
     this.performance = performance;
@@ -141,16 +58,13 @@ public class Cooling {
       return false;
     }
     Cooling cooling = (Cooling) o;
-    return Objects.equals(this.price, cooling.price) &&
-        Objects.equals(this.name, cooling.name) &&
-        Objects.equals(this.productId, cooling.productId) &&
-        Objects.equals(this.category, cooling.category) &&
-        Objects.equals(this.performance, cooling.performance);
+    return Objects.equals(this.performance, cooling.performance) &&
+        super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(price, name, productId, category, performance);
+    return Objects.hash(performance, super.hashCode());
   }
 
 
@@ -158,11 +72,7 @@ public class Cooling {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class Cooling {\n");
-    
-    sb.append("    price: ").append(toIndentedString(price)).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    productId: ").append(toIndentedString(productId)).append("\n");
-    sb.append("    category: ").append(toIndentedString(category)).append("\n");
+    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("    performance: ").append(toIndentedString(performance)).append("\n");
     sb.append("}");
     return sb.toString();

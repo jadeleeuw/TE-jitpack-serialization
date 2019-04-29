@@ -20,101 +20,18 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import sdk.serialization.model.PCPart;
 
 /**
  * CPU
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-04-26T15:59:01.100196+02:00[Europe/Amsterdam]")
-public class CPU {
-  @JsonProperty("price")
-  private Double price;
-
-  @JsonProperty("name")
-  private String name;
-
-  @JsonProperty("productId")
-  private String productId;
-
-  @JsonProperty("category")
-  private String category;
-
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-04-29T13:12:28.277491+02:00[Europe/Amsterdam]")
+public class CPU extends PCPart {
   @JsonProperty("brand")
   private String brand;
 
   @JsonProperty("performance")
   private Integer performance;
-
-  public CPU price(Double price) {
-    this.price = price;
-    return this;
-  }
-
-   /**
-   * Get price
-   * @return price
-  **/
-  @ApiModelProperty(required = true, value = "")
-  public Double getPrice() {
-    return price;
-  }
-
-  public void setPrice(Double price) {
-    this.price = price;
-  }
-
-  public CPU name(String name) {
-    this.name = name;
-    return this;
-  }
-
-   /**
-   * Get name
-   * @return name
-  **/
-  @ApiModelProperty(required = true, value = "")
-  public String getName() {
-    return name;
-  }
-
-  public void setName(String name) {
-    this.name = name;
-  }
-
-  public CPU productId(String productId) {
-    this.productId = productId;
-    return this;
-  }
-
-   /**
-   * Get productId
-   * @return productId
-  **/
-  @ApiModelProperty(required = true, value = "")
-  public String getProductId() {
-    return productId;
-  }
-
-  public void setProductId(String productId) {
-    this.productId = productId;
-  }
-
-  public CPU category(String category) {
-    this.category = category;
-    return this;
-  }
-
-   /**
-   * Get category
-   * @return category
-  **/
-  @ApiModelProperty(required = true, value = "")
-  public String getCategory() {
-    return category;
-  }
-
-  public void setCategory(String category) {
-    this.category = category;
-  }
 
   public CPU brand(String brand) {
     this.brand = brand;
@@ -162,17 +79,14 @@ public class CPU {
       return false;
     }
     CPU CPU = (CPU) o;
-    return Objects.equals(this.price, CPU.price) &&
-        Objects.equals(this.name, CPU.name) &&
-        Objects.equals(this.productId, CPU.productId) &&
-        Objects.equals(this.category, CPU.category) &&
-        Objects.equals(this.brand, CPU.brand) &&
-        Objects.equals(this.performance, CPU.performance);
+    return Objects.equals(this.brand, CPU.brand) &&
+        Objects.equals(this.performance, CPU.performance) &&
+        super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(price, name, productId, category, brand, performance);
+    return Objects.hash(brand, performance, super.hashCode());
   }
 
 
@@ -180,11 +94,7 @@ public class CPU {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class CPU {\n");
-    
-    sb.append("    price: ").append(toIndentedString(price)).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    productId: ").append(toIndentedString(productId)).append("\n");
-    sb.append("    category: ").append(toIndentedString(category)).append("\n");
+    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("    brand: ").append(toIndentedString(brand)).append("\n");
     sb.append("    performance: ").append(toIndentedString(performance)).append("\n");
     sb.append("}");
