@@ -3,7 +3,7 @@ package sdk.serialization.auth;
 import org.springframework.http.HttpHeaders;
 import org.springframework.util.MultiValueMap;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-05-02T13:42:14.442064+02:00[Europe/Amsterdam]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-05-02T13:50:19.425903+02:00[Europe/Amsterdam]")
 public class OAuth implements Authentication {
     private String accessToken;
 

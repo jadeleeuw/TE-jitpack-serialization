@@ -430,7 +430,7 @@ This endpoint does not need any parameter.
 
 <a name="getProduct"></a>
 # **getProduct**
-> PCPartResponse getProduct(productId)
+> PCPart getProduct(productId)
 
 Get product/part by ID
 
@@ -456,7 +456,7 @@ idKey.setApiKey("YOUR API KEY");
 WarehouseApi apiInstance = new WarehouseApi();
 String productId = "productId_example"; // String | The id of the product.
 try {
-    PCPartResponse result = apiInstance.getProduct(productId);
+    PCPart result = apiInstance.getProduct(productId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling WarehouseApi#getProduct");
@@ -472,7 +472,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PCPartResponse**](PCPartResponse.md)
+[**PCPart**](PCPart.md)
 
 ### Authorization
 

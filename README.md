@@ -2,7 +2,7 @@
 
 Serialization API
 - API version: 1.0
-  - Build date: 2019-05-02T13:42:14.442064+02:00[Europe/Amsterdam]
+  - Build date: 2019-05-02T13:50:19.425903+02:00[Europe/Amsterdam]
 
 All endpoints related to the serialization assignment.
 
@@ -145,7 +145,6 @@ Class | Method | HTTP request | Description
  - [PC](docs/PC.md)
  - [PCOrder](docs/PCOrder.md)
  - [PCPart](docs/PCPart.md)
- - [PCPartResponse](docs/PCPartResponse.md)
  - [PSU](docs/PSU.md)
  - [Sale](docs/Sale.md)
  - [Shipment](docs/Shipment.md)
