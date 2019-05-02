@@ -27,7 +27,7 @@ import sdk.serialization.model.Sale;
 /**
  * AdministrationOrder
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-05-02T10:14:54.161077+02:00[Europe/Amsterdam]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-05-02T10:48:24.384064+02:00[Europe/Amsterdam]")
 public class AdministrationOrder {
   @JsonProperty("sales")
   private List<Sale> sales = new ArrayList<>();

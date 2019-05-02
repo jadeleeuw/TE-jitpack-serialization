@@ -22,41 +22,59 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
 /**
- * Sale
+ * BasePCPart
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-05-02T10:48:24.384064+02:00[Europe/Amsterdam]")
-public class Sale {
-  @JsonProperty("customerId")
-  private String customerId;
+public class BasePCPart {
+  @JsonProperty("price")
+  private Double price;
+
+  @JsonProperty("name")
+  private String name;
 
   @JsonProperty("productId")
   private String productId;
 
-  @JsonProperty("totalPrice")
-  private Double totalPrice;
+  @JsonProperty("category")
+  private String category;
 
-  @JsonProperty("quantity")
-  private Integer quantity;
-
-  public Sale customerId(String customerId) {
-    this.customerId = customerId;
+  public BasePCPart price(Double price) {
+    this.price = price;
     return this;
   }
 
    /**
-   * Get customerId
-   * @return customerId
+   * Get price
+   * @return price
   **/
   @ApiModelProperty(required = true, value = "")
-  public String getCustomerId() {
-    return customerId;
+  public Double getPrice() {
+    return price;
   }
 
-  public void setCustomerId(String customerId) {
-    this.customerId = customerId;
+  public void setPrice(Double price) {
+    this.price = price;
   }
 
-  public Sale productId(String productId) {
+  public BasePCPart name(String name) {
+    this.name = name;
+    return this;
+  }
+
+   /**
+   * Get name
+   * @return name
+  **/
+  @ApiModelProperty(required = true, value = "")
+  public String getName() {
+    return name;
+  }
+
+  public void setName(String name) {
+    this.name = name;
+  }
+
+  public BasePCPart productId(String productId) {
     this.productId = productId;
     return this;
   }
@@ -74,40 +92,22 @@ public class Sale {
     this.productId = productId;
   }
 
-  public Sale totalPrice(Double totalPrice) {
-    this.totalPrice = totalPrice;
+  public BasePCPart category(String category) {
+    this.category = category;
     return this;
   }
 
    /**
-   * Get totalPrice
-   * @return totalPrice
+   * Get category
+   * @return category
   **/
   @ApiModelProperty(required = true, value = "")
-  public Double getTotalPrice() {
-    return totalPrice;
+  public String getCategory() {
+    return category;
   }
 
-  public void setTotalPrice(Double totalPrice) {
-    this.totalPrice = totalPrice;
-  }
-
-  public Sale quantity(Integer quantity) {
-    this.quantity = quantity;
-    return this;
-  }
-
-   /**
-   * Get quantity
-   * @return quantity
-  **/
-  @ApiModelProperty(required = true, value = "")
-  public Integer getQuantity() {
-    return quantity;
-  }
-
-  public void setQuantity(Integer quantity) {
-    this.quantity = quantity;
+  public void setCategory(String category) {
+    this.category = category;
   }
 
 
@@ -119,28 +119,28 @@ public class Sale {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    Sale sale = (Sale) o;
-    return Objects.equals(this.customerId, sale.customerId) &&
-        Objects.equals(this.productId, sale.productId) &&
-        Objects.equals(this.totalPrice, sale.totalPrice) &&
-        Objects.equals(this.quantity, sale.quantity);
+    BasePCPart basePCPart = (BasePCPart) o;
+    return Objects.equals(this.price, basePCPart.price) &&
+        Objects.equals(this.name, basePCPart.name) &&
+        Objects.equals(this.productId, basePCPart.productId) &&
+        Objects.equals(this.category, basePCPart.category);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(customerId, productId, totalPrice, quantity);
+    return Objects.hash(price, name, productId, category);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class Sale {\n");
+    sb.append("class BasePCPart {\n");
     
-    sb.append("    customerId: ").append(toIndentedString(customerId)).append("\n");
+    sb.append("    price: ").append(toIndentedString(price)).append("\n");
+    sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    productId: ").append(toIndentedString(productId)).append("\n");
-    sb.append("    totalPrice: ").append(toIndentedString(totalPrice)).append("\n");
-    sb.append("    quantity: ").append(toIndentedString(quantity)).append("\n");
+    sb.append("    category: ").append(toIndentedString(category)).append("\n");
     sb.append("}");
     return sb.toString();
   }

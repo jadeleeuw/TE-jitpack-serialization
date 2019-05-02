@@ -20,13 +20,13 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import sdk.serialization.model.PCPart;
+import sdk.serialization.model.BasePCPart;
 
 /**
  * ModelCase
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-05-02T10:14:54.161077+02:00[Europe/Amsterdam]")
-public class ModelCase extends PCPart {
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-05-02T10:48:24.384064+02:00[Europe/Amsterdam]")
+public class ModelCase extends BasePCPart {
   @JsonProperty("volume")
   private Double volume;
 

@@ -15,101 +15,18 @@ package sdk.serialization.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
+import sdk.serialization.model.CPU;
+import sdk.serialization.model.Cooling;
+import sdk.serialization.model.GPU;
+import sdk.serialization.model.ModelCase;
+import sdk.serialization.model.PSU;
+import sdk.serialization.model.Storage;
 
 /**
  * PCPart
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-05-02T10:14:54.161077+02:00[Europe/Amsterdam]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-05-02T10:48:24.384064+02:00[Europe/Amsterdam]")
 public class PCPart {
-  @JsonProperty("price")
-  private Double price;
-
-  @JsonProperty("name")
-  private String name;
-
-  @JsonProperty("productId")
-  private String productId;
-
-  @JsonProperty("category")
-  private String category;
-
-  public PCPart price(Double price) {
-    this.price = price;
-    return this;
-  }
-
-   /**
-   * Get price
-   * @return price
-  **/
-  @ApiModelProperty(required = true, value = "")
-  public Double getPrice() {
-    return price;
-  }
-
-  public void setPrice(Double price) {
-    this.price = price;
-  }
-
-  public PCPart name(String name) {
-    this.name = name;
-    return this;
-  }
-
-   /**
-   * Get name
-   * @return name
-  **/
-  @ApiModelProperty(required = true, value = "")
-  public String getName() {
-    return name;
-  }
-
-  public void setName(String name) {
-    this.name = name;
-  }
-
-  public PCPart productId(String productId) {
-    this.productId = productId;
-    return this;
-  }
-
-   /**
-   * Get productId
-   * @return productId
-  **/
-  @ApiModelProperty(required = true, value = "")
-  public String getProductId() {
-    return productId;
-  }
-
-  public void setProductId(String productId) {
-    this.productId = productId;
-  }
-
-  public PCPart category(String category) {
-    this.category = category;
-    return this;
-  }
-
-   /**
-   * Get category
-   * @return category
-  **/
-  @ApiModelProperty(required = true, value = "")
-  public String getCategory() {
-    return category;
-  }
-
-  public void setCategory(String category) {
-    this.category = category;
-  }
-
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -119,16 +36,12 @@ public class PCPart {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    PCPart pcPart = (PCPart) o;
-    return Objects.equals(this.price, pcPart.price) &&
-        Objects.equals(this.name, pcPart.name) &&
-        Objects.equals(this.productId, pcPart.productId) &&
-        Objects.equals(this.category, pcPart.category);
+    return true;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(price, name, productId, category);
+    return Objects.hash();
   }
 
 
@@ -137,10 +50,6 @@ public class PCPart {
     StringBuilder sb = new StringBuilder();
     sb.append("class PCPart {\n");
     
-    sb.append("    price: ").append(toIndentedString(price)).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    productId: ").append(toIndentedString(productId)).append("\n");
-    sb.append("    category: ").append(toIndentedString(category)).append("\n");
     sb.append("}");
     return sb.toString();
   }
