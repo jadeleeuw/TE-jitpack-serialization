@@ -16,8 +16,9 @@ Method | HTTP request | Description
 [**getStorage**](WarehouseApi.md#getStorage) | **GET** /warehouse/storage | Returns all storage possibilities
 
 
-<a name="assemblePC"></a>
-# **assemblePC**
+
+## assemblePC
+
 > PC assemblePC(pcPart)
 
 Assemble PC parts into a PC.
@@ -25,6 +26,7 @@ Assemble PC parts into a PC.
 Assembles the given PC parts into a PC and returns the constructed PC.
 
 ### Example
+
 ```java
 // Import classes:
 //import sdk.serialization.ApiClient;
@@ -54,6 +56,7 @@ try {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **pcPart** | [**List&lt;PCPart&gt;**](List.md)| The parts that should be used in the PC. |
@@ -68,11 +71,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
-<a name="getCPUs"></a>
-# **getCPUs**
+
+## getCPUs
+
 > List&lt;CPU&gt; getCPUs()
 
 Returns all CPUs
@@ -80,6 +84,7 @@ Returns all CPUs
 Returns an array of all CPU objects in the warehouse
 
 ### Example
+
 ```java
 // Import classes:
 //import sdk.serialization.ApiClient;
@@ -107,6 +112,7 @@ try {
 ```
 
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
@@ -119,11 +125,12 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="getCases"></a>
-# **getCases**
+
+## getCases
+
 > List&lt;ModelCase&gt; getCases()
 
 Returns all cases
@@ -131,6 +138,7 @@ Returns all cases
 Returns an array of all case objects in the warehouse
 
 ### Example
+
 ```java
 // Import classes:
 //import sdk.serialization.ApiClient;
@@ -158,6 +166,7 @@ try {
 ```
 
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
@@ -170,11 +179,12 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="getCatalog"></a>
-# **getCatalog**
+
+## getCatalog
+
 > Catalog getCatalog()
 
 Returns a catalog containing all parts divided in categories
@@ -182,6 +192,7 @@ Returns a catalog containing all parts divided in categories
 Returns a catalog containing all parts divided in their respective categories.
 
 ### Example
+
 ```java
 // Import classes:
 //import sdk.serialization.ApiClient;
@@ -209,6 +220,7 @@ try {
 ```
 
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
@@ -221,11 +233,12 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="getCooling"></a>
-# **getCooling**
+
+## getCooling
+
 > List&lt;Cooling&gt; getCooling()
 
 Returns all cooling possibilities
@@ -233,6 +246,7 @@ Returns all cooling possibilities
 Returns an array of all cooling objects in the warehouse
 
 ### Example
+
 ```java
 // Import classes:
 //import sdk.serialization.ApiClient;
@@ -260,6 +274,7 @@ try {
 ```
 
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
@@ -272,11 +287,12 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="getGPUs"></a>
-# **getGPUs**
+
+## getGPUs
+
 > List&lt;GPU&gt; getGPUs()
 
 Returns all GPUs
@@ -284,6 +300,7 @@ Returns all GPUs
 Returns an array of all GPU objects in the warehouse
 
 ### Example
+
 ```java
 // Import classes:
 //import sdk.serialization.ApiClient;
@@ -311,6 +328,7 @@ try {
 ```
 
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
@@ -323,11 +341,12 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="getPSUs"></a>
-# **getPSUs**
+
+## getPSUs
+
 > List&lt;PSU&gt; getPSUs()
 
 Returns all PSUs
@@ -335,6 +354,7 @@ Returns all PSUs
 Returns an array of all PSU objects in the warehouse
 
 ### Example
+
 ```java
 // Import classes:
 //import sdk.serialization.ApiClient;
@@ -362,6 +382,7 @@ try {
 ```
 
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
@@ -374,11 +395,12 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="getPartslist"></a>
-# **getPartslist**
+
+## getPartslist
+
 > List&lt;PCPart&gt; getPartslist()
 
 Returns all parts in the warehouse in one list
@@ -386,6 +408,7 @@ Returns all parts in the warehouse in one list
 Returns all parts in the warehouse as a single list, without division in categories
 
 ### Example
+
 ```java
 // Import classes:
 //import sdk.serialization.ApiClient;
@@ -413,6 +436,7 @@ try {
 ```
 
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
@@ -425,18 +449,20 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="getProduct"></a>
-# **getProduct**
-> PCPart getProduct(productId)
+
+## getProduct
+
+> PCPartResponse getProduct(productId)
 
 Get product/part by ID
 
 Gets all the information about the product with the specified ID.
 
 ### Example
+
 ```java
 // Import classes:
 //import sdk.serialization.ApiClient;
@@ -456,7 +482,7 @@ idKey.setApiKey("YOUR API KEY");
 WarehouseApi apiInstance = new WarehouseApi();
 String productId = "productId_example"; // String | The id of the product.
 try {
-    PCPart result = apiInstance.getProduct(productId);
+    PCPartResponse result = apiInstance.getProduct(productId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling WarehouseApi#getProduct");
@@ -466,13 +492,14 @@ try {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **productId** | **String**| The id of the product. |
 
 ### Return type
 
-[**PCPart**](PCPart.md)
+[**PCPartResponse**](PCPartResponse.md)
 
 ### Authorization
 
@@ -480,11 +507,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="getStorage"></a>
-# **getStorage**
+
+## getStorage
+
 > List&lt;Storage&gt; getStorage()
 
 Returns all storage possibilities
@@ -492,6 +520,7 @@ Returns all storage possibilities
 Returns an array of all storage objects in the warehouse
 
 ### Example
+
 ```java
 // Import classes:
 //import sdk.serialization.ApiClient;
@@ -519,6 +548,7 @@ try {
 ```
 
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
@@ -531,6 +561,6 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 

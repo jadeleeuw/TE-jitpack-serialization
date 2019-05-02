@@ -1,7 +1,9 @@
 
+
 # PC
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **caze** | [**ModelCase**](ModelCase.md) |  | 

@@ -20,35 +20,131 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import sdk.serialization.model.BasePCPart;
+import sdk.serialization.model.PCPart;
 
 /**
  * CPU
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-05-02T10:48:24.384064+02:00[Europe/Amsterdam]")
-public class CPU extends BasePCPart {
-  @JsonProperty("brand")
-  private String brand;
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-05-02T12:15:27.933413+02:00[Europe/Amsterdam]")
+public class CPU {
+  @JsonProperty("price")
+  private Double price;
+
+  @JsonProperty("name")
+  private String name;
+
+  @JsonProperty("productId")
+  private String productId;
+
+  @JsonProperty("category")
+  private String category;
+
+  @JsonProperty("volume")
+  private Double volume;
 
   @JsonProperty("performance")
   private Integer performance;
 
-  public CPU brand(String brand) {
-    this.brand = brand;
+  @JsonProperty("brand")
+  private String brand;
+
+  @JsonProperty("wattage")
+  private Integer wattage;
+
+  @JsonProperty("capacity")
+  private Integer capacity;
+
+  @JsonProperty("speed")
+  private Integer speed;
+
+  public CPU price(Double price) {
+    this.price = price;
     return this;
   }
 
    /**
-   * Get brand
-   * @return brand
+   * Get price
+   * @return price
   **/
   @ApiModelProperty(required = true, value = "")
-  public String getBrand() {
-    return brand;
+  public Double getPrice() {
+    return price;
   }
 
-  public void setBrand(String brand) {
-    this.brand = brand;
+  public void setPrice(Double price) {
+    this.price = price;
+  }
+
+  public CPU name(String name) {
+    this.name = name;
+    return this;
+  }
+
+   /**
+   * Get name
+   * @return name
+  **/
+  @ApiModelProperty(required = true, value = "")
+  public String getName() {
+    return name;
+  }
+
+  public void setName(String name) {
+    this.name = name;
+  }
+
+  public CPU productId(String productId) {
+    this.productId = productId;
+    return this;
+  }
+
+   /**
+   * Get productId
+   * @return productId
+  **/
+  @ApiModelProperty(required = true, value = "")
+  public String getProductId() {
+    return productId;
+  }
+
+  public void setProductId(String productId) {
+    this.productId = productId;
+  }
+
+  public CPU category(String category) {
+    this.category = category;
+    return this;
+  }
+
+   /**
+   * Get category
+   * @return category
+  **/
+  @ApiModelProperty(required = true, value = "")
+  public String getCategory() {
+    return category;
+  }
+
+  public void setCategory(String category) {
+    this.category = category;
+  }
+
+  public CPU volume(Double volume) {
+    this.volume = volume;
+    return this;
+  }
+
+   /**
+   * Get volume
+   * @return volume
+  **/
+  @ApiModelProperty(value = "")
+  public Double getVolume() {
+    return volume;
+  }
+
+  public void setVolume(Double volume) {
+    this.volume = volume;
   }
 
   public CPU performance(Integer performance) {
@@ -69,6 +165,78 @@ public class CPU extends BasePCPart {
     this.performance = performance;
   }
 
+  public CPU brand(String brand) {
+    this.brand = brand;
+    return this;
+  }
+
+   /**
+   * Get brand
+   * @return brand
+  **/
+  @ApiModelProperty(required = true, value = "")
+  public String getBrand() {
+    return brand;
+  }
+
+  public void setBrand(String brand) {
+    this.brand = brand;
+  }
+
+  public CPU wattage(Integer wattage) {
+    this.wattage = wattage;
+    return this;
+  }
+
+   /**
+   * Get wattage
+   * @return wattage
+  **/
+  @ApiModelProperty(value = "")
+  public Integer getWattage() {
+    return wattage;
+  }
+
+  public void setWattage(Integer wattage) {
+    this.wattage = wattage;
+  }
+
+  public CPU capacity(Integer capacity) {
+    this.capacity = capacity;
+    return this;
+  }
+
+   /**
+   * Get capacity
+   * @return capacity
+  **/
+  @ApiModelProperty(value = "")
+  public Integer getCapacity() {
+    return capacity;
+  }
+
+  public void setCapacity(Integer capacity) {
+    this.capacity = capacity;
+  }
+
+  public CPU speed(Integer speed) {
+    this.speed = speed;
+    return this;
+  }
+
+   /**
+   * Get speed
+   * @return speed
+  **/
+  @ApiModelProperty(value = "")
+  public Integer getSpeed() {
+    return speed;
+  }
+
+  public void setSpeed(Integer speed) {
+    this.speed = speed;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -79,14 +247,21 @@ public class CPU extends BasePCPart {
       return false;
     }
     CPU CPU = (CPU) o;
-    return Objects.equals(this.brand, CPU.brand) &&
+    return Objects.equals(this.price, CPU.price) &&
+        Objects.equals(this.name, CPU.name) &&
+        Objects.equals(this.productId, CPU.productId) &&
+        Objects.equals(this.category, CPU.category) &&
+        Objects.equals(this.volume, CPU.volume) &&
         Objects.equals(this.performance, CPU.performance) &&
-        super.equals(o);
+        Objects.equals(this.brand, CPU.brand) &&
+        Objects.equals(this.wattage, CPU.wattage) &&
+        Objects.equals(this.capacity, CPU.capacity) &&
+        Objects.equals(this.speed, CPU.speed);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(brand, performance, super.hashCode());
+    return Objects.hash(price, name, productId, category, volume, performance, brand, wattage, capacity, speed);
   }
 
 
@@ -94,9 +269,16 @@ public class CPU extends BasePCPart {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class CPU {\n");
-    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
-    sb.append("    brand: ").append(toIndentedString(brand)).append("\n");
+    sb.append("    price: ").append(toIndentedString(price)).append("\n");
+    sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    productId: ").append(toIndentedString(productId)).append("\n");
+    sb.append("    category: ").append(toIndentedString(category)).append("\n");
+    sb.append("    volume: ").append(toIndentedString(volume)).append("\n");
     sb.append("    performance: ").append(toIndentedString(performance)).append("\n");
+    sb.append("    brand: ").append(toIndentedString(brand)).append("\n");
+    sb.append("    wattage: ").append(toIndentedString(wattage)).append("\n");
+    sb.append("    capacity: ").append(toIndentedString(capacity)).append("\n");
+    sb.append("    speed: ").append(toIndentedString(speed)).append("\n");
     sb.append("}");
     return sb.toString();
   }

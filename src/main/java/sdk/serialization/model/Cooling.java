@@ -20,15 +20,132 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import sdk.serialization.model.BasePCPart;
+import sdk.serialization.model.PCPart;
 
 /**
  * Cooling
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-05-02T10:48:24.384064+02:00[Europe/Amsterdam]")
-public class Cooling extends BasePCPart {
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-05-02T12:15:27.933413+02:00[Europe/Amsterdam]")
+public class Cooling {
+  @JsonProperty("price")
+  private Double price;
+
+  @JsonProperty("name")
+  private String name;
+
+  @JsonProperty("productId")
+  private String productId;
+
+  @JsonProperty("category")
+  private String category;
+
+  @JsonProperty("volume")
+  private Double volume;
+
   @JsonProperty("performance")
   private Integer performance;
+
+  @JsonProperty("brand")
+  private String brand;
+
+  @JsonProperty("wattage")
+  private Integer wattage;
+
+  @JsonProperty("capacity")
+  private Integer capacity;
+
+  @JsonProperty("speed")
+  private Integer speed;
+
+  public Cooling price(Double price) {
+    this.price = price;
+    return this;
+  }
+
+   /**
+   * Get price
+   * @return price
+  **/
+  @ApiModelProperty(required = true, value = "")
+  public Double getPrice() {
+    return price;
+  }
+
+  public void setPrice(Double price) {
+    this.price = price;
+  }
+
+  public Cooling name(String name) {
+    this.name = name;
+    return this;
+  }
+
+   /**
+   * Get name
+   * @return name
+  **/
+  @ApiModelProperty(required = true, value = "")
+  public String getName() {
+    return name;
+  }
+
+  public void setName(String name) {
+    this.name = name;
+  }
+
+  public Cooling productId(String productId) {
+    this.productId = productId;
+    return this;
+  }
+
+   /**
+   * Get productId
+   * @return productId
+  **/
+  @ApiModelProperty(required = true, value = "")
+  public String getProductId() {
+    return productId;
+  }
+
+  public void setProductId(String productId) {
+    this.productId = productId;
+  }
+
+  public Cooling category(String category) {
+    this.category = category;
+    return this;
+  }
+
+   /**
+   * Get category
+   * @return category
+  **/
+  @ApiModelProperty(required = true, value = "")
+  public String getCategory() {
+    return category;
+  }
+
+  public void setCategory(String category) {
+    this.category = category;
+  }
+
+  public Cooling volume(Double volume) {
+    this.volume = volume;
+    return this;
+  }
+
+   /**
+   * Get volume
+   * @return volume
+  **/
+  @ApiModelProperty(required = true, value = "")
+  public Double getVolume() {
+    return volume;
+  }
+
+  public void setVolume(Double volume) {
+    this.volume = volume;
+  }
 
   public Cooling performance(Integer performance) {
     this.performance = performance;
@@ -48,6 +165,78 @@ public class Cooling extends BasePCPart {
     this.performance = performance;
   }
 
+  public Cooling brand(String brand) {
+    this.brand = brand;
+    return this;
+  }
+
+   /**
+   * Get brand
+   * @return brand
+  **/
+  @ApiModelProperty(value = "")
+  public String getBrand() {
+    return brand;
+  }
+
+  public void setBrand(String brand) {
+    this.brand = brand;
+  }
+
+  public Cooling wattage(Integer wattage) {
+    this.wattage = wattage;
+    return this;
+  }
+
+   /**
+   * Get wattage
+   * @return wattage
+  **/
+  @ApiModelProperty(value = "")
+  public Integer getWattage() {
+    return wattage;
+  }
+
+  public void setWattage(Integer wattage) {
+    this.wattage = wattage;
+  }
+
+  public Cooling capacity(Integer capacity) {
+    this.capacity = capacity;
+    return this;
+  }
+
+   /**
+   * Get capacity
+   * @return capacity
+  **/
+  @ApiModelProperty(value = "")
+  public Integer getCapacity() {
+    return capacity;
+  }
+
+  public void setCapacity(Integer capacity) {
+    this.capacity = capacity;
+  }
+
+  public Cooling speed(Integer speed) {
+    this.speed = speed;
+    return this;
+  }
+
+   /**
+   * Get speed
+   * @return speed
+  **/
+  @ApiModelProperty(value = "")
+  public Integer getSpeed() {
+    return speed;
+  }
+
+  public void setSpeed(Integer speed) {
+    this.speed = speed;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -58,13 +247,21 @@ public class Cooling extends BasePCPart {
       return false;
     }
     Cooling cooling = (Cooling) o;
-    return Objects.equals(this.performance, cooling.performance) &&
-        super.equals(o);
+    return Objects.equals(this.price, cooling.price) &&
+        Objects.equals(this.name, cooling.name) &&
+        Objects.equals(this.productId, cooling.productId) &&
+        Objects.equals(this.category, cooling.category) &&
+        Objects.equals(this.volume, cooling.volume) &&
+        Objects.equals(this.performance, cooling.performance) &&
+        Objects.equals(this.brand, cooling.brand) &&
+        Objects.equals(this.wattage, cooling.wattage) &&
+        Objects.equals(this.capacity, cooling.capacity) &&
+        Objects.equals(this.speed, cooling.speed);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(performance, super.hashCode());
+    return Objects.hash(price, name, productId, category, volume, performance, brand, wattage, capacity, speed);
   }
 
 
@@ -72,8 +269,16 @@ public class Cooling extends BasePCPart {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class Cooling {\n");
-    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
+    sb.append("    price: ").append(toIndentedString(price)).append("\n");
+    sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    productId: ").append(toIndentedString(productId)).append("\n");
+    sb.append("    category: ").append(toIndentedString(category)).append("\n");
+    sb.append("    volume: ").append(toIndentedString(volume)).append("\n");
     sb.append("    performance: ").append(toIndentedString(performance)).append("\n");
+    sb.append("    brand: ").append(toIndentedString(brand)).append("\n");
+    sb.append("    wattage: ").append(toIndentedString(wattage)).append("\n");
+    sb.append("    capacity: ").append(toIndentedString(capacity)).append("\n");
+    sb.append("    speed: ").append(toIndentedString(speed)).append("\n");
     sb.append("}");
     return sb.toString();
   }

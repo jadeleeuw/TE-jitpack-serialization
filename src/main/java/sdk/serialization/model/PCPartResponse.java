@@ -17,16 +17,33 @@ import java.util.Objects;
 import java.util.Arrays;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import sdk.serialization.model.PCPart;
+import sdk.serialization.model.CPU;
+import sdk.serialization.model.Cooling;
+import sdk.serialization.model.GPU;
+import sdk.serialization.model.ModelCase;
+import sdk.serialization.model.PSU;
+import sdk.serialization.model.Storage;
 
 /**
- * GPU
+ * PCPartResponse
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-05-02T12:15:27.933413+02:00[Europe/Amsterdam]")
-public class GPU {
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "category", visible = true)
+@JsonSubTypes({
+  @JsonSubTypes.Type(value = ModelCase.class, name = "CASE"),
+  @JsonSubTypes.Type(value = Cooling.class, name = "COOLING"),
+  @JsonSubTypes.Type(value = CPU.class, name = "CPU"),
+  @JsonSubTypes.Type(value = GPU.class, name = "GPU"),
+  @JsonSubTypes.Type(value = PSU.class, name = "PSU"),
+  @JsonSubTypes.Type(value = Storage.class, name = "STORAGE"),
+})
+
+public class PCPartResponse {
   @JsonProperty("price")
   private Double price;
 
@@ -57,7 +74,7 @@ public class GPU {
   @JsonProperty("speed")
   private Integer speed;
 
-  public GPU price(Double price) {
+  public PCPartResponse price(Double price) {
     this.price = price;
     return this;
   }
@@ -75,7 +92,7 @@ public class GPU {
     this.price = price;
   }
 
-  public GPU name(String name) {
+  public PCPartResponse name(String name) {
     this.name = name;
     return this;
   }
@@ -93,7 +110,7 @@ public class GPU {
     this.name = name;
   }
 
-  public GPU productId(String productId) {
+  public PCPartResponse productId(String productId) {
     this.productId = productId;
     return this;
   }
@@ -111,7 +128,7 @@ public class GPU {
     this.productId = productId;
   }
 
-  public GPU category(String category) {
+  public PCPartResponse category(String category) {
     this.category = category;
     return this;
   }
@@ -129,7 +146,7 @@ public class GPU {
     this.category = category;
   }
 
-  public GPU volume(Double volume) {
+  public PCPartResponse volume(Double volume) {
     this.volume = volume;
     return this;
   }
@@ -138,7 +155,7 @@ public class GPU {
    * Get volume
    * @return volume
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(required = true, value = "")
   public Double getVolume() {
     return volume;
   }
@@ -147,7 +164,7 @@ public class GPU {
     this.volume = volume;
   }
 
-  public GPU performance(Integer performance) {
+  public PCPartResponse performance(Integer performance) {
     this.performance = performance;
     return this;
   }
@@ -165,7 +182,7 @@ public class GPU {
     this.performance = performance;
   }
 
-  public GPU brand(String brand) {
+  public PCPartResponse brand(String brand) {
     this.brand = brand;
     return this;
   }
@@ -183,7 +200,7 @@ public class GPU {
     this.brand = brand;
   }
 
-  public GPU wattage(Integer wattage) {
+  public PCPartResponse wattage(Integer wattage) {
     this.wattage = wattage;
     return this;
   }
@@ -192,7 +209,7 @@ public class GPU {
    * Get wattage
    * @return wattage
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(required = true, value = "")
   public Integer getWattage() {
     return wattage;
   }
@@ -201,7 +218,7 @@ public class GPU {
     this.wattage = wattage;
   }
 
-  public GPU capacity(Integer capacity) {
+  public PCPartResponse capacity(Integer capacity) {
     this.capacity = capacity;
     return this;
   }
@@ -210,7 +227,7 @@ public class GPU {
    * Get capacity
    * @return capacity
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(required = true, value = "")
   public Integer getCapacity() {
     return capacity;
   }
@@ -219,7 +236,7 @@ public class GPU {
     this.capacity = capacity;
   }
 
-  public GPU speed(Integer speed) {
+  public PCPartResponse speed(Integer speed) {
     this.speed = speed;
     return this;
   }
@@ -228,7 +245,7 @@ public class GPU {
    * Get speed
    * @return speed
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(required = true, value = "")
   public Integer getSpeed() {
     return speed;
   }
@@ -246,17 +263,17 @@ public class GPU {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    GPU GPU = (GPU) o;
-    return Objects.equals(this.price, GPU.price) &&
-        Objects.equals(this.name, GPU.name) &&
-        Objects.equals(this.productId, GPU.productId) &&
-        Objects.equals(this.category, GPU.category) &&
-        Objects.equals(this.volume, GPU.volume) &&
-        Objects.equals(this.performance, GPU.performance) &&
-        Objects.equals(this.brand, GPU.brand) &&
-        Objects.equals(this.wattage, GPU.wattage) &&
-        Objects.equals(this.capacity, GPU.capacity) &&
-        Objects.equals(this.speed, GPU.speed);
+    PCPartResponse pcPartResponse = (PCPartResponse) o;
+    return Objects.equals(this.price, pcPartResponse.price) &&
+        Objects.equals(this.name, pcPartResponse.name) &&
+        Objects.equals(this.productId, pcPartResponse.productId) &&
+        Objects.equals(this.category, pcPartResponse.category) &&
+        Objects.equals(this.volume, pcPartResponse.volume) &&
+        Objects.equals(this.performance, pcPartResponse.performance) &&
+        Objects.equals(this.brand, pcPartResponse.brand) &&
+        Objects.equals(this.wattage, pcPartResponse.wattage) &&
+        Objects.equals(this.capacity, pcPartResponse.capacity) &&
+        Objects.equals(this.speed, pcPartResponse.speed);
   }
 
   @Override
@@ -268,7 +285,7 @@ public class GPU {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class GPU {\n");
+    sb.append("class PCPartResponse {\n");
     sb.append("    price: ").append(toIndentedString(price)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    productId: ").append(toIndentedString(productId)).append("\n");

@@ -20,18 +20,186 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import sdk.serialization.model.BasePCPart;
+import sdk.serialization.model.PCPart;
 
 /**
  * Storage
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-05-02T10:48:24.384064+02:00[Europe/Amsterdam]")
-public class Storage extends BasePCPart {
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-05-02T12:15:27.933413+02:00[Europe/Amsterdam]")
+public class Storage {
+  @JsonProperty("price")
+  private Double price;
+
+  @JsonProperty("name")
+  private String name;
+
+  @JsonProperty("productId")
+  private String productId;
+
+  @JsonProperty("category")
+  private String category;
+
+  @JsonProperty("volume")
+  private Double volume;
+
+  @JsonProperty("performance")
+  private Integer performance;
+
+  @JsonProperty("brand")
+  private String brand;
+
+  @JsonProperty("wattage")
+  private Integer wattage;
+
   @JsonProperty("capacity")
   private Integer capacity;
 
   @JsonProperty("speed")
   private Integer speed;
+
+  public Storage price(Double price) {
+    this.price = price;
+    return this;
+  }
+
+   /**
+   * Get price
+   * @return price
+  **/
+  @ApiModelProperty(required = true, value = "")
+  public Double getPrice() {
+    return price;
+  }
+
+  public void setPrice(Double price) {
+    this.price = price;
+  }
+
+  public Storage name(String name) {
+    this.name = name;
+    return this;
+  }
+
+   /**
+   * Get name
+   * @return name
+  **/
+  @ApiModelProperty(required = true, value = "")
+  public String getName() {
+    return name;
+  }
+
+  public void setName(String name) {
+    this.name = name;
+  }
+
+  public Storage productId(String productId) {
+    this.productId = productId;
+    return this;
+  }
+
+   /**
+   * Get productId
+   * @return productId
+  **/
+  @ApiModelProperty(required = true, value = "")
+  public String getProductId() {
+    return productId;
+  }
+
+  public void setProductId(String productId) {
+    this.productId = productId;
+  }
+
+  public Storage category(String category) {
+    this.category = category;
+    return this;
+  }
+
+   /**
+   * Get category
+   * @return category
+  **/
+  @ApiModelProperty(required = true, value = "")
+  public String getCategory() {
+    return category;
+  }
+
+  public void setCategory(String category) {
+    this.category = category;
+  }
+
+  public Storage volume(Double volume) {
+    this.volume = volume;
+    return this;
+  }
+
+   /**
+   * Get volume
+   * @return volume
+  **/
+  @ApiModelProperty(value = "")
+  public Double getVolume() {
+    return volume;
+  }
+
+  public void setVolume(Double volume) {
+    this.volume = volume;
+  }
+
+  public Storage performance(Integer performance) {
+    this.performance = performance;
+    return this;
+  }
+
+   /**
+   * Get performance
+   * @return performance
+  **/
+  @ApiModelProperty(value = "")
+  public Integer getPerformance() {
+    return performance;
+  }
+
+  public void setPerformance(Integer performance) {
+    this.performance = performance;
+  }
+
+  public Storage brand(String brand) {
+    this.brand = brand;
+    return this;
+  }
+
+   /**
+   * Get brand
+   * @return brand
+  **/
+  @ApiModelProperty(value = "")
+  public String getBrand() {
+    return brand;
+  }
+
+  public void setBrand(String brand) {
+    this.brand = brand;
+  }
+
+  public Storage wattage(Integer wattage) {
+    this.wattage = wattage;
+    return this;
+  }
+
+   /**
+   * Get wattage
+   * @return wattage
+  **/
+  @ApiModelProperty(value = "")
+  public Integer getWattage() {
+    return wattage;
+  }
+
+  public void setWattage(Integer wattage) {
+    this.wattage = wattage;
+  }
 
   public Storage capacity(Integer capacity) {
     this.capacity = capacity;
@@ -79,14 +247,21 @@ public class Storage extends BasePCPart {
       return false;
     }
     Storage storage = (Storage) o;
-    return Objects.equals(this.capacity, storage.capacity) &&
-        Objects.equals(this.speed, storage.speed) &&
-        super.equals(o);
+    return Objects.equals(this.price, storage.price) &&
+        Objects.equals(this.name, storage.name) &&
+        Objects.equals(this.productId, storage.productId) &&
+        Objects.equals(this.category, storage.category) &&
+        Objects.equals(this.volume, storage.volume) &&
+        Objects.equals(this.performance, storage.performance) &&
+        Objects.equals(this.brand, storage.brand) &&
+        Objects.equals(this.wattage, storage.wattage) &&
+        Objects.equals(this.capacity, storage.capacity) &&
+        Objects.equals(this.speed, storage.speed);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(capacity, speed, super.hashCode());
+    return Objects.hash(price, name, productId, category, volume, performance, brand, wattage, capacity, speed);
   }
 
 
@@ -94,7 +269,14 @@ public class Storage extends BasePCPart {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class Storage {\n");
-    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
+    sb.append("    price: ").append(toIndentedString(price)).append("\n");
+    sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    productId: ").append(toIndentedString(productId)).append("\n");
+    sb.append("    category: ").append(toIndentedString(category)).append("\n");
+    sb.append("    volume: ").append(toIndentedString(volume)).append("\n");
+    sb.append("    performance: ").append(toIndentedString(performance)).append("\n");
+    sb.append("    brand: ").append(toIndentedString(brand)).append("\n");
+    sb.append("    wattage: ").append(toIndentedString(wattage)).append("\n");
     sb.append("    capacity: ").append(toIndentedString(capacity)).append("\n");
     sb.append("    speed: ").append(toIndentedString(speed)).append("\n");
     sb.append("}");

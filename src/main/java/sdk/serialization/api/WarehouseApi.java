@@ -9,6 +9,7 @@ import sdk.serialization.model.GPU;
 import sdk.serialization.model.ModelCase;
 import sdk.serialization.model.PC;
 import sdk.serialization.model.PCPart;
+import sdk.serialization.model.PCPartResponse;
 import sdk.serialization.model.PSU;
 import sdk.serialization.model.Storage;
 
@@ -32,7 +33,7 @@ import org.springframework.http.MediaType;
 import reactor.core.publisher.Mono;
 import reactor.core.publisher.Flux;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-05-02T10:48:24.384064+02:00[Europe/Amsterdam]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-05-02T12:15:27.933413+02:00[Europe/Amsterdam]")
 public class WarehouseApi {
     private ApiClient apiClient;
 
@@ -292,10 +293,10 @@ public class WarehouseApi {
      * <p><b>200</b> - All information about the product
      * <p><b>400</b> - The product with the specified ID could not be found.
      * @param productId The id of the product.
-     * @return PCPart
+     * @return PCPartResponse
      * @throws RestClientException if an error occurs while attempting to invoke the API
      */
-    public Mono<PCPart> getProduct(String productId) throws HttpClientErrorException {
+    public Mono<PCPartResponse> getProduct(String productId) throws HttpClientErrorException {
         Object postBody = null;
         
         // verify the required parameter 'productId' is set
@@ -321,7 +322,7 @@ public class WarehouseApi {
 
         String[] authNames = new String[] { "idKey" };
 
-        ParameterizedTypeReference<PCPart> returnType = new ParameterizedTypeReference<PCPart>() {};
+        ParameterizedTypeReference<PCPartResponse> returnType = new ParameterizedTypeReference<PCPartResponse>() {};
         return apiClient.invokeAPI(path, HttpMethod.GET, queryParams, postBody, headerParams, formParams, accept, contentType, authNames, returnType);
     }
     /**

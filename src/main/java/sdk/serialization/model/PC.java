@@ -32,7 +32,7 @@ import sdk.serialization.model.Storage;
 /**
  * PC
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-05-02T10:48:24.384064+02:00[Europe/Amsterdam]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-05-02T12:15:27.933413+02:00[Europe/Amsterdam]")
 public class PC {
   @JsonProperty("caze")
   private ModelCase caze = null;
@@ -193,7 +193,6 @@ public class PC {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class PC {\n");
-    
     sb.append("    caze: ").append(toIndentedString(caze)).append("\n");
     sb.append("    cooling: ").append(toIndentedString(cooling)).append("\n");
     sb.append("    cpu: ").append(toIndentedString(cpu)).append("\n");

@@ -8,8 +8,9 @@ Method | HTTP request | Description
 [**verifyC**](AssignmentCApi.md#verifyC) | **POST** /serialization/c | verify assignment C
 
 
-<a name="getWebshopOrder"></a>
-# **getWebshopOrder**
+
+## getWebshopOrder
+
 > WebshopOrder getWebshopOrder()
 
 Get webshop order
@@ -17,6 +18,7 @@ Get webshop order
 Gets the webshop order that needs to be processed for assignment C.
 
 ### Example
+
 ```java
 // Import classes:
 //import sdk.serialization.ApiClient;
@@ -44,6 +46,7 @@ try {
 ```
 
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
@@ -56,11 +59,12 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="verifyC"></a>
-# **verifyC**
+
+## verifyC
+
 > SubmissionResult verifyC(administrationOrder)
 
 verify assignment C
@@ -68,6 +72,7 @@ verify assignment C
 Verifies the administration order based on the webshop order for assignment C.
 
 ### Example
+
 ```java
 // Import classes:
 //import sdk.serialization.ApiClient;
@@ -97,6 +102,7 @@ try {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **administrationOrder** | [**AdministrationOrder**](AdministrationOrder.md)| The administration order based on the given webshop order. |
@@ -111,6 +117,6 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 

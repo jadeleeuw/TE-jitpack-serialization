@@ -27,7 +27,7 @@ import sdk.serialization.model.CustomerOrder;
 /**
  * Shipment
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-05-02T10:48:24.384064+02:00[Europe/Amsterdam]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-05-02T12:15:27.933413+02:00[Europe/Amsterdam]")
 public class Shipment {
   @JsonProperty("orders")
   private List<CustomerOrder> orders = new ArrayList<>();
@@ -78,7 +78,6 @@ public class Shipment {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class Shipment {\n");
-    
     sb.append("    orders: ").append(toIndentedString(orders)).append("\n");
     sb.append("}");
     return sb.toString();

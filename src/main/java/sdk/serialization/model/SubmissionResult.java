@@ -45,13 +45,13 @@ public enum SubmissionResult {
   }
 
   @JsonCreator
-  public static SubmissionResult fromValue(String text) {
+  public static SubmissionResult fromValue(String value) {
     for (SubmissionResult b : SubmissionResult.values()) {
-      if (String.valueOf(b.value).equals(text)) {
+      if (b.value.equals(value)) {
         return b;
       }
     }
-    throw new IllegalArgumentException("Unexpected value '" + text + "'");
+    throw new IllegalArgumentException("Unexpected value '" + value + "'");
   }
 }
 

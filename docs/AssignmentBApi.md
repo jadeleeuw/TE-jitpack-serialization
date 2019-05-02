@@ -8,8 +8,9 @@ Method | HTTP request | Description
 [**verifyB**](AssignmentBApi.md#verifyB) | **POST** /serialization/b | verify assignment B
 
 
-<a name="getShipmentRequest"></a>
-# **getShipmentRequest**
+
+## getShipmentRequest
+
 > ShipmentRequest getShipmentRequest()
 
 Get shipment request
@@ -17,6 +18,7 @@ Get shipment request
 Gets the shipment request that needs to be handled for assignment B.
 
 ### Example
+
 ```java
 // Import classes:
 //import sdk.serialization.ApiClient;
@@ -44,6 +46,7 @@ try {
 ```
 
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
@@ -56,11 +59,12 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="verifyB"></a>
-# **verifyB**
+
+## verifyB
+
 > SubmissionResult verifyB(shipment)
 
 verify assignment B
@@ -68,6 +72,7 @@ verify assignment B
 Verifies the shipment based on the shipment request for assignment B.
 
 ### Example
+
 ```java
 // Import classes:
 //import sdk.serialization.ApiClient;
@@ -97,6 +102,7 @@ try {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **shipment** | [**Shipment**](Shipment.md)| The shipment based on the given shipment request. |
@@ -111,6 +117,6 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
