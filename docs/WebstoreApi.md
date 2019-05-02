@@ -7,9 +7,8 @@ Method | HTTP request | Description
 [**getCustomer**](WebstoreApi.md#getCustomer) | **GET** /webstore/customer/{customerId} | Get customer by ID
 
 
-
-## getCustomer
-
+<a name="getCustomer"></a>
+# **getCustomer**
 > Customer getCustomer(customerId)
 
 Get customer by ID
@@ -17,7 +16,6 @@ Get customer by ID
 Gets all the information about the customer with the specified ID.
 
 ### Example
-
 ```java
 // Import classes:
 //import sdk.serialization.ApiClient;
@@ -47,7 +45,6 @@ try {
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **customerId** | **String**| The id of the customer. |
@@ -62,6 +59,6 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 

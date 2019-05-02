@@ -9,9 +9,8 @@ Method | HTTP request | Description
 [**verifyA3**](AssignmentAApi.md#verifyA3) | **POST** /serialization/a/3 | verify assignment A3
 
 
-
-## verifyA1
-
+<a name="verifyA1"></a>
+# **verifyA1**
 > SubmissionResult verifyA1(requestBody)
 
 verify assignment A1
@@ -19,7 +18,6 @@ verify assignment A1
 Verifies assignment A1.
 
 ### Example
-
 ```java
 // Import classes:
 //import sdk.serialization.ApiClient;
@@ -49,7 +47,6 @@ try {
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **requestBody** | [**List&lt;String&gt;**](List.md)| The array of PSU identifiers. |
@@ -64,12 +61,11 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
-
-## verifyA2
-
+<a name="verifyA2"></a>
+# **verifyA2**
 > SubmissionResult verifyA2(GPU)
 
 verify assignment A2
@@ -77,7 +73,6 @@ verify assignment A2
 Verifies assignment A2.
 
 ### Example
-
 ```java
 // Import classes:
 //import sdk.serialization.ApiClient;
@@ -107,7 +102,6 @@ try {
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **GPU** | [**GPU**](GPU.md)| The GPU object. |
@@ -122,12 +116,11 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
-
-## verifyA3
-
+<a name="verifyA3"></a>
+# **verifyA3**
 > SubmissionResult verifyA3(pcPart)
 
 verify assignment A3
@@ -135,7 +128,6 @@ verify assignment A3
 Verifies assignment A3.
 
 ### Example
-
 ```java
 // Import classes:
 //import sdk.serialization.ApiClient;
@@ -165,7 +157,6 @@ try {
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **pcPart** | [**List&lt;PCPart&gt;**](List.md)| The array of PC parts. |
@@ -180,6 +171,6 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 

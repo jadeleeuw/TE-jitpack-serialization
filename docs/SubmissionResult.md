@@ -1,5 +1,4 @@
 
-
 # SubmissionResult
 
 ## Enum

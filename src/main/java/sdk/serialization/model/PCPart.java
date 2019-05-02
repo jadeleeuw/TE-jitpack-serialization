@@ -24,7 +24,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * PCPart
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-05-02T12:15:27.933413+02:00[Europe/Amsterdam]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-05-02T13:42:14.442064+02:00[Europe/Amsterdam]")
 public class PCPart {
   @JsonProperty("price")
   private Double price;
@@ -268,6 +268,7 @@ public class PCPart {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class PCPart {\n");
+    
     sb.append("    price: ").append(toIndentedString(price)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    productId: ").append(toIndentedString(productId)).append("\n");

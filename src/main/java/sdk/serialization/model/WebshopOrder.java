@@ -28,13 +28,13 @@ import sdk.serialization.model.PCPart;
 /**
  * WebshopOrder
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-05-02T12:15:27.933413+02:00[Europe/Amsterdam]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-05-02T13:42:14.442064+02:00[Europe/Amsterdam]")
 public class WebshopOrder {
   @JsonProperty("customer")
   private Customer customer = null;
 
   @JsonProperty("pcParts")
-  private List<PCPart> pcParts = new ArrayList<>();
+  private List<PCPart> pcParts = null;
 
   public WebshopOrder customer(Customer customer) {
     this.customer = customer;
@@ -104,6 +104,7 @@ public class WebshopOrder {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class WebshopOrder {\n");
+    
     sb.append("    customer: ").append(toIndentedString(customer)).append("\n");
     sb.append("    pcParts: ").append(toIndentedString(pcParts)).append("\n");
     sb.append("}");

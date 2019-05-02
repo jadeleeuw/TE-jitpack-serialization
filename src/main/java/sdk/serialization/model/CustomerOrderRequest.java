@@ -27,7 +27,7 @@ import sdk.serialization.model.PCOrder;
 /**
  * CustomerOrderRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-05-02T12:15:27.933413+02:00[Europe/Amsterdam]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-05-02T13:42:14.442064+02:00[Europe/Amsterdam]")
 public class CustomerOrderRequest {
   @JsonProperty("customerId")
   private String customerId;
@@ -100,6 +100,7 @@ public class CustomerOrderRequest {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class CustomerOrderRequest {\n");
+    
     sb.append("    customerId: ").append(toIndentedString(customerId)).append("\n");
     sb.append("    pcs: ").append(toIndentedString(pcs)).append("\n");
     sb.append("}");

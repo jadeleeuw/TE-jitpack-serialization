@@ -15,27 +15,22 @@ package sdk.serialization.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
-import com.fasterxml.jackson.annotation.JsonValue;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 import sdk.serialization.model.CPU;
+import sdk.serialization.model.Caze;
 import sdk.serialization.model.Cooling;
 import sdk.serialization.model.GPU;
-import sdk.serialization.model.ModelCase;
 import sdk.serialization.model.PSU;
 import sdk.serialization.model.Storage;
 
 /**
  * PCPartResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-05-02T12:15:27.933413+02:00[Europe/Amsterdam]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-05-02T13:42:14.442064+02:00[Europe/Amsterdam]")
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "category", visible = true)
 @JsonSubTypes({
-  @JsonSubTypes.Type(value = ModelCase.class, name = "CASE"),
+  @JsonSubTypes.Type(value = Caze.class, name = "CASE"),
   @JsonSubTypes.Type(value = Cooling.class, name = "COOLING"),
   @JsonSubTypes.Type(value = CPU.class, name = "CPU"),
   @JsonSubTypes.Type(value = GPU.class, name = "GPU"),
@@ -44,216 +39,6 @@ import sdk.serialization.model.Storage;
 })
 
 public class PCPartResponse {
-  @JsonProperty("price")
-  private Double price;
-
-  @JsonProperty("name")
-  private String name;
-
-  @JsonProperty("productId")
-  private String productId;
-
-  @JsonProperty("category")
-  private String category;
-
-  @JsonProperty("volume")
-  private Double volume;
-
-  @JsonProperty("performance")
-  private Integer performance;
-
-  @JsonProperty("brand")
-  private String brand;
-
-  @JsonProperty("wattage")
-  private Integer wattage;
-
-  @JsonProperty("capacity")
-  private Integer capacity;
-
-  @JsonProperty("speed")
-  private Integer speed;
-
-  public PCPartResponse price(Double price) {
-    this.price = price;
-    return this;
-  }
-
-   /**
-   * Get price
-   * @return price
-  **/
-  @ApiModelProperty(required = true, value = "")
-  public Double getPrice() {
-    return price;
-  }
-
-  public void setPrice(Double price) {
-    this.price = price;
-  }
-
-  public PCPartResponse name(String name) {
-    this.name = name;
-    return this;
-  }
-
-   /**
-   * Get name
-   * @return name
-  **/
-  @ApiModelProperty(required = true, value = "")
-  public String getName() {
-    return name;
-  }
-
-  public void setName(String name) {
-    this.name = name;
-  }
-
-  public PCPartResponse productId(String productId) {
-    this.productId = productId;
-    return this;
-  }
-
-   /**
-   * Get productId
-   * @return productId
-  **/
-  @ApiModelProperty(required = true, value = "")
-  public String getProductId() {
-    return productId;
-  }
-
-  public void setProductId(String productId) {
-    this.productId = productId;
-  }
-
-  public PCPartResponse category(String category) {
-    this.category = category;
-    return this;
-  }
-
-   /**
-   * Get category
-   * @return category
-  **/
-  @ApiModelProperty(required = true, value = "")
-  public String getCategory() {
-    return category;
-  }
-
-  public void setCategory(String category) {
-    this.category = category;
-  }
-
-  public PCPartResponse volume(Double volume) {
-    this.volume = volume;
-    return this;
-  }
-
-   /**
-   * Get volume
-   * @return volume
-  **/
-  @ApiModelProperty(required = true, value = "")
-  public Double getVolume() {
-    return volume;
-  }
-
-  public void setVolume(Double volume) {
-    this.volume = volume;
-  }
-
-  public PCPartResponse performance(Integer performance) {
-    this.performance = performance;
-    return this;
-  }
-
-   /**
-   * Get performance
-   * @return performance
-  **/
-  @ApiModelProperty(required = true, value = "")
-  public Integer getPerformance() {
-    return performance;
-  }
-
-  public void setPerformance(Integer performance) {
-    this.performance = performance;
-  }
-
-  public PCPartResponse brand(String brand) {
-    this.brand = brand;
-    return this;
-  }
-
-   /**
-   * Get brand
-   * @return brand
-  **/
-  @ApiModelProperty(required = true, value = "")
-  public String getBrand() {
-    return brand;
-  }
-
-  public void setBrand(String brand) {
-    this.brand = brand;
-  }
-
-  public PCPartResponse wattage(Integer wattage) {
-    this.wattage = wattage;
-    return this;
-  }
-
-   /**
-   * Get wattage
-   * @return wattage
-  **/
-  @ApiModelProperty(required = true, value = "")
-  public Integer getWattage() {
-    return wattage;
-  }
-
-  public void setWattage(Integer wattage) {
-    this.wattage = wattage;
-  }
-
-  public PCPartResponse capacity(Integer capacity) {
-    this.capacity = capacity;
-    return this;
-  }
-
-   /**
-   * Get capacity
-   * @return capacity
-  **/
-  @ApiModelProperty(required = true, value = "")
-  public Integer getCapacity() {
-    return capacity;
-  }
-
-  public void setCapacity(Integer capacity) {
-    this.capacity = capacity;
-  }
-
-  public PCPartResponse speed(Integer speed) {
-    this.speed = speed;
-    return this;
-  }
-
-   /**
-   * Get speed
-   * @return speed
-  **/
-  @ApiModelProperty(required = true, value = "")
-  public Integer getSpeed() {
-    return speed;
-  }
-
-  public void setSpeed(Integer speed) {
-    this.speed = speed;
-  }
-
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -263,22 +48,12 @@ public class PCPartResponse {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    PCPartResponse pcPartResponse = (PCPartResponse) o;
-    return Objects.equals(this.price, pcPartResponse.price) &&
-        Objects.equals(this.name, pcPartResponse.name) &&
-        Objects.equals(this.productId, pcPartResponse.productId) &&
-        Objects.equals(this.category, pcPartResponse.category) &&
-        Objects.equals(this.volume, pcPartResponse.volume) &&
-        Objects.equals(this.performance, pcPartResponse.performance) &&
-        Objects.equals(this.brand, pcPartResponse.brand) &&
-        Objects.equals(this.wattage, pcPartResponse.wattage) &&
-        Objects.equals(this.capacity, pcPartResponse.capacity) &&
-        Objects.equals(this.speed, pcPartResponse.speed);
+    return true;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(price, name, productId, category, volume, performance, brand, wattage, capacity, speed);
+    return Objects.hash();
   }
 
 
@@ -286,16 +61,7 @@ public class PCPartResponse {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class PCPartResponse {\n");
-    sb.append("    price: ").append(toIndentedString(price)).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    productId: ").append(toIndentedString(productId)).append("\n");
-    sb.append("    category: ").append(toIndentedString(category)).append("\n");
-    sb.append("    volume: ").append(toIndentedString(volume)).append("\n");
-    sb.append("    performance: ").append(toIndentedString(performance)).append("\n");
-    sb.append("    brand: ").append(toIndentedString(brand)).append("\n");
-    sb.append("    wattage: ").append(toIndentedString(wattage)).append("\n");
-    sb.append("    capacity: ").append(toIndentedString(capacity)).append("\n");
-    sb.append("    speed: ").append(toIndentedString(speed)).append("\n");
+    
     sb.append("}");
     return sb.toString();
   }

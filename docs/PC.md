@@ -1,12 +1,10 @@
 
-
 # PC
 
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**caze** | [**ModelCase**](ModelCase.md) |  | 
+**caze** | [**Caze**](Caze.md) |  | 
 **cooling** | [**Cooling**](Cooling.md) |  | 
 **cpu** | [**CPU**](CPU.md) |  | 
 **gpu** | [**GPU**](GPU.md) |  | 

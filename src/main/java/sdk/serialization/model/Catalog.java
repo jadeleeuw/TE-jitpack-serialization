@@ -23,19 +23,19 @@ import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
 import java.util.List;
 import sdk.serialization.model.CPU;
+import sdk.serialization.model.Caze;
 import sdk.serialization.model.Cooling;
 import sdk.serialization.model.GPU;
-import sdk.serialization.model.ModelCase;
 import sdk.serialization.model.PSU;
 import sdk.serialization.model.Storage;
 
 /**
  * Catalog
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-05-02T12:15:27.933413+02:00[Europe/Amsterdam]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-05-02T13:42:14.442064+02:00[Europe/Amsterdam]")
 public class Catalog {
   @JsonProperty("cases")
-  private List<ModelCase> cases = new ArrayList<>();
+  private List<Caze> cases = new ArrayList<>();
 
   @JsonProperty("cooling")
   private List<Cooling> cooling = new ArrayList<>();
@@ -52,12 +52,12 @@ public class Catalog {
   @JsonProperty("storage")
   private List<Storage> storage = new ArrayList<>();
 
-  public Catalog cases(List<ModelCase> cases) {
+  public Catalog cases(List<Caze> cases) {
     this.cases = cases;
     return this;
   }
 
-  public Catalog addCasesItem(ModelCase casesItem) {
+  public Catalog addCasesItem(Caze casesItem) {
     this.cases.add(casesItem);
     return this;
   }
@@ -67,11 +67,11 @@ public class Catalog {
    * @return cases
   **/
   @ApiModelProperty(required = true, value = "")
-  public List<ModelCase> getCases() {
+  public List<Caze> getCases() {
     return cases;
   }
 
-  public void setCases(List<ModelCase> cases) {
+  public void setCases(List<Caze> cases) {
     this.cases = cases;
   }
 
@@ -218,6 +218,7 @@ public class Catalog {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class Catalog {\n");
+    
     sb.append("    cases: ").append(toIndentedString(cases)).append("\n");
     sb.append("    cooling: ").append(toIndentedString(cooling)).append("\n");
     sb.append("    cpus: ").append(toIndentedString(cpus)).append("\n");
