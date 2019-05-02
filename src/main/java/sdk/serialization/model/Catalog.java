@@ -23,19 +23,19 @@ import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
 import java.util.List;
 import sdk.serialization.model.CPU;
-import sdk.serialization.model.Caze;
 import sdk.serialization.model.Cooling;
 import sdk.serialization.model.GPU;
+import sdk.serialization.model.ModelCase;
 import sdk.serialization.model.PSU;
 import sdk.serialization.model.Storage;
 
 /**
  * Catalog
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-05-02T15:10:00.624361+02:00[Europe/Amsterdam]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-05-02T16:01:11.088770+02:00[Europe/Amsterdam]")
 public class Catalog {
   @JsonProperty("cases")
-  private List<Caze> cases = new ArrayList<>();
+  private List<ModelCase> cases = new ArrayList<>();
 
   @JsonProperty("cooling")
   private List<Cooling> cooling = new ArrayList<>();
@@ -52,12 +52,12 @@ public class Catalog {
   @JsonProperty("storage")
   private List<Storage> storage = new ArrayList<>();
 
-  public Catalog cases(List<Caze> cases) {
+  public Catalog cases(List<ModelCase> cases) {
     this.cases = cases;
     return this;
   }
 
-  public Catalog addCasesItem(Caze casesItem) {
+  public Catalog addCasesItem(ModelCase casesItem) {
     this.cases.add(casesItem);
     return this;
   }
@@ -67,11 +67,11 @@ public class Catalog {
    * @return cases
   **/
   @ApiModelProperty(required = true, value = "")
-  public List<Caze> getCases() {
+  public List<ModelCase> getCases() {
     return cases;
   }
 
-  public void setCases(List<Caze> cases) {
+  public void setCases(List<ModelCase> cases) {
     this.cases = cases;
   }
 

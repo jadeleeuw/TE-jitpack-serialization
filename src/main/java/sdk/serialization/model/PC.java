@@ -23,19 +23,19 @@ import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
 import java.util.List;
 import sdk.serialization.model.CPU;
-import sdk.serialization.model.Caze;
 import sdk.serialization.model.Cooling;
 import sdk.serialization.model.GPU;
+import sdk.serialization.model.ModelCase;
 import sdk.serialization.model.PSU;
 import sdk.serialization.model.Storage;
 
 /**
  * PC
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-05-02T15:10:00.624361+02:00[Europe/Amsterdam]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-05-02T16:01:11.088770+02:00[Europe/Amsterdam]")
 public class PC {
   @JsonProperty("caze")
-  private Caze caze = null;
+  private ModelCase caze = null;
 
   @JsonProperty("cooling")
   private Cooling cooling = null;
@@ -52,7 +52,7 @@ public class PC {
   @JsonProperty("storage")
   private List<Storage> storage = new ArrayList<>();
 
-  public PC caze(Caze caze) {
+  public PC caze(ModelCase caze) {
     this.caze = caze;
     return this;
   }
@@ -62,11 +62,11 @@ public class PC {
    * @return caze
   **/
   @ApiModelProperty(required = true, value = "")
-  public Caze getCaze() {
+  public ModelCase getCaze() {
     return caze;
   }
 
-  public void setCaze(Caze caze) {
+  public void setCaze(ModelCase caze) {
     this.caze = caze;
   }
 

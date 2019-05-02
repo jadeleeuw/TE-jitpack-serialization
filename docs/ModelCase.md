@@ -1,5 +1,5 @@
 
-# Caze
+# ModelCase
 
 ## Properties
 Name | Type | Description | Notes

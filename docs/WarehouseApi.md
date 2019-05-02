@@ -124,7 +124,7 @@ This endpoint does not need any parameter.
 
 <a name="getCases"></a>
 # **getCases**
-> List&lt;Caze&gt; getCases()
+> List&lt;ModelCase&gt; getCases()
 
 Returns all cases
 
@@ -149,7 +149,7 @@ idKey.setApiKey("YOUR API KEY");
 
 WarehouseApi apiInstance = new WarehouseApi();
 try {
-    List<Caze> result = apiInstance.getCases();
+    List<ModelCase> result = apiInstance.getCases();
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling WarehouseApi#getCases");
@@ -162,7 +162,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**List&lt;Caze&gt;**](Caze.md)
+[**List&lt;ModelCase&gt;**](ModelCase.md)
 
 ### Authorization
 

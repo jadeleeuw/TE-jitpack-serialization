@@ -20,17 +20,17 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import sdk.serialization.model.BasePart;
+import sdk.serialization.model.PCPart;
 
 /**
- * Caze
+ * ModelCase
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-05-02T15:10:00.624361+02:00[Europe/Amsterdam]")
-public class Caze extends BasePart {
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-05-02T16:01:11.088770+02:00[Europe/Amsterdam]")
+public class ModelCase extends PCPart {
   @JsonProperty("volume")
   private Double volume;
 
-  public Caze volume(Double volume) {
+  public ModelCase volume(Double volume) {
     this.volume = volume;
     return this;
   }
@@ -57,8 +57,8 @@ public class Caze extends BasePart {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    Caze caze = (Caze) o;
-    return Objects.equals(this.volume, caze.volume) &&
+    ModelCase _case = (ModelCase) o;
+    return Objects.equals(this.volume, _case.volume) &&
         super.equals(o);
   }
 
@@ -71,7 +71,7 @@ public class Caze extends BasePart {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class Caze {\n");
+    sb.append("class ModelCase {\n");
     sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("    volume: ").append(toIndentedString(volume)).append("\n");
     sb.append("}");

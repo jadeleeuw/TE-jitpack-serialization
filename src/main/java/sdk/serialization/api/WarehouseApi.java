@@ -4,9 +4,9 @@ import sdk.serialization.ApiClient;
 
 import sdk.serialization.model.CPU;
 import sdk.serialization.model.Catalog;
-import sdk.serialization.model.Caze;
 import sdk.serialization.model.Cooling;
 import sdk.serialization.model.GPU;
+import sdk.serialization.model.ModelCase;
 import sdk.serialization.model.PC;
 import sdk.serialization.model.PCPart;
 import sdk.serialization.model.PSU;
@@ -32,7 +32,7 @@ import org.springframework.http.MediaType;
 import reactor.core.publisher.Mono;
 import reactor.core.publisher.Flux;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-05-02T15:10:00.624361+02:00[Europe/Amsterdam]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-05-02T16:01:11.088770+02:00[Europe/Amsterdam]")
 public class WarehouseApi {
     private ApiClient apiClient;
 
@@ -122,10 +122,10 @@ public class WarehouseApi {
      * Returns all cases
      * Returns an array of all case objects in the warehouse
      * <p><b>200</b> - An array of all case objects
-     * @return List&lt;Caze&gt;
+     * @return List&lt;ModelCase&gt;
      * @throws RestClientException if an error occurs while attempting to invoke the API
      */
-    public Flux<Caze> getCases() throws HttpClientErrorException {
+    public Flux<ModelCase> getCases() throws HttpClientErrorException {
         Object postBody = null;
         
         String path = UriComponentsBuilder.fromPath("/warehouse/cases").build().toUriString();
@@ -143,7 +143,7 @@ public class WarehouseApi {
 
         String[] authNames = new String[] { "idKey" };
 
-        ParameterizedTypeReference<Caze> returnType = new ParameterizedTypeReference<Caze>() {};
+        ParameterizedTypeReference<ModelCase> returnType = new ParameterizedTypeReference<ModelCase>() {};
         return apiClient.invokeFluxAPI(path, HttpMethod.GET, queryParams, postBody, headerParams, formParams, accept, contentType, authNames, returnType);
     }
     /**
