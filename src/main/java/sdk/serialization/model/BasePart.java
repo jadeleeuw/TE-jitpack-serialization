@@ -20,12 +20,13 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import sdk.serialization.model.PCPart;
 
 /**
  * BasePart
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-05-02T13:57:43.349820+02:00[Europe/Amsterdam]")
-public class BasePart {
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-05-02T15:10:00.624361+02:00[Europe/Amsterdam]")
+public class BasePart extends PCPart {
   @JsonProperty("price")
   private Double price;
 
@@ -123,12 +124,13 @@ public class BasePart {
     return Objects.equals(this.price, basePart.price) &&
         Objects.equals(this.name, basePart.name) &&
         Objects.equals(this.productId, basePart.productId) &&
-        Objects.equals(this.category, basePart.category);
+        Objects.equals(this.category, basePart.category) &&
+        super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(price, name, productId, category);
+    return Objects.hash(price, name, productId, category, super.hashCode());
   }
 
 
@@ -136,7 +138,7 @@ public class BasePart {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class BasePart {\n");
-    
+    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("    price: ").append(toIndentedString(price)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    productId: ").append(toIndentedString(productId)).append("\n");

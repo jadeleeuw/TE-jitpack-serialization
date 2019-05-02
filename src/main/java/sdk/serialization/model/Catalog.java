@@ -32,7 +32,7 @@ import sdk.serialization.model.Storage;
 /**
  * Catalog
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-05-02T13:57:43.349820+02:00[Europe/Amsterdam]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-05-02T15:10:00.624361+02:00[Europe/Amsterdam]")
 public class Catalog {
   @JsonProperty("cases")
   private List<Caze> cases = new ArrayList<>();
