@@ -20,13 +20,13 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import sdk.serialization.model.PCPart;
+import sdk.serialization.model.BasePart;
 
 /**
  * CPU
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-05-02T13:50:19.425903+02:00[Europe/Amsterdam]")
-public class CPU extends PCPart {
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-05-02T13:57:43.349820+02:00[Europe/Amsterdam]")
+public class CPU extends BasePart {
   @JsonProperty("brand")
   private String brand;
 
