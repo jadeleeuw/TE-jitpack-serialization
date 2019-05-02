@@ -18,7 +18,7 @@ paths:
       description: Verifies assignment A1.
       operationId: verifyA1
       requestBody:
-        description: The array of PSU identifiers. 
+        description: The array of PSU identifiers.
         required: true
         content:
           application/json:
@@ -44,7 +44,7 @@ paths:
       description: Verifies assignment A2.
       operationId: verifyA2
       requestBody:
-        description: The GPU object. 
+        description: The GPU object.
         required: true
         content:
           application/json:
@@ -68,7 +68,7 @@ paths:
       description: Verifies assignment A3.
       operationId: verifyA3
       requestBody:
-        description: The array of PC parts. 
+        description: The array of PC parts.
         required: true
         content:
           application/json:
@@ -95,7 +95,7 @@ paths:
       description: Verifies the shipment based on the shipment request for assignment B.
       operationId: verifyB
       requestBody:
-        description: The shipment based on the given shipment request. 
+        description: The shipment based on the given shipment request.
         required: true
         content:
           application/json:
@@ -112,7 +112,7 @@ paths:
                 $ref: '#/components/schemas/SubmissionResult'
         '400':
           description: The submitted JSON could not be parsed correctly.
-    
+
     get:
       summary: Get shipment request
       description: Gets the shipment request that needs to be handled for assignment B.
@@ -134,7 +134,7 @@ paths:
       description: Verifies the administration order based on the webshop order for assignment C.
       operationId: verifyC
       requestBody:
-        description: The administration order based on the given webshop order. 
+        description: The administration order based on the given webshop order.
         required: true
         content:
           application/json:
@@ -151,7 +151,7 @@ paths:
                 $ref: '#/components/schemas/SubmissionResult'
         '400':
           description: The submitted JSON could not be parsed correctly.
-    
+
     get:
       summary: Get webshop order
       description: Gets the webshop order that needs to be processed for assignment C.
@@ -302,7 +302,7 @@ paths:
                   $ref: '#/components/schemas/PCPart'
 
   /warehouse/{productId}:
-    get: 
+    get:
       summary: Get product/part by ID
       description: Gets all the information about the product with the specified ID.
       operationId: getProduct
@@ -325,9 +325,35 @@ paths:
         '400':
           description: The product with the specified ID could not be found.
 
+  /warehouse/assemble:
+    post:
+      summary: Assemble PC parts into a PC.
+      description: Assembles the given PC parts into a PC and returns the constructed PC.
+      operationId: assemblePC
+      requestBody:
+        description: The parts that should be used in the PC.
+        required: true
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/PCPart'
+      tags:
+      - WAREHOUSE
+      responses:
+        '200':
+          description: The constructed PC
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PC'
+        '400':
+          description: Unable to assemble the PC. There was either a component missing or multiple components of the same category (with the exception of storage)
+
   ##### WEBSTORE #####
   /webstore/customer/{customerId}:
-    get: 
+    get:
       summary: Get customer by ID
       description: Gets all the information about the customer with the specified ID.
       operationId: getCustomer
@@ -369,10 +395,119 @@ components:
     SubmissionResult:
       type: string
       enum:
-        - CORRECT
-        - INCORRECT
+      - CORRECT
+      - INCORRECT
 
     Case:
+      allOf:
+      - $ref: '#/components/schemas/PCPart'
+      - type: object
+        properties:
+          volume:
+            type: number
+            format: double
+        required:
+        - volume
+        example:
+          price: 68.90
+          name: "Large case"
+          productId: "cL"
+          category: "CASE"
+          volume: 57.75
+
+    Cooling:
+      allOf:
+      - $ref: '#/components/schemas/PCPart'
+      - type: object
+        properties:
+          performance:
+            type: integer
+        required:
+        - volume
+        example:
+          price: 20
+          name: "Air cooled"
+          productId: "cA"
+          category: "COOLING"
+          performance: 1
+
+    CPU:
+      allOf:
+      - $ref: '#/components/schemas/PCPart'
+      - type: object
+        properties:
+          brand:
+            type: string
+          performance:
+            type: integer
+        required:
+        - brand
+        - performance
+        example:
+          price: 90
+          name: "Ryzen 2200"
+          productId: "cr2200"
+          category: "CPU"
+          brand: "AMD"
+          performance: 4
+
+    GPU:
+      allOf:
+      - $ref: '#/components/schemas/PCPart'
+      - type: object
+        properties:
+          brand:
+            type: string
+          performance:
+            type: integer
+        required:
+        - brand
+        - performance
+        example:
+          price: 165
+          name: "GTX 1050Ti"
+          productId: "gg1050ti"
+          category: "GPU"
+          brand: "Nvidia"
+          performance: 3
+
+    PSU:
+      allOf:
+      - $ref: '#/components/schemas/PCPart'
+      - type: object
+        properties:
+          wattage:
+            type: integer
+        required:
+        - wattage
+        example:
+          price: 36.99
+          name: "Corsair 450W"
+          productId: "pc450"
+          category: "PSU"
+          wattage: 450
+
+    Storage:
+      allOf:
+        - $ref: '#/components/schemas/PCPart'
+        - type: object
+          properties:
+            capacity:
+              type: integer
+            speed:
+              type: integer
+          required:
+          - capacity
+          - speed
+          example:
+            price: 40
+            name: "Seagate 1Tb HDD"
+            productId: "ss1000hdd"
+            category: "STORAGE"
+            capacity: 1000
+            speed: 95
+
+    PCPart:
       type: object
       properties:
         price:
@@ -387,178 +522,16 @@ components:
         volume:
           type: number
           format: double
-      required:
-        - price
-        - name
-        - productId
-        - category
-        - volume
-      example:
-        price: 68.90
-        name: "Large case"
-        productId: "cL"
-        category: "CASE"
-        volume: 57.75
-
-    Cooling:
-      type: object
-      properties:
-        price:
-          type: number
-          format: double
-        name:
-          type: string
-        productId:
-          type: string
-        category:
-          type: string
         performance:
           type: integer
-      required:
-        - price
-        - name
-        - productId
-        - category
-        - volume
-      example:
-        price: 20
-        name: "Air cooled"
-        productId: "cA"
-        category: "COOLING"
-        performance: 1
-
-    CPU:
-      type: object
-      properties:
-        price:
-          type: number
-          format: double
-        name:
-          type: string
-        productId:
-          type: string
-        category:
-          type: string
         brand:
-          type: string
-        performance:
-          type: integer
-      required:
-        - price
-        - name
-        - productId
-        - category
-        - brand
-        - performance
-      example:
-        price: 90
-        name: "Ryzen 2200"
-        productId: "cr2200"
-        category: "CPU"
-        brand: "AMD"
-        performance: 4
-
-    GPU:
-      type: object
-      properties:
-        price:
-          type: number
-          format: double
-        name:
-          type: string
-        productId:
-          type: string
-        category:
-          type: string
-        brand:
-          type: string
-        performance:
-          type: integer
-      required:
-        - price
-        - name
-        - productId
-        - category
-        - brand
-        - performance
-      example:
-        price: 165
-        name: "GTX 1050Ti"
-        productId: "gg1050ti"
-        category: "GPU"
-        brand: "Nvidia"
-        performance: 3
-
-    PSU:
-      type: object
-      properties:
-        price:
-          type: number
-          format: double
-        name:
-          type: string
-        productId:
-          type: string
-        category:
           type: string
         wattage:
           type: integer
-      required:
-        - price
-        - name
-        - productId
-        - category
-        - wattage
-      example:
-        price: 36.99
-        name: "Corsair 450W"
-        productId: "pc450"
-        category: "PSU"
-        wattage: 450
-
-    Storage:
-      type: object
-      properties:
-        price:
-          type: number
-          format: double
-        name:
-          type: string
-        productId:
-          type: string
-        category:
-          type: string
         capacity:
           type: integer
         speed:
           type: integer
-      required:
-        - price
-        - name
-        - productId
-        - category
-        - capacity
-        - speed
-      example:
-        price: 40
-        name: "Seagate 1Tb HDD"
-        productId: "ss1000hdd"
-        category: "STORAGE"
-        capacity: 1000
-        speed: 95
-    
-    PCPart:
-      type: object
-      properties:
-        price:
-          type: number
-          format: double
-        name:
-          type: string
-        productId:
-          type: string
-        category:
-          type: string
       required:
         - price
         - name
@@ -583,12 +556,12 @@ components:
           items:
             $ref: '#/components/schemas/Storage'
       required:
-        - caze
-        - cooling
-        - cpu
-        - gpu
-        - psu
-        - storage
+      - caze
+      - cooling
+      - cpu
+      - gpu
+      - psu
+      - storage
 
     Customer:
       type: object
@@ -602,10 +575,10 @@ components:
         id:
           type: string
       required:
-        - name
-        - address
-        - email
-        - id
+      - name
+      - address
+      - email
+      - id
 
     CustomerOrder:
       type: object
@@ -617,8 +590,8 @@ components:
           items:
             $ref: '#/components/schemas/PC'
       required:
-        - customer
-        - pcOrders
+      - customer
+      - pcOrders
 
     Shipment:
       type: object
@@ -628,7 +601,7 @@ components:
           items:
             $ref: '#/components/schemas/CustomerOrder'
       required:
-        - orders
+      - orders
 
     PCOrder:
       type: object
@@ -638,7 +611,7 @@ components:
           items:
             type: string
       required:
-        - partIds
+      - partIds
 
     CustomerOrderRequest:
       type: object
@@ -650,8 +623,8 @@ components:
           items:
             $ref: '#/components/schemas/PCOrder'
       required:
-        - customerId
-        - pcs
+      - customerId
+      - pcs
 
     ShipmentRequest:
       type: object
@@ -661,7 +634,7 @@ components:
           items:
             $ref: '#/components/schemas/CustomerOrderRequest'
       required:
-        - orderRequests
+      - orderRequests
 
     Sale:
       type: object
@@ -676,10 +649,10 @@ components:
         quantity:
           type: integer
       required:
-        - customerId
-        - productId
-        - totalPrice
-        - quantity
+      - customerId
+      - productId
+      - totalPrice
+      - quantity
 
     AdministrationOrder:
       type: object
@@ -689,7 +662,7 @@ components:
           items:
             $ref: '#/components/schemas/Sale'
       required:
-        - sales
+      - sales
 
     WebshopOrder:
       type: object
@@ -728,12 +701,12 @@ components:
           items:
             $ref: '#/components/schemas/Storage'
       required:
-        - cases
-        - cooling
-        - cpus
-        - gpus
-        - psus
-        - storage
+      - cases
+      - cooling
+      - cpus
+      - gpus
+      - psus
+      - storage
 
 security:
 - idKey: []
