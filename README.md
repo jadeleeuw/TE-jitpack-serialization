@@ -2,7 +2,7 @@
 
 Serialization API
 - API version: 1.0
-  - Build date: 2019-05-02T16:01:11.088770+02:00[Europe/Amsterdam]
+  - Build date: 2019-05-03T15:10:28.255141+02:00[Europe/Amsterdam]
 
 All endpoints related to the serialization assignment.
 
@@ -107,7 +107,7 @@ public class AssignmentAApiExample {
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *http://localhost:8080*
+All URIs are relative to *https://jeansthesis.nl:8080*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
@@ -126,7 +126,7 @@ Class | Method | HTTP request | Description
 *WarehouseApi* | [**getGPUs**](docs/WarehouseApi.md#getGPUs) | **GET** /warehouse/gpus | Returns all GPUs
 *WarehouseApi* | [**getPSUs**](docs/WarehouseApi.md#getPSUs) | **GET** /warehouse/psus | Returns all PSUs
 *WarehouseApi* | [**getPartslist**](docs/WarehouseApi.md#getPartslist) | **GET** /warehouse/partslist | Returns all parts in the warehouse in one list
-*WarehouseApi* | [**getProduct**](docs/WarehouseApi.md#getProduct) | **GET** /warehouse/{productId} | Get product/part by ID
+*WarehouseApi* | [**getProduct**](docs/WarehouseApi.md#getProduct) | **GET** /warehouse/product/{productId} | Get product/part by ID
 *WarehouseApi* | [**getStorage**](docs/WarehouseApi.md#getStorage) | **GET** /warehouse/storage | Returns all storage possibilities
 *WebstoreApi* | [**getCustomer**](docs/WebstoreApi.md#getCustomer) | **GET** /webstore/customer/{customerId} | Get customer by ID
 

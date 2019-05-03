@@ -25,7 +25,7 @@ import sdk.serialization.model.PCPart;
 /**
  * Cooling
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-05-02T16:01:11.088770+02:00[Europe/Amsterdam]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-05-03T15:10:28.255141+02:00[Europe/Amsterdam]")
 public class Cooling extends PCPart {
   @JsonProperty("performance")
   private Integer performance;
@@ -39,7 +39,7 @@ public class Cooling extends PCPart {
    * Get performance
    * @return performance
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(required = true, value = "")
   public Integer getPerformance() {
     return performance;
   }

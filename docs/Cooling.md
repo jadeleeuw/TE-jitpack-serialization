@@ -4,7 +4,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**performance** | **Integer** |  |  [optional]
+**performance** | **Integer** |  | 
 
 
 

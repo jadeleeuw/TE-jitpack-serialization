@@ -1,6 +1,6 @@
 # WarehouseApi
 
-All URIs are relative to *http://localhost:8080*
+All URIs are relative to *https://jeansthesis.nl:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -12,7 +12,7 @@ Method | HTTP request | Description
 [**getGPUs**](WarehouseApi.md#getGPUs) | **GET** /warehouse/gpus | Returns all GPUs
 [**getPSUs**](WarehouseApi.md#getPSUs) | **GET** /warehouse/psus | Returns all PSUs
 [**getPartslist**](WarehouseApi.md#getPartslist) | **GET** /warehouse/partslist | Returns all parts in the warehouse in one list
-[**getProduct**](WarehouseApi.md#getProduct) | **GET** /warehouse/{productId} | Get product/part by ID
+[**getProduct**](WarehouseApi.md#getProduct) | **GET** /warehouse/product/{productId} | Get product/part by ID
 [**getStorage**](WarehouseApi.md#getStorage) | **GET** /warehouse/storage | Returns all storage possibilities
 
 

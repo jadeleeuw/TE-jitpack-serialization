@@ -13,7 +13,7 @@
 
 package sdk.serialization;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-05-02T16:01:11.088770+02:00[Europe/Amsterdam]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-05-03T15:10:28.255141+02:00[Europe/Amsterdam]")
 public class StringUtil {
   /**
    * Check if the given array contains the given value (with case-insensitive comparison).
