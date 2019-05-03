@@ -6,7 +6,7 @@ info:
   version: 1.0
 
 servers:
-- url: http://localhost:8080
+- url: https://jeansthesis.nl:8080
   description: Main server
 
 paths:
@@ -301,7 +301,7 @@ paths:
                 items:
                   $ref: '#/components/schemas/PCPart'
 
-  /warehouse/{productId}:
+  /warehouse/product/{productId}:
     get:
       summary: Get product/part by ID
       description: Gets all the information about the product with the specified ID.
