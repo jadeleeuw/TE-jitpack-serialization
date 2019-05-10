@@ -405,12 +405,6 @@ components:
         - correct
         - reason
 
-    SubmissionResult:
-      type: string
-      enum:
-      - CORRECT
-      - INCORRECT
-
     Case:
       allOf:
       - $ref: '#/components/schemas/PCPart'
