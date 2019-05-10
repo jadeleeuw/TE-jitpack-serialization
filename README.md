@@ -2,7 +2,7 @@
 
 Serialization API
 - API version: 1.0
-  - Build date: 2019-05-10T12:06:45.482817+02:00[Europe/Amsterdam]
+  - Build date: 2019-05-10T14:46:30.086149+02:00[Europe/Amsterdam]
 
 All endpoints related to the serialization assignment.
 
@@ -125,7 +125,7 @@ Class | Method | HTTP request | Description
 *WarehouseApi* | [**getPSUs**](docs/WarehouseApi.md#getPSUs) | **GET** /warehouse/psus | Returns all PSUs
 *WarehouseApi* | [**getPartslist**](docs/WarehouseApi.md#getPartslist) | **GET** /warehouse/partslist | Returns all parts in the warehouse in one list
 *WarehouseApi* | [**getProduct**](docs/WarehouseApi.md#getProduct) | **GET** /warehouse/product/{productId} | Get product/part by ID
-*WarehouseApi* | [**getStockRequest**](docs/WarehouseApi.md#getStockRequest) | **GET** /warehouse/stock/requests/assignment_b | Get stock request
+*WarehouseApi* | [**getStockRequest**](docs/WarehouseApi.md#getStockRequest) | **GET** /warehouse/stock/requests/assignment_c | Get stock request
 *WarehouseApi* | [**getStorage**](docs/WarehouseApi.md#getStorage) | **GET** /warehouse/storage | Returns all storage possibilities
 *WebstoreApi* | [**getCustomer**](docs/WebstoreApi.md#getCustomer) | **GET** /webstore/customer/{customerId} | Get customer by ID
 *WebstoreApi* | [**getOrderRequest**](docs/WebstoreApi.md#getOrderRequest) | **GET** /webstore/orders/requests/assignment_b | Get order request

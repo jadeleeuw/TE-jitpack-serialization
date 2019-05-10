@@ -13,7 +13,7 @@ Method | HTTP request | Description
 [**getPSUs**](WarehouseApi.md#getPSUs) | **GET** /warehouse/psus | Returns all PSUs
 [**getPartslist**](WarehouseApi.md#getPartslist) | **GET** /warehouse/partslist | Returns all parts in the warehouse in one list
 [**getProduct**](WarehouseApi.md#getProduct) | **GET** /warehouse/product/{productId} | Get product/part by ID
-[**getStockRequest**](WarehouseApi.md#getStockRequest) | **GET** /warehouse/stock/requests/assignment_b | Get stock request
+[**getStockRequest**](WarehouseApi.md#getStockRequest) | **GET** /warehouse/stock/requests/assignment_c | Get stock request
 [**getStorage**](WarehouseApi.md#getStorage) | **GET** /warehouse/storage | Returns all storage possibilities
 
 

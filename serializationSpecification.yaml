@@ -323,7 +323,7 @@ paths:
         '400':
           description: Unable to assemble the PC. There was either a component missing or multiple components of the same category (with the exception of storage)
 
-  /warehouse/stock/requests/assignment_b:
+  /warehouse/stock/requests/assignment_c:
     get:
       summary: Get stock request
       description: Gets the stock request that needs to be processed for assignment C.
