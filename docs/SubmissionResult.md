@@ -1,12 +1,11 @@
 
 # SubmissionResult
 
-## Enum
-
-
-* `CORRECT` (value: `"CORRECT"`)
-
-* `INCORRECT` (value: `"INCORRECT"`)
+## Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**correct** | **Boolean** |  | 
+**reason** | **String** |  | 
 
 
 

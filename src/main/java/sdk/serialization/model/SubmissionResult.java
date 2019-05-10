@@ -15,43 +15,100 @@ package sdk.serialization.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
 /**
- * Gets or Sets SubmissionResult
+ * SubmissionResult
  */
-public enum SubmissionResult {
-  
-  CORRECT("CORRECT"),
-  
-  INCORRECT("INCORRECT");
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-05-10T17:14:58.073843+02:00[Europe/Amsterdam]")
+public class SubmissionResult {
+  @JsonProperty("correct")
+  private Boolean correct;
 
-  private String value;
+  @JsonProperty("reason")
+  private String reason;
 
-  SubmissionResult(String value) {
-    this.value = value;
+  public SubmissionResult correct(Boolean correct) {
+    this.correct = correct;
+    return this;
   }
 
-  @JsonValue
-  public String getValue() {
-    return value;
+   /**
+   * Get correct
+   * @return correct
+  **/
+  @ApiModelProperty(required = true, value = "")
+  public Boolean getCorrect() {
+    return correct;
+  }
+
+  public void setCorrect(Boolean correct) {
+    this.correct = correct;
+  }
+
+  public SubmissionResult reason(String reason) {
+    this.reason = reason;
+    return this;
+  }
+
+   /**
+   * Get reason
+   * @return reason
+  **/
+  @ApiModelProperty(required = true, value = "")
+  public String getReason() {
+    return reason;
+  }
+
+  public void setReason(String reason) {
+    this.reason = reason;
+  }
+
+
+  @Override
+  public boolean equals(java.lang.Object o) {
+    if (this == o) {
+      return true;
+    }
+    if (o == null || getClass() != o.getClass()) {
+      return false;
+    }
+    SubmissionResult submissionResult = (SubmissionResult) o;
+    return Objects.equals(this.correct, submissionResult.correct) &&
+        Objects.equals(this.reason, submissionResult.reason);
   }
 
   @Override
-  public String toString() {
-    return String.valueOf(value);
+  public int hashCode() {
+    return Objects.hash(correct, reason);
   }
 
-  @JsonCreator
-  public static SubmissionResult fromValue(String text) {
-    for (SubmissionResult b : SubmissionResult.values()) {
-      if (String.valueOf(b.value).equals(text)) {
-        return b;
-      }
-    }
-    throw new IllegalArgumentException("Unexpected value '" + text + "'");
+
+  @Override
+  public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class SubmissionResult {\n");
+    
+    sb.append("    correct: ").append(toIndentedString(correct)).append("\n");
+    sb.append("    reason: ").append(toIndentedString(reason)).append("\n");
+    sb.append("}");
+    return sb.toString();
   }
+
+  /**
+   * Convert the given object to string with each line indented by 4 spaces
+   * (except the first line).
+   */
+  private String toIndentedString(java.lang.Object o) {
+    if (o == null) {
+      return "null";
+    }
+    return o.toString().replace("\n", "\n    ");
+  }
+
 }
 
