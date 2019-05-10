@@ -28,7 +28,7 @@ import sdk.serialization.model.PC;
 /**
  * AssembledOrder
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-05-10T14:46:30.086149+02:00[Europe/Amsterdam]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-05-10T17:06:50.964221+02:00[Europe/Amsterdam]")
 public class AssembledOrder {
   @JsonProperty("customer")
   private Customer customer = null;

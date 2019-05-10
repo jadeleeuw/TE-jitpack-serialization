@@ -25,7 +25,7 @@ import sdk.serialization.model.PCPart;
 /**
  * PSU
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-05-10T14:46:30.086149+02:00[Europe/Amsterdam]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-05-10T17:06:50.964221+02:00[Europe/Amsterdam]")
 public class PSU extends PCPart {
   @JsonProperty("wattage")
   private Integer wattage;

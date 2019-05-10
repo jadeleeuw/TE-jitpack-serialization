@@ -395,6 +395,17 @@ components:
 
   schemas:
     SubmissionResult:
+      type: object
+      properties:
+        correct:
+          type: boolean
+        reason:
+          type: string
+      required:
+        - correct
+        - reason
+
+    SubmissionResult:
       type: string
       enum:
       - CORRECT
