@@ -92,15 +92,15 @@ paths:
   /serialization/b:
     post:
       summary: verify assignment B
-      description: Verifies the shipment based on the shipment request for assignment B.
+      description: Verifies the assembled order based on the order request for assignment B.
       operationId: verifyB
       requestBody:
-        description: The shipment based on the given shipment request.
+        description: The assembled order based on the given order request.
         required: true
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Shipment'
+              $ref: '#/components/schemas/AssembledOrder'
       tags:
       - ASSIGNMENT_B
       responses:
@@ -112,34 +112,20 @@ paths:
                 $ref: '#/components/schemas/SubmissionResult'
         '400':
           description: The submitted JSON could not be parsed correctly.
-
-    get:
-      summary: Get shipment request
-      description: Gets the shipment request that needs to be handled for assignment B.
-      operationId: getShipmentRequest
-      tags:
-      - ASSIGNMENT_B
-      responses:
-        '200':
-          description: The shipment request that needs to be handled for assignment B.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ShipmentRequest'
 
   ##### ASSIGNMENT C #####
   /serialization/c:
     post:
       summary: verify assignment C
-      description: Verifies the administration order based on the webshop order for assignment C.
+      description: Verifies the stock update based on the stock request for assignment C.
       operationId: verifyC
       requestBody:
-        description: The administration order based on the given webshop order.
+        description: The stock update based on the given stock request.
         required: true
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/AdministrationOrder'
+              $ref: '#/components/schemas/StockUpdate'
       tags:
       - ASSIGNMENT_C
       responses:
@@ -151,20 +137,6 @@ paths:
                 $ref: '#/components/schemas/SubmissionResult'
         '400':
           description: The submitted JSON could not be parsed correctly.
-
-    get:
-      summary: Get webshop order
-      description: Gets the webshop order that needs to be processed for assignment C.
-      operationId: getWebshopOrder
-      tags:
-      - ASSIGNMENT_C
-      responses:
-        '200':
-          description: The webshop order that needs to be processed for assignment C.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/WebshopOrder'
 
   ##### WAREHOUSE #####
   /warehouse/catalog:
@@ -351,6 +323,21 @@ paths:
         '400':
           description: Unable to assemble the PC. There was either a component missing or multiple components of the same category (with the exception of storage)
 
+  /warehouse/stock/requests/assignment_b:
+    get:
+      summary: Get stock request
+      description: Gets the stock request that needs to be processed for assignment C.
+      operationId: getStockRequest
+      tags:
+      - WAREHOUSE
+      responses:
+        '200':
+          description: The stock request that needs to be processed for assignment C.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StockRequest'
+
   ##### WEBSTORE #####
   /webstore/customer/{customerId}:
     get:
@@ -375,6 +362,21 @@ paths:
                 $ref: '#/components/schemas/Customer'
         '400':
           description: The customer with the specified ID could not be found.
+
+  /webstore/orders/requests/assignment_b:
+    get:
+      summary: Get order request
+      description: Gets the order request that needs to be assembled for assignment B.
+      operationId: getOrderRequest
+      tags:
+      - WEBSTORE
+      responses:
+        '200':
+          description: The order request that needs to be assembled for assignment B.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OrderRequest'
 
 components:
   securitySchemes:
@@ -580,30 +582,20 @@ components:
       - email
       - id
 
-    CustomerOrder:
+    AssembledOrder:
       type: object
       properties:
         customer:
           $ref: '#/components/schemas/Customer'
-        pcOrders:
+        pcs:
           type: array
           items:
             $ref: '#/components/schemas/PC'
       required:
       - customer
-      - pcOrders
+      - pcs
 
-    Shipment:
-      type: object
-      properties:
-        orders:
-          type: array
-          items:
-            $ref: '#/components/schemas/CustomerOrder'
-      required:
-      - orders
-
-    PCOrder:
+    PCBuildRequest:
       type: object
       properties:
         partIds:
@@ -613,28 +605,18 @@ components:
       required:
       - partIds
 
-    CustomerOrderRequest:
+    OrderRequest:
       type: object
       properties:
         customerId:
           type: string
-        pcs:
+        pcBuildRequests:
           type: array
           items:
-            $ref: '#/components/schemas/PCOrder'
+            $ref: '#/components/schemas/PCBuildRequest'
       required:
       - customerId
-      - pcs
-
-    ShipmentRequest:
-      type: object
-      properties:
-        orderRequests:
-          type: array
-          items:
-            $ref: '#/components/schemas/CustomerOrderRequest'
-      required:
-      - orderRequests
+      - pcBuildRequests
 
     Sale:
       type: object
@@ -654,7 +636,7 @@ components:
       - totalPrice
       - quantity
 
-    AdministrationOrder:
+    StockUpdate:
       type: object
       properties:
         sales:
@@ -664,7 +646,7 @@ components:
       required:
       - sales
 
-    WebshopOrder:
+    StockRequest:
       type: object
       properties:
         customer:
@@ -673,6 +655,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/PCPart'
+
     Catalog:
       type: object
       properties:

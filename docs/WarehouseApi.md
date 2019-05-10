@@ -13,6 +13,7 @@ Method | HTTP request | Description
 [**getPSUs**](WarehouseApi.md#getPSUs) | **GET** /warehouse/psus | Returns all PSUs
 [**getPartslist**](WarehouseApi.md#getPartslist) | **GET** /warehouse/partslist | Returns all parts in the warehouse in one list
 [**getProduct**](WarehouseApi.md#getProduct) | **GET** /warehouse/product/{productId} | Get product/part by ID
+[**getStockRequest**](WarehouseApi.md#getStockRequest) | **GET** /warehouse/stock/requests/assignment_b | Get stock request
 [**getStorage**](WarehouseApi.md#getStorage) | **GET** /warehouse/storage | Returns all storage possibilities
 
 
@@ -473,6 +474,57 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**PCPart**](PCPart.md)
+
+### Authorization
+
+[idKey](../README.md#idKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="getStockRequest"></a>
+# **getStockRequest**
+> StockRequest getStockRequest()
+
+Get stock request
+
+Gets the stock request that needs to be processed for assignment C.
+
+### Example
+```java
+// Import classes:
+//import sdk.serialization.ApiClient;
+//import sdk.serialization.ApiException;
+//import sdk.serialization.Configuration;
+//import sdk.serialization.auth.*;
+//import sdk.serialization.api.WarehouseApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure API key authorization: idKey
+ApiKeyAuth idKey = (ApiKeyAuth) defaultClient.getAuthentication("idKey");
+idKey.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//idKey.setApiKeyPrefix("Token");
+
+WarehouseApi apiInstance = new WarehouseApi();
+try {
+    StockRequest result = apiInstance.getStockRequest();
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WarehouseApi#getStockRequest");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**StockRequest**](StockRequest.md)
 
 ### Authorization
 

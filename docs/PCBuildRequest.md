@@ -1,10 +1,10 @@
 
-# Cooling
+# PCBuildRequest
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**performance** | **Integer** |  |  [optional]
+**partIds** | **List&lt;String&gt;** |  | 
 
 
 

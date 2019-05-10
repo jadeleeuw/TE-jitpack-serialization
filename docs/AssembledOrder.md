@@ -1,10 +1,11 @@
 
-# Cooling
+# AssembledOrder
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**performance** | **Integer** |  |  [optional]
+**customer** | [**Customer**](Customer.md) |  | 
+**pcs** | [**List&lt;PC&gt;**](PC.md) |  | 
 
 
 

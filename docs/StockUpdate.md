@@ -1,10 +1,10 @@
 
-# Cooling
+# StockUpdate
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**performance** | **Integer** |  |  [optional]
+**sales** | [**List&lt;Sale&gt;**](Sale.md) |  | 
 
 
 
