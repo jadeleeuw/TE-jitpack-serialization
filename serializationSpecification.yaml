@@ -156,8 +156,8 @@ paths:
 
   /warehouse/cases:
     get:
-      summary: Returns all cases
-      description: Returns an array of all case objects in the warehouse
+      summary: Returns all PC cases
+      description: Returns an array of all pc case objects in the warehouse
       operationId: getCases
       tags:
       - WAREHOUSE
@@ -169,7 +169,7 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/Case'
+                  $ref: '#/components/schemas/PCCase'
 
   /warehouse/cooling:
     get:
@@ -402,10 +402,10 @@ components:
         reason:
           type: string
       required:
-        - correct
-        - reason
+      - correct
+      - reason
 
-    Case:
+    PCCase:
       allOf:
       - $ref: '#/components/schemas/PCPart'
       - type: object
@@ -496,26 +496,28 @@ components:
 
     Storage:
       allOf:
-        - $ref: '#/components/schemas/PCPart'
-        - type: object
-          properties:
-            capacity:
-              type: integer
-            speed:
-              type: integer
-          required:
-          - capacity
-          - speed
-          example:
-            price: 40
-            name: "Seagate 1Tb HDD"
-            productId: "ss1000hdd"
-            category: "STORAGE"
-            capacity: 1000
-            speed: 95
+      - $ref: '#/components/schemas/PCPart'
+      - type: object
+        properties:
+          capacity:
+            type: integer
+          speed:
+            type: integer
+        required:
+        - capacity
+        - speed
+        example:
+          price: 40
+          name: "Seagate 1Tb HDD"
+          productId: "ss1000hdd"
+          category: "STORAGE"
+          capacity: 1000
+          speed: 95
 
     PCPart:
       type: object
+      discriminator:
+        propertyName: category
       properties:
         price:
           type: number
@@ -526,30 +528,17 @@ components:
           type: string
         category:
           type: string
-        volume:
-          type: number
-          format: double
-        performance:
-          type: integer
-        brand:
-          type: string
-        wattage:
-          type: integer
-        capacity:
-          type: integer
-        speed:
-          type: integer
       required:
-        - price
-        - name
-        - productId
-        - category
+      - price
+      - name
+      - productId
+      - category
 
     PC:
       type: object
       properties:
-        caze:
-          $ref: '#/components/schemas/Case'
+        pcCase:
+          $ref: '#/components/schemas/PCCase'
         cooling:
           $ref: '#/components/schemas/Cooling'
         cpu:
@@ -563,7 +552,7 @@ components:
           items:
             $ref: '#/components/schemas/Storage'
       required:
-      - caze
+      - pcCase
       - cooling
       - cpu
       - gpu
@@ -664,10 +653,10 @@ components:
     Catalog:
       type: object
       properties:
-        cases:
+        pcCases:
           type: array
           items:
-            $ref: '#/components/schemas/Case'
+            $ref: '#/components/schemas/PCCase'
         cooling:
           type: array
           items:
@@ -689,7 +678,7 @@ components:
           items:
             $ref: '#/components/schemas/Storage'
       required:
-      - cases
+      - pcCases
       - cooling
       - cpus
       - gpus
