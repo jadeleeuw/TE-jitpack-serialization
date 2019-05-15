@@ -25,7 +25,7 @@ import sdk.serialization.model.PCPart;
 /**
  * GPU
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-05-10T17:14:58.073843+02:00[Europe/Amsterdam]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-05-15T10:40:23.135848+02:00[Europe/Amsterdam]")
 public class GPU extends PCPart {
   @JsonProperty("brand")
   private String brand;

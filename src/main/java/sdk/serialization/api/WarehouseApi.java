@@ -6,8 +6,8 @@ import sdk.serialization.model.CPU;
 import sdk.serialization.model.Catalog;
 import sdk.serialization.model.Cooling;
 import sdk.serialization.model.GPU;
-import sdk.serialization.model.ModelCase;
 import sdk.serialization.model.PC;
+import sdk.serialization.model.PCCase;
 import sdk.serialization.model.PCPart;
 import sdk.serialization.model.PSU;
 import sdk.serialization.model.StockRequest;
@@ -33,7 +33,7 @@ import org.springframework.http.MediaType;
 import reactor.core.publisher.Mono;
 import reactor.core.publisher.Flux;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-05-10T17:14:58.073843+02:00[Europe/Amsterdam]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-05-15T10:40:23.135848+02:00[Europe/Amsterdam]")
 public class WarehouseApi {
     private ApiClient apiClient;
 
@@ -120,13 +120,13 @@ public class WarehouseApi {
         return apiClient.invokeFluxAPI(path, HttpMethod.GET, queryParams, postBody, headerParams, formParams, accept, contentType, authNames, returnType);
     }
     /**
-     * Returns all cases
-     * Returns an array of all case objects in the warehouse
+     * Returns all PC cases
+     * Returns an array of all pc case objects in the warehouse
      * <p><b>200</b> - An array of all case objects
-     * @return List&lt;ModelCase&gt;
+     * @return List&lt;PCCase&gt;
      * @throws RestClientException if an error occurs while attempting to invoke the API
      */
-    public Flux<ModelCase> getCases() throws HttpClientErrorException {
+    public Flux<PCCase> getCases() throws HttpClientErrorException {
         Object postBody = null;
         
         String path = UriComponentsBuilder.fromPath("/warehouse/cases").build().toUriString();
@@ -144,7 +144,7 @@ public class WarehouseApi {
 
         String[] authNames = new String[] { "idKey" };
 
-        ParameterizedTypeReference<ModelCase> returnType = new ParameterizedTypeReference<ModelCase>() {};
+        ParameterizedTypeReference<PCCase> returnType = new ParameterizedTypeReference<PCCase>() {};
         return apiClient.invokeFluxAPI(path, HttpMethod.GET, queryParams, postBody, headerParams, formParams, accept, contentType, authNames, returnType);
     }
     /**

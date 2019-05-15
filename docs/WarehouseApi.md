@@ -6,7 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**assemblePC**](WarehouseApi.md#assemblePC) | **POST** /warehouse/assemble | Assemble PC parts into a PC.
 [**getCPUs**](WarehouseApi.md#getCPUs) | **GET** /warehouse/cpus | Returns all CPUs
-[**getCases**](WarehouseApi.md#getCases) | **GET** /warehouse/cases | Returns all cases
+[**getCases**](WarehouseApi.md#getCases) | **GET** /warehouse/cases | Returns all PC cases
 [**getCatalog**](WarehouseApi.md#getCatalog) | **GET** /warehouse/catalog | Returns a catalog containing all parts divided in categories
 [**getCooling**](WarehouseApi.md#getCooling) | **GET** /warehouse/cooling | Returns all cooling possibilities
 [**getGPUs**](WarehouseApi.md#getGPUs) | **GET** /warehouse/gpus | Returns all GPUs
@@ -125,11 +125,11 @@ This endpoint does not need any parameter.
 
 <a name="getCases"></a>
 # **getCases**
-> List&lt;ModelCase&gt; getCases()
+> List&lt;PCCase&gt; getCases()
 
-Returns all cases
+Returns all PC cases
 
-Returns an array of all case objects in the warehouse
+Returns an array of all pc case objects in the warehouse
 
 ### Example
 ```java
@@ -150,7 +150,7 @@ idKey.setApiKey("YOUR API KEY");
 
 WarehouseApi apiInstance = new WarehouseApi();
 try {
-    List<ModelCase> result = apiInstance.getCases();
+    List<PCCase> result = apiInstance.getCases();
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling WarehouseApi#getCases");
@@ -163,7 +163,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**List&lt;ModelCase&gt;**](ModelCase.md)
+[**List&lt;PCCase&gt;**](PCCase.md)
 
 ### Authorization
 

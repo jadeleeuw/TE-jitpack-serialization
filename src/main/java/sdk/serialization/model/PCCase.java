@@ -23,14 +23,14 @@ import io.swagger.annotations.ApiModelProperty;
 import sdk.serialization.model.PCPart;
 
 /**
- * ModelCase
+ * PCCase
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-05-10T17:14:58.073843+02:00[Europe/Amsterdam]")
-public class ModelCase extends PCPart {
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-05-15T10:40:23.135848+02:00[Europe/Amsterdam]")
+public class PCCase extends PCPart {
   @JsonProperty("volume")
   private Double volume;
 
-  public ModelCase volume(Double volume) {
+  public PCCase volume(Double volume) {
     this.volume = volume;
     return this;
   }
@@ -57,8 +57,8 @@ public class ModelCase extends PCPart {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ModelCase _case = (ModelCase) o;
-    return Objects.equals(this.volume, _case.volume) &&
+    PCCase pcCase = (PCCase) o;
+    return Objects.equals(this.volume, pcCase.volume) &&
         super.equals(o);
   }
 
@@ -71,7 +71,7 @@ public class ModelCase extends PCPart {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ModelCase {\n");
+    sb.append("class PCCase {\n");
     sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("    volume: ").append(toIndentedString(volume)).append("\n");
     sb.append("}");

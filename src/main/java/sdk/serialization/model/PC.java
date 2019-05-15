@@ -25,17 +25,17 @@ import java.util.List;
 import sdk.serialization.model.CPU;
 import sdk.serialization.model.Cooling;
 import sdk.serialization.model.GPU;
-import sdk.serialization.model.ModelCase;
+import sdk.serialization.model.PCCase;
 import sdk.serialization.model.PSU;
 import sdk.serialization.model.Storage;
 
 /**
  * PC
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-05-10T17:14:58.073843+02:00[Europe/Amsterdam]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-05-15T10:40:23.135848+02:00[Europe/Amsterdam]")
 public class PC {
-  @JsonProperty("caze")
-  private ModelCase caze = null;
+  @JsonProperty("pcCase")
+  private PCCase pcCase = null;
 
   @JsonProperty("cooling")
   private Cooling cooling = null;
@@ -52,22 +52,22 @@ public class PC {
   @JsonProperty("storage")
   private List<Storage> storage = new ArrayList<>();
 
-  public PC caze(ModelCase caze) {
-    this.caze = caze;
+  public PC pcCase(PCCase pcCase) {
+    this.pcCase = pcCase;
     return this;
   }
 
    /**
-   * Get caze
-   * @return caze
+   * Get pcCase
+   * @return pcCase
   **/
   @ApiModelProperty(required = true, value = "")
-  public ModelCase getCaze() {
-    return caze;
+  public PCCase getPcCase() {
+    return pcCase;
   }
 
-  public void setCaze(ModelCase caze) {
-    this.caze = caze;
+  public void setPcCase(PCCase pcCase) {
+    this.pcCase = pcCase;
   }
 
   public PC cooling(Cooling cooling) {
@@ -175,7 +175,7 @@ public class PC {
       return false;
     }
     PC PC = (PC) o;
-    return Objects.equals(this.caze, PC.caze) &&
+    return Objects.equals(this.pcCase, PC.pcCase) &&
         Objects.equals(this.cooling, PC.cooling) &&
         Objects.equals(this.cpu, PC.cpu) &&
         Objects.equals(this.gpu, PC.gpu) &&
@@ -185,7 +185,7 @@ public class PC {
 
   @Override
   public int hashCode() {
-    return Objects.hash(caze, cooling, cpu, gpu, psu, storage);
+    return Objects.hash(pcCase, cooling, cpu, gpu, psu, storage);
   }
 
 
@@ -194,7 +194,7 @@ public class PC {
     StringBuilder sb = new StringBuilder();
     sb.append("class PC {\n");
     
-    sb.append("    caze: ").append(toIndentedString(caze)).append("\n");
+    sb.append("    pcCase: ").append(toIndentedString(pcCase)).append("\n");
     sb.append("    cooling: ").append(toIndentedString(cooling)).append("\n");
     sb.append("    cpu: ").append(toIndentedString(cpu)).append("\n");
     sb.append("    gpu: ").append(toIndentedString(gpu)).append("\n");

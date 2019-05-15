@@ -25,17 +25,17 @@ import java.util.List;
 import sdk.serialization.model.CPU;
 import sdk.serialization.model.Cooling;
 import sdk.serialization.model.GPU;
-import sdk.serialization.model.ModelCase;
+import sdk.serialization.model.PCCase;
 import sdk.serialization.model.PSU;
 import sdk.serialization.model.Storage;
 
 /**
  * Catalog
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-05-10T17:14:58.073843+02:00[Europe/Amsterdam]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-05-15T10:40:23.135848+02:00[Europe/Amsterdam]")
 public class Catalog {
-  @JsonProperty("cases")
-  private List<ModelCase> cases = new ArrayList<>();
+  @JsonProperty("pcCases")
+  private List<PCCase> pcCases = new ArrayList<>();
 
   @JsonProperty("cooling")
   private List<Cooling> cooling = new ArrayList<>();
@@ -52,27 +52,27 @@ public class Catalog {
   @JsonProperty("storage")
   private List<Storage> storage = new ArrayList<>();
 
-  public Catalog cases(List<ModelCase> cases) {
-    this.cases = cases;
+  public Catalog pcCases(List<PCCase> pcCases) {
+    this.pcCases = pcCases;
     return this;
   }
 
-  public Catalog addCasesItem(ModelCase casesItem) {
-    this.cases.add(casesItem);
+  public Catalog addPcCasesItem(PCCase pcCasesItem) {
+    this.pcCases.add(pcCasesItem);
     return this;
   }
 
    /**
-   * Get cases
-   * @return cases
+   * Get pcCases
+   * @return pcCases
   **/
   @ApiModelProperty(required = true, value = "")
-  public List<ModelCase> getCases() {
-    return cases;
+  public List<PCCase> getPcCases() {
+    return pcCases;
   }
 
-  public void setCases(List<ModelCase> cases) {
-    this.cases = cases;
+  public void setPcCases(List<PCCase> pcCases) {
+    this.pcCases = pcCases;
   }
 
   public Catalog cooling(List<Cooling> cooling) {
@@ -200,7 +200,7 @@ public class Catalog {
       return false;
     }
     Catalog catalog = (Catalog) o;
-    return Objects.equals(this.cases, catalog.cases) &&
+    return Objects.equals(this.pcCases, catalog.pcCases) &&
         Objects.equals(this.cooling, catalog.cooling) &&
         Objects.equals(this.cpus, catalog.cpus) &&
         Objects.equals(this.gpus, catalog.gpus) &&
@@ -210,7 +210,7 @@ public class Catalog {
 
   @Override
   public int hashCode() {
-    return Objects.hash(cases, cooling, cpus, gpus, psus, storage);
+    return Objects.hash(pcCases, cooling, cpus, gpus, psus, storage);
   }
 
 
@@ -219,7 +219,7 @@ public class Catalog {
     StringBuilder sb = new StringBuilder();
     sb.append("class Catalog {\n");
     
-    sb.append("    cases: ").append(toIndentedString(cases)).append("\n");
+    sb.append("    pcCases: ").append(toIndentedString(pcCases)).append("\n");
     sb.append("    cooling: ").append(toIndentedString(cooling)).append("\n");
     sb.append("    cpus: ").append(toIndentedString(cpus)).append("\n");
     sb.append("    gpus: ").append(toIndentedString(gpus)).append("\n");

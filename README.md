@@ -2,7 +2,7 @@
 
 Serialization API
 - API version: 1.0
-  - Build date: 2019-05-10T17:14:58.073843+02:00[Europe/Amsterdam]
+  - Build date: 2019-05-15T10:40:23.135848+02:00[Europe/Amsterdam]
 
 All endpoints related to the serialization assignment.
 
@@ -118,7 +118,7 @@ Class | Method | HTTP request | Description
 *AssignmentCApi* | [**verifyC**](docs/AssignmentCApi.md#verifyC) | **POST** /serialization/c | verify assignment C
 *WarehouseApi* | [**assemblePC**](docs/WarehouseApi.md#assemblePC) | **POST** /warehouse/assemble | Assemble PC parts into a PC.
 *WarehouseApi* | [**getCPUs**](docs/WarehouseApi.md#getCPUs) | **GET** /warehouse/cpus | Returns all CPUs
-*WarehouseApi* | [**getCases**](docs/WarehouseApi.md#getCases) | **GET** /warehouse/cases | Returns all cases
+*WarehouseApi* | [**getCases**](docs/WarehouseApi.md#getCases) | **GET** /warehouse/cases | Returns all PC cases
 *WarehouseApi* | [**getCatalog**](docs/WarehouseApi.md#getCatalog) | **GET** /warehouse/catalog | Returns a catalog containing all parts divided in categories
 *WarehouseApi* | [**getCooling**](docs/WarehouseApi.md#getCooling) | **GET** /warehouse/cooling | Returns all cooling possibilities
 *WarehouseApi* | [**getGPUs**](docs/WarehouseApi.md#getGPUs) | **GET** /warehouse/gpus | Returns all GPUs
@@ -139,10 +139,10 @@ Class | Method | HTTP request | Description
  - [Cooling](docs/Cooling.md)
  - [Customer](docs/Customer.md)
  - [GPU](docs/GPU.md)
- - [ModelCase](docs/ModelCase.md)
  - [OrderRequest](docs/OrderRequest.md)
  - [PC](docs/PC.md)
  - [PCBuildRequest](docs/PCBuildRequest.md)
+ - [PCCase](docs/PCCase.md)
  - [PCPart](docs/PCPart.md)
  - [PSU](docs/PSU.md)
  - [Sale](docs/Sale.md)

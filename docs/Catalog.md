@@ -4,7 +4,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**cases** | [**List&lt;ModelCase&gt;**](ModelCase.md) |  | 
+**pcCases** | [**List&lt;PCCase&gt;**](PCCase.md) |  | 
 **cooling** | [**List&lt;Cooling&gt;**](Cooling.md) |  | 
 **cpus** | [**List&lt;CPU&gt;**](CPU.md) |  | 
 **gpus** | [**List&lt;GPU&gt;**](GPU.md) |  | 
