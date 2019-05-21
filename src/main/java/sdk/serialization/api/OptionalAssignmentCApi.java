@@ -25,16 +25,16 @@ import org.springframework.http.MediaType;
 import reactor.core.publisher.Mono;
 import reactor.core.publisher.Flux;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-05-15T10:40:23.135848+02:00[Europe/Amsterdam]")
-public class AssignmentCApi {
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-05-21T13:46:39.597167+02:00[Europe/Amsterdam]")
+public class OptionalAssignmentCApi {
     private ApiClient apiClient;
 
-    public AssignmentCApi() {
+    public OptionalAssignmentCApi() {
         this(new ApiClient());
     }
 
     @Autowired
-    public AssignmentCApi(ApiClient apiClient) {
+    public OptionalAssignmentCApi(ApiClient apiClient) {
         this.apiClient = apiClient;
     }
 
@@ -63,7 +63,7 @@ public class AssignmentCApi {
             throw new HttpClientErrorException(HttpStatus.BAD_REQUEST, "Missing the required parameter 'stockUpdate' when calling verifyC");
         }
         
-        String path = UriComponentsBuilder.fromPath("/serialization/c").build().toUriString();
+        String path = UriComponentsBuilder.fromPath("/optional/serialization/c").build().toUriString();
         
         final MultiValueMap<String, String> queryParams = new LinkedMultiValueMap<String, String>();
         final HttpHeaders headerParams = new HttpHeaders();

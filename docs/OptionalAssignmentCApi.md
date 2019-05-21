@@ -1,10 +1,10 @@
-# AssignmentCApi
+# OptionalAssignmentCApi
 
 All URIs are relative to *https://jeansthesis.nl:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**verifyC**](AssignmentCApi.md#verifyC) | **POST** /serialization/c | verify assignment C
+[**verifyC**](OptionalAssignmentCApi.md#verifyC) | **POST** /optional/serialization/c | verify assignment C
 
 
 <a name="verifyC"></a>
@@ -22,7 +22,7 @@ Verifies the stock update based on the stock request for assignment C.
 //import sdk.serialization.ApiException;
 //import sdk.serialization.Configuration;
 //import sdk.serialization.auth.*;
-//import sdk.serialization.api.AssignmentCApi;
+//import sdk.serialization.api.OptionalAssignmentCApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
@@ -32,13 +32,13 @@ idKey.setApiKey("YOUR API KEY");
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //idKey.setApiKeyPrefix("Token");
 
-AssignmentCApi apiInstance = new AssignmentCApi();
+OptionalAssignmentCApi apiInstance = new OptionalAssignmentCApi();
 StockUpdate stockUpdate = new StockUpdate(); // StockUpdate | The stock update based on the given stock request.
 try {
     SubmissionResult result = apiInstance.verifyC(stockUpdate);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling AssignmentCApi#verifyC");
+    System.err.println("Exception when calling OptionalAssignmentCApi#verifyC");
     e.printStackTrace();
 }
 ```

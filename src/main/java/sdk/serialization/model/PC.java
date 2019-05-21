@@ -20,25 +20,18 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.util.ArrayList;
-import java.util.List;
 import sdk.serialization.model.CPU;
-import sdk.serialization.model.Cooling;
 import sdk.serialization.model.GPU;
 import sdk.serialization.model.PCCase;
 import sdk.serialization.model.PSU;
-import sdk.serialization.model.Storage;
 
 /**
  * PC
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-05-15T10:40:23.135848+02:00[Europe/Amsterdam]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-05-21T13:46:39.597167+02:00[Europe/Amsterdam]")
 public class PC {
   @JsonProperty("pcCase")
   private PCCase pcCase = null;
-
-  @JsonProperty("cooling")
-  private Cooling cooling = null;
 
   @JsonProperty("cpu")
   private CPU cpu = null;
@@ -48,9 +41,6 @@ public class PC {
 
   @JsonProperty("psu")
   private PSU psu = null;
-
-  @JsonProperty("storage")
-  private List<Storage> storage = new ArrayList<>();
 
   public PC pcCase(PCCase pcCase) {
     this.pcCase = pcCase;
@@ -68,24 +58,6 @@ public class PC {
 
   public void setPcCase(PCCase pcCase) {
     this.pcCase = pcCase;
-  }
-
-  public PC cooling(Cooling cooling) {
-    this.cooling = cooling;
-    return this;
-  }
-
-   /**
-   * Get cooling
-   * @return cooling
-  **/
-  @ApiModelProperty(required = true, value = "")
-  public Cooling getCooling() {
-    return cooling;
-  }
-
-  public void setCooling(Cooling cooling) {
-    this.cooling = cooling;
   }
 
   public PC cpu(CPU cpu) {
@@ -142,29 +114,6 @@ public class PC {
     this.psu = psu;
   }
 
-  public PC storage(List<Storage> storage) {
-    this.storage = storage;
-    return this;
-  }
-
-  public PC addStorageItem(Storage storageItem) {
-    this.storage.add(storageItem);
-    return this;
-  }
-
-   /**
-   * Get storage
-   * @return storage
-  **/
-  @ApiModelProperty(required = true, value = "")
-  public List<Storage> getStorage() {
-    return storage;
-  }
-
-  public void setStorage(List<Storage> storage) {
-    this.storage = storage;
-  }
-
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -176,16 +125,14 @@ public class PC {
     }
     PC PC = (PC) o;
     return Objects.equals(this.pcCase, PC.pcCase) &&
-        Objects.equals(this.cooling, PC.cooling) &&
         Objects.equals(this.cpu, PC.cpu) &&
         Objects.equals(this.gpu, PC.gpu) &&
-        Objects.equals(this.psu, PC.psu) &&
-        Objects.equals(this.storage, PC.storage);
+        Objects.equals(this.psu, PC.psu);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(pcCase, cooling, cpu, gpu, psu, storage);
+    return Objects.hash(pcCase, cpu, gpu, psu);
   }
 
 
@@ -195,11 +142,9 @@ public class PC {
     sb.append("class PC {\n");
     
     sb.append("    pcCase: ").append(toIndentedString(pcCase)).append("\n");
-    sb.append("    cooling: ").append(toIndentedString(cooling)).append("\n");
     sb.append("    cpu: ").append(toIndentedString(cpu)).append("\n");
     sb.append("    gpu: ").append(toIndentedString(gpu)).append("\n");
     sb.append("    psu: ").append(toIndentedString(psu)).append("\n");
-    sb.append("    storage: ").append(toIndentedString(storage)).append("\n");
     sb.append("}");
     return sb.toString();
   }

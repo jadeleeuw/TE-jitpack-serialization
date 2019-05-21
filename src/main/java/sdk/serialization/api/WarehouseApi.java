@@ -4,14 +4,12 @@ import sdk.serialization.ApiClient;
 
 import sdk.serialization.model.CPU;
 import sdk.serialization.model.Catalog;
-import sdk.serialization.model.Cooling;
 import sdk.serialization.model.GPU;
 import sdk.serialization.model.PC;
 import sdk.serialization.model.PCCase;
 import sdk.serialization.model.PCPart;
 import sdk.serialization.model.PSU;
 import sdk.serialization.model.StockRequest;
-import sdk.serialization.model.Storage;
 
 import java.util.HashMap;
 import java.util.List;
@@ -33,7 +31,7 @@ import org.springframework.http.MediaType;
 import reactor.core.publisher.Mono;
 import reactor.core.publisher.Flux;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-05-15T10:40:23.135848+02:00[Europe/Amsterdam]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-05-21T13:46:39.597167+02:00[Europe/Amsterdam]")
 public class WarehouseApi {
     private ApiClient apiClient;
 
@@ -58,7 +56,7 @@ public class WarehouseApi {
      * Assemble PC parts into a PC.
      * Assembles the given PC parts into a PC and returns the constructed PC.
      * <p><b>200</b> - The constructed PC
-     * <p><b>400</b> - Unable to assemble the PC. There was either a component missing or multiple components of the same category (with the exception of storage)
+     * <p><b>400</b> - Unable to assemble the PC. There was either a component missing or multiple components of the same category
      * @param pcPart The parts that should be used in the PC.
      * @return PC
      * @throws RestClientException if an error occurs while attempting to invoke the API
@@ -174,34 +172,6 @@ public class WarehouseApi {
 
         ParameterizedTypeReference<Catalog> returnType = new ParameterizedTypeReference<Catalog>() {};
         return apiClient.invokeAPI(path, HttpMethod.GET, queryParams, postBody, headerParams, formParams, accept, contentType, authNames, returnType);
-    }
-    /**
-     * Returns all cooling possibilities
-     * Returns an array of all cooling objects in the warehouse
-     * <p><b>200</b> - An array of all cooling objects
-     * @return List&lt;Cooling&gt;
-     * @throws RestClientException if an error occurs while attempting to invoke the API
-     */
-    public Flux<Cooling> getCooling() throws HttpClientErrorException {
-        Object postBody = null;
-        
-        String path = UriComponentsBuilder.fromPath("/warehouse/cooling").build().toUriString();
-        
-        final MultiValueMap<String, String> queryParams = new LinkedMultiValueMap<String, String>();
-        final HttpHeaders headerParams = new HttpHeaders();
-        final MultiValueMap<String, Object> formParams = new LinkedMultiValueMap<String, Object>();
-
-        final String[] accepts = { 
-            "application/json"
-        };
-        final List<MediaType> accept = apiClient.selectHeaderAccept(accepts);
-        final String[] contentTypes = { };
-        final MediaType contentType = apiClient.selectHeaderContentType(contentTypes);
-
-        String[] authNames = new String[] { "idKey" };
-
-        ParameterizedTypeReference<Cooling> returnType = new ParameterizedTypeReference<Cooling>() {};
-        return apiClient.invokeFluxAPI(path, HttpMethod.GET, queryParams, postBody, headerParams, formParams, accept, contentType, authNames, returnType);
     }
     /**
      * Returns all GPUs
@@ -352,33 +322,5 @@ public class WarehouseApi {
 
         ParameterizedTypeReference<StockRequest> returnType = new ParameterizedTypeReference<StockRequest>() {};
         return apiClient.invokeAPI(path, HttpMethod.GET, queryParams, postBody, headerParams, formParams, accept, contentType, authNames, returnType);
-    }
-    /**
-     * Returns all storage possibilities
-     * Returns an array of all storage objects in the warehouse
-     * <p><b>200</b> - An array of all storage objects
-     * @return List&lt;Storage&gt;
-     * @throws RestClientException if an error occurs while attempting to invoke the API
-     */
-    public Flux<Storage> getStorage() throws HttpClientErrorException {
-        Object postBody = null;
-        
-        String path = UriComponentsBuilder.fromPath("/warehouse/storage").build().toUriString();
-        
-        final MultiValueMap<String, String> queryParams = new LinkedMultiValueMap<String, String>();
-        final HttpHeaders headerParams = new HttpHeaders();
-        final MultiValueMap<String, Object> formParams = new LinkedMultiValueMap<String, Object>();
-
-        final String[] accepts = { 
-            "application/json"
-        };
-        final List<MediaType> accept = apiClient.selectHeaderAccept(accepts);
-        final String[] contentTypes = { };
-        final MediaType contentType = apiClient.selectHeaderContentType(contentTypes);
-
-        String[] authNames = new String[] { "idKey" };
-
-        ParameterizedTypeReference<Storage> returnType = new ParameterizedTypeReference<Storage>() {};
-        return apiClient.invokeFluxAPI(path, HttpMethod.GET, queryParams, postBody, headerParams, formParams, accept, contentType, authNames, returnType);
     }
 }

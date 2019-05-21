@@ -5,11 +5,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **pcCase** | [**PCCase**](PCCase.md) |  | 
-**cooling** | [**Cooling**](Cooling.md) |  | 
 **cpu** | [**CPU**](CPU.md) |  | 
 **gpu** | [**GPU**](GPU.md) |  | 
 **psu** | [**PSU**](PSU.md) |  | 
-**storage** | [**List&lt;Storage&gt;**](Storage.md) |  | 
 
 
 

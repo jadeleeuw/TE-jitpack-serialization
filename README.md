@@ -2,7 +2,7 @@
 
 Serialization API
 - API version: 1.0
-  - Build date: 2019-05-15T10:40:23.135848+02:00[Europe/Amsterdam]
+  - Build date: 2019-05-21T13:46:39.597167+02:00[Europe/Amsterdam]
 
 All endpoints related to the serialization assignment.
 
@@ -113,20 +113,17 @@ Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *AssignmentAApi* | [**verifyA1**](docs/AssignmentAApi.md#verifyA1) | **POST** /serialization/a/1 | verify assignment A1
 *AssignmentAApi* | [**verifyA2**](docs/AssignmentAApi.md#verifyA2) | **POST** /serialization/a/2 | verify assignment A2
-*AssignmentAApi* | [**verifyA3**](docs/AssignmentAApi.md#verifyA3) | **POST** /serialization/a/3 | verify assignment A3
 *AssignmentBApi* | [**verifyB**](docs/AssignmentBApi.md#verifyB) | **POST** /serialization/b | verify assignment B
-*AssignmentCApi* | [**verifyC**](docs/AssignmentCApi.md#verifyC) | **POST** /serialization/c | verify assignment C
+*OptionalAssignmentCApi* | [**verifyC**](docs/OptionalAssignmentCApi.md#verifyC) | **POST** /optional/serialization/c | verify assignment C
 *WarehouseApi* | [**assemblePC**](docs/WarehouseApi.md#assemblePC) | **POST** /warehouse/assemble | Assemble PC parts into a PC.
 *WarehouseApi* | [**getCPUs**](docs/WarehouseApi.md#getCPUs) | **GET** /warehouse/cpus | Returns all CPUs
 *WarehouseApi* | [**getCases**](docs/WarehouseApi.md#getCases) | **GET** /warehouse/cases | Returns all PC cases
 *WarehouseApi* | [**getCatalog**](docs/WarehouseApi.md#getCatalog) | **GET** /warehouse/catalog | Returns a catalog containing all parts divided in categories
-*WarehouseApi* | [**getCooling**](docs/WarehouseApi.md#getCooling) | **GET** /warehouse/cooling | Returns all cooling possibilities
 *WarehouseApi* | [**getGPUs**](docs/WarehouseApi.md#getGPUs) | **GET** /warehouse/gpus | Returns all GPUs
 *WarehouseApi* | [**getPSUs**](docs/WarehouseApi.md#getPSUs) | **GET** /warehouse/psus | Returns all PSUs
 *WarehouseApi* | [**getPartslist**](docs/WarehouseApi.md#getPartslist) | **GET** /warehouse/partslist | Returns all parts in the warehouse in one list
 *WarehouseApi* | [**getProduct**](docs/WarehouseApi.md#getProduct) | **GET** /warehouse/product/{productId} | Get product/part by ID
 *WarehouseApi* | [**getStockRequest**](docs/WarehouseApi.md#getStockRequest) | **GET** /warehouse/stock/requests/assignment_c | Get stock request
-*WarehouseApi* | [**getStorage**](docs/WarehouseApi.md#getStorage) | **GET** /warehouse/storage | Returns all storage possibilities
 *WebstoreApi* | [**getCustomer**](docs/WebstoreApi.md#getCustomer) | **GET** /webstore/customer/{customerId} | Get customer by ID
 *WebstoreApi* | [**getOrderRequest**](docs/WebstoreApi.md#getOrderRequest) | **GET** /webstore/orders/requests/assignment_b | Get order request
 
@@ -136,7 +133,6 @@ Class | Method | HTTP request | Description
  - [AssembledOrder](docs/AssembledOrder.md)
  - [CPU](docs/CPU.md)
  - [Catalog](docs/Catalog.md)
- - [Cooling](docs/Cooling.md)
  - [Customer](docs/Customer.md)
  - [GPU](docs/GPU.md)
  - [OrderRequest](docs/OrderRequest.md)
@@ -148,7 +144,6 @@ Class | Method | HTTP request | Description
  - [Sale](docs/Sale.md)
  - [StockRequest](docs/StockRequest.md)
  - [StockUpdate](docs/StockUpdate.md)
- - [Storage](docs/Storage.md)
  - [SubmissionResult](docs/SubmissionResult.md)
 
 

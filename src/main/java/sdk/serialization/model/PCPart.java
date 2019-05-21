@@ -26,15 +26,13 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * PCPart
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-05-15T10:40:23.135848+02:00[Europe/Amsterdam]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-05-21T13:46:39.597167+02:00[Europe/Amsterdam]")
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "category", visible = true)
 @JsonSubTypes({
   @JsonSubTypes.Type(value = PCCase.class, name = "PCCase"),
-  @JsonSubTypes.Type(value = Cooling.class, name = "Cooling"),
   @JsonSubTypes.Type(value = CPU.class, name = "CPU"),
   @JsonSubTypes.Type(value = GPU.class, name = "GPU"),
   @JsonSubTypes.Type(value = PSU.class, name = "PSU"),
-  @JsonSubTypes.Type(value = Storage.class, name = "Storage"),
 })
 
 public class PCPart {

@@ -23,22 +23,17 @@ import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
 import java.util.List;
 import sdk.serialization.model.CPU;
-import sdk.serialization.model.Cooling;
 import sdk.serialization.model.GPU;
 import sdk.serialization.model.PCCase;
 import sdk.serialization.model.PSU;
-import sdk.serialization.model.Storage;
 
 /**
  * Catalog
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-05-15T10:40:23.135848+02:00[Europe/Amsterdam]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-05-21T13:46:39.597167+02:00[Europe/Amsterdam]")
 public class Catalog {
   @JsonProperty("pcCases")
   private List<PCCase> pcCases = new ArrayList<>();
-
-  @JsonProperty("cooling")
-  private List<Cooling> cooling = new ArrayList<>();
 
   @JsonProperty("cpus")
   private List<CPU> cpus = new ArrayList<>();
@@ -48,9 +43,6 @@ public class Catalog {
 
   @JsonProperty("psus")
   private List<PSU> psus = new ArrayList<>();
-
-  @JsonProperty("storage")
-  private List<Storage> storage = new ArrayList<>();
 
   public Catalog pcCases(List<PCCase> pcCases) {
     this.pcCases = pcCases;
@@ -73,29 +65,6 @@ public class Catalog {
 
   public void setPcCases(List<PCCase> pcCases) {
     this.pcCases = pcCases;
-  }
-
-  public Catalog cooling(List<Cooling> cooling) {
-    this.cooling = cooling;
-    return this;
-  }
-
-  public Catalog addCoolingItem(Cooling coolingItem) {
-    this.cooling.add(coolingItem);
-    return this;
-  }
-
-   /**
-   * Get cooling
-   * @return cooling
-  **/
-  @ApiModelProperty(required = true, value = "")
-  public List<Cooling> getCooling() {
-    return cooling;
-  }
-
-  public void setCooling(List<Cooling> cooling) {
-    this.cooling = cooling;
   }
 
   public Catalog cpus(List<CPU> cpus) {
@@ -167,29 +136,6 @@ public class Catalog {
     this.psus = psus;
   }
 
-  public Catalog storage(List<Storage> storage) {
-    this.storage = storage;
-    return this;
-  }
-
-  public Catalog addStorageItem(Storage storageItem) {
-    this.storage.add(storageItem);
-    return this;
-  }
-
-   /**
-   * Get storage
-   * @return storage
-  **/
-  @ApiModelProperty(required = true, value = "")
-  public List<Storage> getStorage() {
-    return storage;
-  }
-
-  public void setStorage(List<Storage> storage) {
-    this.storage = storage;
-  }
-
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -201,16 +147,14 @@ public class Catalog {
     }
     Catalog catalog = (Catalog) o;
     return Objects.equals(this.pcCases, catalog.pcCases) &&
-        Objects.equals(this.cooling, catalog.cooling) &&
         Objects.equals(this.cpus, catalog.cpus) &&
         Objects.equals(this.gpus, catalog.gpus) &&
-        Objects.equals(this.psus, catalog.psus) &&
-        Objects.equals(this.storage, catalog.storage);
+        Objects.equals(this.psus, catalog.psus);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(pcCases, cooling, cpus, gpus, psus, storage);
+    return Objects.hash(pcCases, cpus, gpus, psus);
   }
 
 
@@ -220,11 +164,9 @@ public class Catalog {
     sb.append("class Catalog {\n");
     
     sb.append("    pcCases: ").append(toIndentedString(pcCases)).append("\n");
-    sb.append("    cooling: ").append(toIndentedString(cooling)).append("\n");
     sb.append("    cpus: ").append(toIndentedString(cpus)).append("\n");
     sb.append("    gpus: ").append(toIndentedString(gpus)).append("\n");
     sb.append("    psus: ").append(toIndentedString(psus)).append("\n");
-    sb.append("    storage: ").append(toIndentedString(storage)).append("\n");
     sb.append("}");
     return sb.toString();
   }

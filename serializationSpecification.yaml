@@ -62,31 +62,31 @@ paths:
         '400':
           description: The submitted JSON could not be parsed correctly.
 
-  /serialization/a/3:
-    post:
-      summary: verify assignment A3
-      description: Verifies assignment A3.
-      operationId: verifyA3
-      requestBody:
-        description: The array of PC parts.
-        required: true
-        content:
-          application/json:
-            schema:
-              type: array
-              items:
-                $ref: '#/components/schemas/PCPart'
-      tags:
-      - ASSIGNMENT_A
-      responses:
-        '200':
-          description: The correctness of the submitted solution.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/SubmissionResult'
-        '400':
-          description: The submitted JSON could not be parsed correctly.
+#  /serialization/a/3:
+#    post:
+#      summary: verify assignment A3
+#      description: Verifies assignment A3.
+#      operationId: verifyA3
+#      requestBody:
+#        description: The array of PC parts.
+#        required: true
+#        content:
+#          application/json:
+#            schema:
+#              type: array
+#              items:
+#                $ref: '#/components/schemas/PCPart'
+#      tags:
+#      - ASSIGNMENT_A
+#      responses:
+#        '200':
+#          description: The correctness of the submitted solution.
+#          content:
+#            application/json:
+#              schema:
+#                $ref: '#/components/schemas/SubmissionResult'
+#        '400':
+#          description: The submitted JSON could not be parsed correctly.
 
   ##### ASSIGNMENT B #####
   /serialization/b:
@@ -114,7 +114,7 @@ paths:
           description: The submitted JSON could not be parsed correctly.
 
   ##### ASSIGNMENT C #####
-  /serialization/c:
+  /optional/serialization/c:
     post:
       summary: verify assignment C
       description: Verifies the stock update based on the stock request for assignment C.
@@ -127,7 +127,7 @@ paths:
             schema:
               $ref: '#/components/schemas/StockUpdate'
       tags:
-      - ASSIGNMENT_C
+      - OPTIONAL_ASSIGNMENT_C
       responses:
         '200':
           description: The correctness of the submitted solution.
@@ -171,22 +171,22 @@ paths:
                 items:
                   $ref: '#/components/schemas/PCCase'
 
-  /warehouse/cooling:
-    get:
-      summary: Returns all cooling possibilities
-      description: Returns an array of all cooling objects in the warehouse
-      operationId: getCooling
-      tags:
-      - WAREHOUSE
-      responses:
-        '200':
-          description: An array of all cooling objects
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/Cooling'
+#  /warehouse/cooling:
+#    get:
+#      summary: Returns all cooling possibilities
+#      description: Returns an array of all cooling objects in the warehouse
+#      operationId: getCooling
+#      tags:
+#      - WAREHOUSE
+#      responses:
+#        '200':
+#          description: An array of all cooling objects
+#          content:
+#            application/json:
+#              schema:
+#                type: array
+#                items:
+#                  $ref: '#/components/schemas/Cooling'
 
   /warehouse/cpus:
     get:
@@ -239,22 +239,22 @@ paths:
                 items:
                   $ref: '#/components/schemas/PSU'
 
-  /warehouse/storage:
-    get:
-      summary: Returns all storage possibilities
-      description: Returns an array of all storage objects in the warehouse
-      operationId: getStorage
-      tags:
-      - WAREHOUSE
-      responses:
-        '200':
-          description: An array of all storage objects
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/Storage'
+#  /warehouse/storage:
+#    get:
+#      summary: Returns all storage possibilities
+#      description: Returns an array of all storage objects in the warehouse
+#      operationId: getStorage
+#      tags:
+#      - WAREHOUSE
+#      responses:
+#        '200':
+#          description: An array of all storage objects
+#          content:
+#            application/json:
+#              schema:
+#                type: array
+#                items:
+#                  $ref: '#/components/schemas/Storage'
 
   /warehouse/partslist:
     get:
@@ -321,7 +321,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/PC'
         '400':
-          description: Unable to assemble the PC. There was either a component missing or multiple components of the same category (with the exception of storage)
+          description: Unable to assemble the PC. There was either a component missing or multiple components of the same category #(with the exception of storage)
 
   /warehouse/stock/requests/assignment_c:
     get:
@@ -422,21 +422,21 @@ components:
           category: "CASE"
           volume: 57.75
 
-    Cooling:
-      allOf:
-      - $ref: '#/components/schemas/PCPart'
-      - type: object
-        properties:
-          performance:
-            type: integer
-        required:
-        - volume
-        example:
-          price: 20
-          name: "Air cooled"
-          productId: "cA"
-          category: "COOLING"
-          performance: 1
+#    Cooling:
+#      allOf:
+#      - $ref: '#/components/schemas/PCPart'
+#      - type: object
+#        properties:
+#          performance:
+#            type: integer
+#        required:
+#        - volume
+#        example:
+#          price: 20
+#          name: "Air cooled"
+#          productId: "cA"
+#          category: "COOLING"
+#          performance: 1
 
     CPU:
       allOf:
@@ -494,25 +494,25 @@ components:
           category: "PSU"
           wattage: 450
 
-    Storage:
-      allOf:
-      - $ref: '#/components/schemas/PCPart'
-      - type: object
-        properties:
-          capacity:
-            type: integer
-          speed:
-            type: integer
-        required:
-        - capacity
-        - speed
-        example:
-          price: 40
-          name: "Seagate 1Tb HDD"
-          productId: "ss1000hdd"
-          category: "STORAGE"
-          capacity: 1000
-          speed: 95
+#    Storage:
+#      allOf:
+#      - $ref: '#/components/schemas/PCPart'
+#      - type: object
+#        properties:
+#          capacity:
+#            type: integer
+#          speed:
+#            type: integer
+#        required:
+#        - capacity
+#        - speed
+#        example:
+#          price: 40
+#          name: "Seagate 1Tb HDD"
+#          productId: "ss1000hdd"
+#          category: "STORAGE"
+#          capacity: 1000
+#          speed: 95
 
     PCPart:
       type: object
@@ -539,25 +539,25 @@ components:
       properties:
         pcCase:
           $ref: '#/components/schemas/PCCase'
-        cooling:
-          $ref: '#/components/schemas/Cooling'
+#        cooling:
+#          $ref: '#/components/schemas/Cooling'
         cpu:
           $ref: '#/components/schemas/CPU'
         gpu:
           $ref: '#/components/schemas/GPU'
         psu:
           $ref: '#/components/schemas/PSU'
-        storage:
-          type: array
-          items:
-            $ref: '#/components/schemas/Storage'
+#        storage:
+#          type: array
+#          items:
+#            $ref: '#/components/schemas/Storage'
       required:
       - pcCase
-      - cooling
+#      - cooling
       - cpu
       - gpu
       - psu
-      - storage
+#      - storage
 
     Customer:
       type: object
@@ -657,10 +657,10 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/PCCase'
-        cooling:
-          type: array
-          items:
-            $ref: '#/components/schemas/Cooling'
+#        cooling:
+#          type: array
+#          items:
+#            $ref: '#/components/schemas/Cooling'
         cpus:
           type: array
           items:
@@ -673,17 +673,17 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/PSU'
-        storage:
-          type: array
-          items:
-            $ref: '#/components/schemas/Storage'
+#        storage:
+#          type: array
+#          items:
+#            $ref: '#/components/schemas/Storage'
       required:
       - pcCases
-      - cooling
+#      - cooling
       - cpus
       - gpus
       - psus
-      - storage
+#      - storage
 
 security:
 - idKey: []
@@ -691,6 +691,6 @@ security:
 tags:
 - name: ASSIGNMENT_A
 - name: ASSIGNMENT_B
-- name: ASSIGNMENT_C
+- name: OPTIONAL_ASSIGNMENT_C
 - name: WAREHOUSE
 - name: WEBSTORE
